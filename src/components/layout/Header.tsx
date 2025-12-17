@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 interface NavChild {
   label: string;
@@ -222,18 +223,12 @@ export const Header = () => {
         <div className="container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">SV</span>
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="font-heading text-lg font-bold text-secondary leading-tight">
-                  Swami Vivekananda
-                </h1>
-                <p className="text-xs text-muted-foreground font-medium tracking-wider uppercase">
-                  Seva Brundam
-                </p>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Swami Vivekananda Seva Brundam" 
+                className="h-14 md:h-16 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
