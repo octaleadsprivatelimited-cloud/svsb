@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin, ArrowRight } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = [
   { label: "About Us", path: "/about" },
@@ -33,18 +34,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Section */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">SV</span>
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-bold leading-tight">
-                  Swami Vivekananda
-                </h3>
-                <p className="text-xs text-muted-foreground tracking-wider uppercase">
-                  Seva Brundam
-                </p>
-              </div>
+            <div className="mb-6">
+              <img 
+                src={logo} 
+                alt="Swami Vivekananda Seva Brundam" 
+                className="h-16 w-auto object-contain bg-white p-2"
+              />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Empowering rural communities through education, healthcare, and sustainable development programs since 2008.
