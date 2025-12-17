@@ -1,13 +1,18 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
 import { TeamCard } from "@/components/common/Cards";
-import founderImage from "@/assets/founder.jpg";
+import teamMember1 from "@/assets/team-member-1.jpg";
+import teamMember2 from "@/assets/team-member-2.jpg";
+import teamMember3 from "@/assets/team-member-3.jpg";
+import teamMember4 from "@/assets/team-member-4.jpg";
+import teamMember5 from "@/assets/team-member-5.jpg";
 
 const trustees = [
-  { name: "Shiva Kumar Gudlanaram", role: "Founder & Managing Trustee", image: founderImage },
-  { name: "Dr. Ramesh Kumar", role: "Trustee - Healthcare", image: founderImage },
-  { name: "Smt. Lakshmi Devi", role: "Trustee - Women Programs", image: founderImage },
-  { name: "Sri. Venkat Rao", role: "Trustee - Education", image: founderImage },
+  { name: "Shiva Kumar Gudlanaram", role: "Founder & Managing Trustee", image: teamMember4 },
+  { name: "Member 1", role: "Member", image: teamMember1 },
+  { name: "Member 2", role: "Member", image: teamMember2 },
+  { name: "Member 3", role: "Member", image: teamMember3 },
+  { name: "Member 4", role: "Member", image: teamMember5 },
 ];
 
 const BoardOfTrustees = () => {
