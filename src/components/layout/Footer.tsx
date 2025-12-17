@@ -138,7 +138,7 @@ export const Footer = () => {
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Swami Vivekananda Seva Brundam. All rights reserved.
             </p>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 mb-4">
               {legalLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -149,6 +149,9 @@ export const Footer = () => {
                 </Link>
               ))}
             </div>
+            <p className="text-muted-foreground text-sm">
+              Website Donated By <span className="text-primary font-semibold">Octaleads Pvt Ltd.</span>
+            </p>
           </div>
         </div>
       </div>
