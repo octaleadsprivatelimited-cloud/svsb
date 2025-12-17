@@ -1,96 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
+    /* NGO Trust Color Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 26% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 26% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 26% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep Saffron - Primary */
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Navy Blue - Secondary */
+    --secondary: 216 54% 23%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted grey backgrounds */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Golden Saffron */
+    --accent: 36 100% 50%;
+    --accent-foreground: 220 26% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 18 100% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom NGO colors */
+    --saffron: 18 100% 60%;
+    --saffron-dark: 18 100% 50%;
+    --navy: 216 54% 23%;
+    --navy-light: 216 40% 35%;
+    --navy-dark: 216 60% 15%;
+    --cream: 40 33% 97%;
+    --gold: 36 100% 50%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 216 54% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 18 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 40% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 216 40% 35%;
+    --sidebar-ring: 18 100% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 216 60% 10%;
+    --foreground: 0 0% 98%;
+    --card: 216 54% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 216 54% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 40% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 40% 20%;
+    --muted-foreground: 220 14% 70%;
+    --accent: 36 100% 50%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 40% 25%;
+    --input: 216 40% 25%;
+    --ring: 18 100% 60%;
   }
 }
 
@@ -100,6 +90,134 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Sharp edge cards */
+  .card-sharp {
+    @apply bg-card border border-border shadow-sm;
+  }
+
+  /* Section separators */
+  .section-divider {
+    @apply w-full h-px bg-border;
+  }
+
+  /* NGO CTA Button styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 
+           uppercase tracking-wider text-sm transition-all duration-300
+           hover:bg-saffron-dark border-2 border-primary hover:border-saffron-dark
+           shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-semibold px-8 py-4 
+           uppercase tracking-wider text-sm transition-all duration-300
+           hover:bg-navy-light border-2 border-secondary hover:border-navy-light;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-secondary border-2 border-secondary font-semibold 
+           px-8 py-4 uppercase tracking-wider text-sm transition-all duration-300
+           hover:bg-secondary hover:text-secondary-foreground;
+  }
+
+  .btn-outline-light {
+    @apply bg-transparent text-primary-foreground border-2 border-primary-foreground 
+           font-semibold px-8 py-4 uppercase tracking-wider text-sm transition-all 
+           duration-300 hover:bg-primary-foreground hover:text-secondary;
+  }
+
+  /* Hero overlay */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-navy/90 to-navy/70;
+  }
+
+  /* Section backgrounds */
+  .section-light {
+    @apply bg-cream;
+  }
+
+  .section-dark {
+    @apply bg-navy text-primary-foreground;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply text-center p-8 border-r border-border last:border-r-0;
+  }
+
+  /* Program card */
+  .program-card {
+    @apply bg-card border border-border overflow-hidden group 
+           transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Testimonial card */
+  .testimonial-card {
+    @apply bg-card border border-border p-8 relative;
+  }
+
+  /* Footer link */
+  .footer-link {
+    @apply text-muted-foreground hover:text-primary transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Sharp shadow */
+  .shadow-sharp {
+    box-shadow: 4px 4px 0 0 hsl(var(--border));
+  }
+
+  .shadow-sharp-primary {
+    box-shadow: 4px 4px 0 0 hsl(var(--primary));
+  }
+
+  /* Animate on scroll */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover underline */
+  .hover-underline {
+    @apply relative;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .hover-underline:hover::after {
+    @apply w-full;
   }
 }
