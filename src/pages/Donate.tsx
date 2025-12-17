@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, CreditCard, Building, Wallet, ArrowRight, CheckCircle } from "lucide-react";
+import upiQrCode from "@/assets/upi-qr-code.png";
 
 const donationOptions = [
   { amount: "₹500", description: "Provides school supplies for 1 child for a year" },
@@ -168,10 +169,12 @@ const Donate = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Scan QR code or use UPI ID
               </p>
-              <div className="w-32 h-32 bg-muted mx-auto mb-4 flex items-center justify-center">
-                <span className="text-muted-foreground text-xs">QR Code</span>
-              </div>
-              <p className="text-sm font-medium">UPI: svsb@sbi</p>
+              <img 
+                src={upiQrCode} 
+                alt="UPI QR Code - Swami Vivekananda Seva Brundam" 
+                className="w-48 h-48 mx-auto mb-4 object-contain"
+              />
+              <p className="text-sm font-medium break-all">swamivivekanandasevabrundam@ybl</p>
             </div>
             
             <div className="card-sharp p-8 text-center">
