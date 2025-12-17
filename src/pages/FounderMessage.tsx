@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award } from "lucide-react";
 
-import founderImage from "@/assets/founder.jpg";
+import founderImage from "@/assets/team-member-4.jpg";
 
 const FounderMessage = () => {
   return (
