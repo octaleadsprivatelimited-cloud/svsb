@@ -1,55 +1,149 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, Mail, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const navItems = [
+interface NavChild {
+  label: string;
+  path: string;
+  description?: string;
+}
+
+interface NavCategory {
+  category: string;
+  items: NavChild[];
+}
+
+interface NavItem {
+  label: string;
+  path: string;
+  children?: NavChild[];
+  megaMenu?: NavCategory[];
+  featured?: {
+    title: string;
+    description: string;
+    link: string;
+    linkText: string;
+  };
+}
+
+const navItems: NavItem[] = [
   { label: "Home", path: "/" },
   {
     label: "About",
     path: "/about",
-    children: [
-      { label: "About Us", path: "/about" },
-      { label: "Our Story", path: "/our-story" },
-      { label: "Vision & Mission", path: "/vision-mission" },
-      { label: "Founder Message", path: "/founder-message" },
-      { label: "Board of Trustees", path: "/board-of-trustees" },
+    megaMenu: [
+      {
+        category: "Know Us",
+        items: [
+          { label: "About Us", path: "/about", description: "Learn about our journey" },
+          { label: "Our Story", path: "/our-story", description: "How we started" },
+          { label: "Vision & Mission", path: "/vision-mission", description: "Our guiding principles" },
+        ],
+      },
+      {
+        category: "Leadership",
+        items: [
+          { label: "Founder Message", path: "/founder-message", description: "Words from our founder" },
+          { label: "Board of Trustees", path: "/board-of-trustees", description: "Meet our leaders" },
+        ],
+      },
     ],
+    featured: {
+      title: "Our Impact Story",
+      description: "15+ years of transforming rural communities",
+      link: "/our-impact",
+      linkText: "View Impact",
+    },
   },
   {
     label: "Programs",
     path: "/programs",
-    children: [
-      { label: "Education Programs", path: "/education-programs" },
-      { label: "Rural Education", path: "/rural-education" },
-      { label: "Health & Medical Camps", path: "/health-camps" },
-      { label: "Women Empowerment", path: "/women-empowerment" },
-      { label: "Youth Skill Development", path: "/youth-development" },
-      { label: "Sustainable Development", path: "/sustainable-development" },
-      { label: "Community Outreach", path: "/community-outreach" },
+    megaMenu: [
+      {
+        category: "Education",
+        items: [
+          { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives" },
+          { label: "Rural Education", path: "/rural-education", description: "Reaching remote areas" },
+        ],
+      },
+      {
+        category: "Health & Welfare",
+        items: [
+          { label: "Health & Medical Camps", path: "/health-camps", description: "Free healthcare services" },
+          { label: "Women Empowerment", path: "/women-empowerment", description: "Empowering women leaders" },
+        ],
+      },
+      {
+        category: "Development",
+        items: [
+          { label: "Youth Skill Development", path: "/youth-development", description: "Building future leaders" },
+          { label: "Sustainable Development", path: "/sustainable-development", description: "Eco-friendly initiatives" },
+          { label: "Community Outreach", path: "/community-outreach", description: "Grassroots programs" },
+        ],
+      },
     ],
+    featured: {
+      title: "Featured Program",
+      description: "Youth Leadership Training - Shaping tomorrow's leaders",
+      link: "/youth-development",
+      linkText: "Learn More",
+    },
   },
   {
     label: "Get Involved",
     path: "/volunteer",
-    children: [
-      { label: "Volunteer Programs", path: "/volunteer" },
-      { label: "Donate", path: "/donate" },
-      { label: "How to Donate", path: "/how-to-donate" },
-      { label: "CSR Partnerships", path: "/csr-partnerships" },
+    megaMenu: [
+      {
+        category: "Support Us",
+        items: [
+          { label: "Volunteer Programs", path: "/volunteer", description: "Join our mission" },
+          { label: "Donate", path: "/donate", description: "Make a difference today" },
+          { label: "How to Donate", path: "/how-to-donate", description: "Ways to contribute" },
+        ],
+      },
+      {
+        category: "Partnerships",
+        items: [
+          { label: "CSR Partnerships", path: "/csr-partnerships", description: "Corporate collaborations" },
+        ],
+      },
     ],
+    featured: {
+      title: "Make a Difference",
+      description: "Your contribution transforms lives",
+      link: "/donate",
+      linkText: "Donate Now",
+    },
   },
   { label: "Our Impact", path: "/our-impact" },
   {
     label: "Resources",
     path: "/gallery",
-    children: [
-      { label: "Gallery", path: "/gallery" },
-      { label: "Events", path: "/events" },
-      { label: "Media & Press", path: "/media-press" },
-      { label: "Annual Reports", path: "/annual-reports" },
-      { label: "Awards", path: "/awards" },
+    megaMenu: [
+      {
+        category: "Media",
+        items: [
+          { label: "Gallery", path: "/gallery", description: "Photos & videos" },
+          { label: "Events", path: "/events", description: "Upcoming activities" },
+          { label: "Media & Press", path: "/media-press", description: "News coverage" },
+        ],
+      },
+      {
+        category: "Reports",
+        items: [
+          { label: "Annual Reports", path: "/annual-reports", description: "Yearly documentation" },
+          { label: "Awards", path: "/awards", description: "Our achievements" },
+          { label: "Testimonials", path: "/testimonials", description: "Success stories" },
+        ],
+      },
     ],
+    featured: {
+      title: "Annual Report 2024",
+      description: "Our journey of impact and transparency",
+      link: "/annual-reports",
+      linkText: "Read Report",
+    },
   },
   { label: "Contact", path: "/contact" },
 ];
@@ -58,6 +152,8 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [mobileOpenItems, setMobileOpenItems] = useState<string[]>([]);
   const location = useLocation();
 
   useEffect(() => {
@@ -71,9 +167,26 @@ export const Header = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
+    setActiveCategory(null);
+    setMobileOpenItems([]);
   }, [location]);
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleMouseEnter = (item: NavItem) => {
+    if (item.megaMenu) {
+      setOpenDropdown(item.label);
+      setActiveCategory(item.megaMenu[0]?.category || null);
+    }
+  };
+
+  const toggleMobileItem = (label: string) => {
+    setMobileOpenItems(prev => 
+      prev.includes(label) 
+        ? prev.filter(i => i !== label)
+        : [...prev, label]
+    );
+  };
 
   return (
     <>
@@ -128,9 +241,12 @@ export const Header = () => {
               {navItems.map((item) => (
                 <div
                   key={item.label}
-                  className="relative group"
-                  onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(item)}
+                  onMouseLeave={() => {
+                    setOpenDropdown(null);
+                    setActiveCategory(null);
+                  }}
                 >
                   <Link
                     to={item.path}
@@ -138,28 +254,89 @@ export const Header = () => {
                       isActive(item.path)
                         ? "text-primary"
                         : "text-foreground hover:text-primary"
-                    }`}
+                    } ${openDropdown === item.label ? "text-primary" : ""}`}
                   >
                     {item.label}
-                    {item.children && <ChevronDown size={14} />}
+                    {item.megaMenu && (
+                      <ChevronDown 
+                        size={14} 
+                        className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`}
+                      />
+                    )}
                   </Link>
                   
-                  {/* Dropdown */}
-                  {item.children && openDropdown === item.label && (
-                    <div className="absolute top-full left-0 bg-background border border-border shadow-lg min-w-[220px] animate-fade-in">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.path}
-                          to={child.path}
-                          className={`block px-4 py-3 text-sm transition-colors border-b border-border last:border-b-0 ${
-                            isActive(child.path)
-                              ? "bg-primary/10 text-primary"
-                              : "hover:bg-muted hover:text-primary"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                  {/* Mega Menu Dropdown */}
+                  {item.megaMenu && openDropdown === item.label && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                      <div className="bg-background border border-border shadow-2xl min-w-[700px] animate-fade-in flex">
+                        {/* Left Categories */}
+                        <div className="w-48 bg-muted/30 border-r border-border py-4">
+                          {item.megaMenu.map((category) => (
+                            <button
+                              key={category.category}
+                              onMouseEnter={() => setActiveCategory(category.category)}
+                              className={`w-full text-left px-5 py-3 text-sm font-medium flex items-center justify-between transition-all ${
+                                activeCategory === category.category
+                                  ? "text-primary bg-background border-l-2 border-primary"
+                                  : "text-foreground hover:text-primary hover:bg-background/50"
+                              }`}
+                            >
+                              {category.category}
+                              <ChevronRight size={14} className={activeCategory === category.category ? "text-primary" : "text-muted-foreground"} />
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Middle - Sub Items */}
+                        <div className="flex-1 p-6">
+                          {item.megaMenu.map((category) => (
+                            activeCategory === category.category && (
+                              <div key={category.category} className="grid grid-cols-2 gap-x-8 gap-y-1">
+                                {category.items.map((subItem) => (
+                                  <Link
+                                    key={subItem.path}
+                                    to={subItem.path}
+                                    className={`group p-3 hover:bg-muted/50 transition-colors ${
+                                      isActive(subItem.path) ? "bg-primary/5" : ""
+                                    }`}
+                                  >
+                                    <div className={`text-sm font-medium group-hover:text-primary transition-colors ${
+                                      isActive(subItem.path) ? "text-primary" : "text-foreground"
+                                    }`}>
+                                      {subItem.label}
+                                    </div>
+                                    {subItem.description && (
+                                      <div className="text-xs text-muted-foreground mt-0.5">
+                                        {subItem.description}
+                                      </div>
+                                    )}
+                                  </Link>
+                                ))}
+                              </div>
+                            )
+                          ))}
+                        </div>
+
+                        {/* Right - Featured */}
+                        {item.featured && (
+                          <div className="w-56 bg-primary/5 p-5 border-l border-border">
+                            <span className="text-xs font-semibold text-primary uppercase tracking-wider">Spotlight</span>
+                            <h4 className="font-heading font-bold text-foreground mt-3 text-sm">
+                              {item.featured.title}
+                            </h4>
+                            <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                              {item.featured.description}
+                            </p>
+                            <Link 
+                              to={item.featured.link}
+                              className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 hover:gap-2 transition-all"
+                            >
+                              <ArrowRight size={14} />
+                              {item.featured.linkText}
+                            </Link>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -185,32 +362,52 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background border-t border-border animate-slide-down">
+          <div className="lg:hidden bg-background border-t border-border animate-slide-down max-h-[80vh] overflow-y-auto">
             <div className="container py-4">
               {navItems.map((item) => (
                 <div key={item.label} className="border-b border-border last:border-b-0">
-                  <Link
-                    to={item.path}
-                    className={`block py-3 font-medium ${
-                      isActive(item.path) ? "text-primary" : "text-foreground"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children && (
-                    <div className="pl-4 pb-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.path}
-                          to={child.path}
-                          className={`block py-2 text-sm ${
-                            isActive(child.path)
-                              ? "text-primary"
-                              : "text-muted-foreground hover:text-primary"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={item.path}
+                      className={`flex-1 py-3 font-medium ${
+                        isActive(item.path) ? "text-primary" : "text-foreground"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                    {item.megaMenu && (
+                      <button
+                        onClick={() => toggleMobileItem(item.label)}
+                        className="p-3 text-muted-foreground"
+                      >
+                        <ChevronDown 
+                          size={18} 
+                          className={`transition-transform ${mobileOpenItems.includes(item.label) ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                    )}
+                  </div>
+                  {item.megaMenu && mobileOpenItems.includes(item.label) && (
+                    <div className="pl-4 pb-3 space-y-3">
+                      {item.megaMenu.map((category) => (
+                        <div key={category.category}>
+                          <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
+                            {category.category}
+                          </div>
+                          {category.items.map((subItem) => (
+                            <Link
+                              key={subItem.path}
+                              to={subItem.path}
+                              className={`block py-2 text-sm ${
+                                isActive(subItem.path)
+                                  ? "text-primary"
+                                  : "text-muted-foreground hover:text-primary"
+                              }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   )}
