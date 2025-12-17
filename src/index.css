@@ -156,7 +156,7 @@
 
   /* Program card */
   .program-card {
-    @apply bg-card border border-border overflow-hidden group 
+    @apply bg-card border border-border overflow-hidden 
            transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 
