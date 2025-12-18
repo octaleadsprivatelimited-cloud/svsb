@@ -4,6 +4,11 @@ import { Menu, X, Phone, Mail, ChevronDown, ChevronRight, ArrowRight } from "luc
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import heroEducation from "@/assets/hero-education.jpg";
+import healthCamp from "@/assets/health-camp.jpg";
+import womenEmpowerment from "@/assets/women-empowerment.jpg";
+import youthTraining from "@/assets/youth-training.jpg";
+import ruralEducation from "@/assets/rural-education.jpg";
 
 interface NavChild {
   label: string;
@@ -14,6 +19,7 @@ interface NavChild {
 interface NavCategory {
   category: string;
   items: NavChild[];
+  image?: string;
 }
 
 interface NavItem {
@@ -26,6 +32,7 @@ interface NavItem {
     description: string;
     link: string;
     linkText: string;
+    image?: string;
   };
 }
 
@@ -38,24 +45,27 @@ const navItems: NavItem[] = [
       {
         category: "Know Us",
         items: [
-          { label: "About Us", path: "/about", description: "Learn about our journey" },
-          { label: "Our Story", path: "/our-story", description: "How we started" },
+          { label: "About Us", path: "/about", description: "Learn about our journey and impact" },
+          { label: "Our Story", path: "/our-story", description: "How we started transforming lives" },
           { label: "Vision & Mission", path: "/vision-mission", description: "Our guiding principles" },
         ],
+        image: heroEducation,
       },
       {
         category: "Leadership",
         items: [
-          { label: "Founder Message", path: "/founder-message", description: "Words from our founder" },
-          { label: "Board of Trustees", path: "/board-of-trustees", description: "Meet our leaders" },
+          { label: "Founder Message", path: "/founder-message", description: "Words from our National Youth Awardee founder" },
+          { label: "Board of Trustees", path: "/board-of-trustees", description: "Meet our visionary leaders" },
         ],
+        image: youthTraining,
       },
     ],
     featured: {
       title: "Our Impact Story",
-      description: "15+ years of transforming rural communities",
+      description: "15+ years of transforming rural communities through education, healthcare, and empowerment.",
       link: "/our-impact",
       linkText: "View Impact",
+      image: ruralEducation,
     },
   },
   {
@@ -65,31 +75,35 @@ const navItems: NavItem[] = [
       {
         category: "Education",
         items: [
-          { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives" },
-          { label: "Rural Education", path: "/rural-education", description: "Reaching remote areas" },
+          { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives for all" },
+          { label: "Rural Education", path: "/rural-education", description: "Reaching remote areas with quality education" },
         ],
+        image: heroEducation,
       },
       {
         category: "Health & Welfare",
         items: [
-          { label: "Health & Medical Camps", path: "/health-camps", description: "Free healthcare services" },
-          { label: "Women Empowerment", path: "/women-empowerment", description: "Empowering women leaders" },
+          { label: "Health & Medical Camps", path: "/health-camps", description: "Free healthcare services for communities" },
+          { label: "Women Empowerment", path: "/women-empowerment", description: "Building strong, independent women leaders" },
         ],
+        image: healthCamp,
       },
       {
         category: "Development",
         items: [
-          { label: "Youth Skill Development", path: "/youth-development", description: "Building future leaders" },
-          { label: "Sustainable Development", path: "/sustainable-development", description: "Eco-friendly initiatives" },
-          { label: "Community Outreach", path: "/community-outreach", description: "Grassroots programs" },
+          { label: "Youth Skill Development", path: "/youth-development", description: "Building future leaders with skills" },
+          { label: "Sustainable Development", path: "/sustainable-development", description: "Eco-friendly community initiatives" },
+          { label: "Community Outreach", path: "/community-outreach", description: "Grassroots programs for change" },
         ],
+        image: youthTraining,
       },
     ],
     featured: {
       title: "Featured Program",
-      description: "Youth Leadership Training - Shaping tomorrow's leaders",
+      description: "Youth Leadership Training - Shaping tomorrow's leaders through skill development and mentorship.",
       link: "/youth-development",
       linkText: "Learn More",
+      image: youthTraining,
     },
   },
   {
@@ -99,23 +113,26 @@ const navItems: NavItem[] = [
       {
         category: "Support Us",
         items: [
-          { label: "Volunteer Programs", path: "/volunteer", description: "Join our mission" },
-          { label: "Donate", path: "/donate", description: "Make a difference today" },
-          { label: "How to Donate", path: "/how-to-donate", description: "Ways to contribute" },
+          { label: "Volunteer Programs", path: "/volunteer", description: "Join our mission and make a difference" },
+          { label: "Donate", path: "/donate", description: "Support our cause with your contribution" },
+          { label: "How to Donate", path: "/how-to-donate", description: "Multiple ways to contribute" },
         ],
+        image: womenEmpowerment,
       },
       {
         category: "Partnerships",
         items: [
-          { label: "CSR Partnerships", path: "/csr-partnerships", description: "Corporate collaborations" },
+          { label: "CSR Partnerships", path: "/csr-partnerships", description: "Corporate social responsibility collaborations" },
         ],
+        image: ruralEducation,
       },
     ],
     featured: {
       title: "Make a Difference",
-      description: "Your contribution transforms lives",
+      description: "Your contribution transforms lives. Join thousands who support our mission.",
       link: "/donate",
       linkText: "Donate Now",
+      image: healthCamp,
     },
   },
   { label: "Our Impact", path: "/our-impact" },
@@ -126,25 +143,28 @@ const navItems: NavItem[] = [
       {
         category: "Media",
         items: [
-          { label: "Gallery", path: "/gallery", description: "Photos & videos" },
-          { label: "Events", path: "/events", description: "Upcoming activities" },
-          { label: "Media & Press", path: "/media-press", description: "News coverage" },
+          { label: "Gallery", path: "/gallery", description: "Photos & videos from our programs" },
+          { label: "Events", path: "/events", description: "Upcoming activities and campaigns" },
+          { label: "Media & Press", path: "/media-press", description: "News coverage and press releases" },
         ],
+        image: heroEducation,
       },
       {
         category: "Reports",
         items: [
-          { label: "Annual Reports", path: "/annual-reports", description: "Yearly documentation" },
-          { label: "Awards", path: "/awards", description: "Our achievements" },
-          { label: "Testimonials", path: "/testimonials", description: "Success stories" },
+          { label: "Annual Reports", path: "/annual-reports", description: "Yearly documentation of our work" },
+          { label: "Awards", path: "/awards", description: "Our achievements and recognition" },
+          { label: "Testimonials", path: "/testimonials", description: "Success stories from beneficiaries" },
         ],
+        image: womenEmpowerment,
       },
     ],
     featured: {
       title: "Annual Report 2024",
-      description: "Our journey of impact and transparency",
+      description: "Our journey of impact, transparency, and community transformation.",
       link: "/annual-reports",
       linkText: "Read Report",
+      image: ruralEducation,
     },
   },
   { label: "Contact", path: "/contact" },
@@ -309,66 +329,58 @@ export const Header = () => {
                     )}
                   </Link>
                   
-                  {/* Mega Menu Dropdown */}
+                  {/* Full Width Mega Menu Dropdown */}
                   <AnimatePresence>
                     {item.megaMenu && openDropdown === item.label && (
                       <motion.div 
-                        className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                        className="fixed left-0 right-0 top-[80px] w-full pt-0"
                         initial="hidden"
                         animate="visible"
                         exit="exit"
                         variants={dropdownVariants}
+                        style={{ zIndex: 100 }}
                       >
-                        {/* Arrow indicator */}
-                        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-background border-l border-t border-border rotate-45 z-10" />
-                        
-                        <div className="bg-background border border-border shadow-2xl rounded-lg overflow-hidden min-w-[780px]">
-                          <div className="flex">
-                            {/* Left Categories Sidebar */}
-                            <div className="w-52 bg-muted/20 border-r border-border py-5">
-                              <div className="px-5 mb-3">
-                                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                                  Categories
-                                </span>
-                              </div>
-                              {item.megaMenu.map((category, index) => (
-                                <motion.button
-                                  key={category.category}
-                                  onMouseEnter={() => setActiveCategory(category.category)}
-                                  variants={itemVariants}
-                                  custom={index}
-                                  className={`w-full text-left px-5 py-3.5 text-sm font-medium flex items-center justify-between transition-all duration-200 ${
-                                    activeCategory === category.category
-                                      ? "text-primary bg-background border-l-3 border-primary"
-                                      : "text-foreground hover:text-primary hover:bg-background/60 border-l-3 border-transparent"
-                                  }`}
-                                >
-                                  {category.category}
-                                  <ChevronRight 
-                                    size={14} 
-                                    className={`transition-transform duration-200 ${
-                                      activeCategory === category.category 
-                                        ? "text-primary translate-x-1" 
-                                        : "text-muted-foreground"
-                                    }`} 
-                                  />
-                                </motion.button>
-                              ))}
-                            </div>
-
-                            {/* Middle - Sub Items */}
-                            <div className="flex-1 p-6">
-                              <AnimatePresence mode="wait">
-                                {item.megaMenu.map((category) => (
-                                  activeCategory === category.category && (
-                                    <motion.div 
-                                      key={category.category} 
-                                      className="grid grid-cols-2 gap-2"
-                                      initial="hidden"
-                                      animate="visible"
-                                      exit="hidden"
-                                      variants={categoryVariants}
-                                    >
+                        <div className="bg-background border-t border-b border-border shadow-2xl">
+                          <div className="container">
+                            <div className="grid grid-cols-12 gap-0 min-h-[400px]">
+                              {/* Left - Categories with Images */}
+                              <div className="col-span-8 grid grid-cols-3 gap-0 border-r border-border">
+                                {item.megaMenu.map((category, catIndex) => (
+                                  <motion.div
+                                    key={category.category}
+                                    className={`p-6 ${catIndex !== item.megaMenu!.length - 1 ? 'border-r border-border' : ''}`}
+                                    variants={itemVariants}
+                                    custom={catIndex}
+                                    onMouseEnter={() => setActiveCategory(category.category)}
+                                  >
+                                    {/* Category Image */}
+                                    {category.image && (
+                                      <motion.div 
+                                        className="relative h-32 mb-5 overflow-hidden rounded-none"
+                                        whileHover={{ scale: 1.02 }}
+                                        transition={{ duration: 0.3 }}
+                                      >
+                                        <img 
+                                          src={category.image} 
+                                          alt={category.category}
+                                          className="w-full h-full object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
+                                        <span className="absolute bottom-3 left-3 text-background text-xs font-bold uppercase tracking-wider">
+                                          {category.category}
+                                        </span>
+                                      </motion.div>
+                                    )}
+                                    
+                                    {/* Category Title (if no image) */}
+                                    {!category.image && (
+                                      <h3 className="text-sm font-bold text-primary uppercase tracking-wider mb-4 pb-2 border-b border-border">
+                                        {category.category}
+                                      </h3>
+                                    )}
+                                    
+                                    {/* Links */}
+                                    <div className="space-y-1">
                                       {category.items.map((subItem, index) => (
                                         <motion.div
                                           key={subItem.path}
@@ -377,8 +389,8 @@ export const Header = () => {
                                         >
                                           <Link
                                             to={subItem.path}
-                                            className={`group block p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 ${
-                                              isActive(subItem.path) ? "bg-primary/10" : ""
+                                            className={`group block py-2.5 transition-all duration-200 ${
+                                              isActive(subItem.path) ? "" : ""
                                             }`}
                                           >
                                             <div className={`text-sm font-semibold group-hover:text-primary transition-colors flex items-center gap-2 ${
@@ -391,46 +403,61 @@ export const Header = () => {
                                               />
                                             </div>
                                             {subItem.description && (
-                                              <div className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                                              <div className="text-xs text-muted-foreground mt-1 leading-relaxed">
                                                 {subItem.description}
                                               </div>
                                             )}
                                           </Link>
                                         </motion.div>
                                       ))}
-                                    </motion.div>
-                                  )
+                                    </div>
+                                  </motion.div>
                                 ))}
-                              </AnimatePresence>
-                            </div>
+                              </div>
 
-                            {/* Right - Featured */}
-                            {item.featured && (
-                              <motion.div 
-                                className="w-60 bg-gradient-to-br from-primary/5 to-primary/10 p-6 border-l border-border"
-                                variants={itemVariants}
-                              >
-                                <span className="inline-block text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-1 rounded">
-                                  Spotlight
-                                </span>
-                                <h4 className="font-heading font-bold text-foreground mt-4 text-base leading-tight">
-                                  {item.featured.title}
-                                </h4>
-                                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                                  {item.featured.description}
-                                </p>
-                                <Link 
-                                  to={item.featured.link}
-                                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold mt-5 group"
+                              {/* Right - Featured with Large Image */}
+                              {item.featured && (
+                                <motion.div 
+                                  className="col-span-4 relative overflow-hidden"
+                                  variants={itemVariants}
                                 >
-                                  {item.featured.linkText}
-                                  <ArrowRight 
-                                    size={14} 
-                                    className="group-hover:translate-x-1 transition-transform duration-200"
-                                  />
-                                </Link>
-                              </motion.div>
-                            )}
+                                  {/* Background Image */}
+                                  {item.featured.image && (
+                                    <div className="absolute inset-0">
+                                      <img 
+                                        src={item.featured.image} 
+                                        alt={item.featured.title}
+                                        className="w-full h-full object-cover"
+                                      />
+                                      <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/60" />
+                                    </div>
+                                  )}
+                                  
+                                  {/* Content */}
+                                  <div className="relative z-10 p-8 h-full flex flex-col justify-center">
+                                    <span className="inline-block text-xs font-bold text-primary uppercase tracking-wider bg-primary/20 px-3 py-1.5 rounded-none w-fit">
+                                      Spotlight
+                                    </span>
+                                    <h4 className="font-heading font-bold text-background mt-5 text-xl leading-tight">
+                                      {item.featured.title}
+                                    </h4>
+                                    <p className="text-sm text-background/80 mt-3 leading-relaxed max-w-xs">
+                                      {item.featured.description}
+                                    </p>
+                                    <Link 
+                                      to={item.featured.link}
+                                      className="inline-flex items-center gap-2 text-primary text-sm font-bold mt-6 group bg-background px-4 py-2.5 hover:bg-primary hover:text-background transition-all duration-200 w-fit"
+                                    >
+                                      {item.featured.linkText}
+                                      <ArrowRight 
+                                        size={14} 
+                                        className="group-hover:translate-x-1 transition-transform duration-200"
+                                      />
+                                    </Link>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </motion.div>
