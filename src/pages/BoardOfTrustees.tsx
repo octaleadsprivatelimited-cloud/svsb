@@ -8,11 +8,36 @@ import teamMember4 from "@/assets/team-member-4.jpg";
 import teamMember5 from "@/assets/team-member-5.jpg";
 
 const trustees = [
-  { name: "Shiva Kumar Gudlanaram", role: "Founder & Managing Trustee", image: teamMember4 },
-  { name: "Member 1", role: "Member", image: teamMember1 },
-  { name: "Member 2", role: "Member", image: teamMember2 },
-  { name: "Member 3", role: "Member", image: teamMember3 },
-  { name: "Member 4", role: "Member", image: teamMember5 },
+  { 
+    name: "Shiva Kumar Gudlanaram", 
+    role: "Founder & Managing Trustee", 
+    image: teamMember4,
+    description: "National Youth Awardee 2018, dedicated to rural development and community empowerment for over 15 years."
+  },
+  { 
+    name: "Dr. Ramesh Kumar", 
+    role: "Trustee - Education Programs", 
+    image: teamMember1,
+    description: "Educationist with 25+ years of experience in rural education and skill development initiatives."
+  },
+  { 
+    name: "Dr. Padma Reddy", 
+    role: "Trustee - Healthcare", 
+    image: teamMember2,
+    description: "Medical professional specializing in community health and rural healthcare delivery systems."
+  },
+  { 
+    name: "Smt. Lakshmi Devi", 
+    role: "Trustee - Women Empowerment", 
+    image: teamMember3,
+    description: "Social worker and advocate for women's rights with expertise in SHG management and microfinance."
+  },
+  { 
+    name: "Sri Venkatesh Rao", 
+    role: "Trustee - Finance & Administration", 
+    image: teamMember5,
+    description: "Chartered Accountant with extensive experience in NGO financial management and compliance."
+  },
 ];
 
 const BoardOfTrustees = () => {
