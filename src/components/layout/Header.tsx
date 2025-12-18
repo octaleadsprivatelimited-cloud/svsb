@@ -328,21 +328,49 @@ export const Header = () => {
                       </motion.span>
                     )}
                   </Link>
-                  
-                  {/* Full Width Mega Menu Dropdown */}
-                  <AnimatePresence>
-                    {item.megaMenu && openDropdown === item.label && (
-                      <motion.div 
-                        className="fixed left-0 right-0 top-20 w-full"
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={dropdownVariants}
-                        style={{ zIndex: 90 }}
-                      >
-                        <div className="bg-background border-t border-b border-border shadow-2xl">
-                          <div className="container">
-                            <div className="grid grid-cols-12 gap-0 min-h-[400px]">
+                </div>
+              ))}
+            </nav>
+
+            {/* Desktop Donate Button */}
+            <Link to="/donate" className="hidden lg:block">
+              <Button className="btn-primary">Donate Now</Button>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Full Width Mega Menu Dropdown - Positioned relative to header */}
+        <AnimatePresence>
+          {navItems.map((item) => (
+            item.megaMenu && openDropdown === item.label && (
+              <motion.div 
+                key={item.label}
+                className="absolute left-0 right-0 top-full w-full"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={dropdownVariants}
+                onMouseEnter={() => {
+                  setOpenDropdown(item.label);
+                  setActiveCategory(item.megaMenu![0]?.category || null);
+                }}
+                onMouseLeave={() => {
+                  setOpenDropdown(null);
+                  setActiveCategory(null);
+                }}
+              >
+                <div className="bg-background border-t border-b border-border shadow-2xl">
+                  <div className="container">
+                    <div className="grid grid-cols-12 gap-0 min-h-[400px]">
                               {/* Left - Categories with Images */}
                               <div className="col-span-8 grid grid-cols-3 gap-0 border-r border-border">
                                 {item.megaMenu.map((category, catIndex) => (
@@ -457,32 +485,13 @@ export const Header = () => {
                                   </div>
                                 </motion.div>
                               )}
-                            </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </nav>
-
-            {/* CTA & Mobile Menu */}
-            <div className="flex items-center gap-4">
-              <Link to="/donate" className="hidden sm:block">
-                <Button className="btn-primary">Donate Now</Button>
-              </Link>
-              
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-foreground"
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-        </div>
+              </motion.div>
+            )
+          ))}
+        </AnimatePresence>
 
         {/* Mobile Menu */}
         <AnimatePresence>
