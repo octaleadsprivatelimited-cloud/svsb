@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin, ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+// TODO: Add your footer background image to src/assets/ and uncomment the line below
+// import footerBackground from "@/assets/footer-background.png";
 
 const quickLinks = [
   { label: "About Us", path: "/about" },
@@ -33,9 +35,22 @@ export const Footer = () => {
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
 
   return (
-    <footer className="bg-navy-dark text-secondary-foreground">
+    <footer className="relative text-secondary-foreground overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          // Uncomment the line below and add your image file to src/assets/
+          // backgroundImage: `url(${footerBackground})`,
+          // Temporary gradient matching the image description until image is added
+          background: 'linear-gradient(135deg, rgba(240, 248, 255, 0.3) 0%, rgba(64, 224, 208, 0.4) 20%, rgba(135, 206, 235, 0.5) 50%, rgba(176, 224, 230, 0.4) 80%, rgba(240, 248, 255, 0.2) 100%)',
+        }}
+      />
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-navy-dark/75" />
+      
       {/* Main Footer */}
-      <div className="container py-12">
+      <div className="container py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* About Section */}
           <div>

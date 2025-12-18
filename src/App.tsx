@@ -3,12 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Donate from "./pages/Donate";
 import Contact from "./pages/Contact";
 import OurImpact from "./pages/OurImpact";
 import Volunteer from "./pages/Volunteer";
+import Programs from "./pages/Programs";
 import EducationPrograms from "./pages/EducationPrograms";
 import HealthCamps from "./pages/HealthCamps";
 import WomenEmpowerment from "./pages/WomenEmpowerment";
@@ -36,6 +38,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -44,6 +47,7 @@ const App = () => (
           <Route path="/founder-message" element={<FounderMessage />} />
           <Route path="/board-of-trustees" element={<BoardOfTrustees />} />
           <Route path="/our-impact" element={<OurImpact />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/education-programs" element={<EducationPrograms />} />
           <Route path="/rural-education" element={<EducationPrograms />} />
           <Route path="/health-camps" element={<HealthCamps />} />

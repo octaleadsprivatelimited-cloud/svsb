@@ -37,7 +37,6 @@ const EducationPrograms = () => {
       <PageHero
         title="Education Programs"
         subtitle="Empowering through quality education for all"
-        breadcrumbs={[{ label: "Programs", path: "/education-programs" }, { label: "Education" }]}
       />
 
       {/* Introduction */}
