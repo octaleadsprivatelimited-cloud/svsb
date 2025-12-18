@@ -18,7 +18,7 @@ import {
 
 // Import images
 import heroImage from "@/assets/hero-education.jpg";
-import founderImage from "@/assets/founder.jpg";
+import founderImage from "@/assets/team-member-4.jpg";
 import healthCampImage from "@/assets/health-camp.jpg";
 import womenEmpowermentImage from "@/assets/women-empowerment.jpg";
 import youthTrainingImage from "@/assets/youth-training.jpg";
