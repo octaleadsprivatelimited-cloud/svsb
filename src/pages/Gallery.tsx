@@ -62,8 +62,6 @@ import img54 from "@/assets/gallery/IMG-20250128-WA0011.jpg";
 import img55 from "@/assets/gallery/IMG-20250128-WA0015.jpg";
 import img56 from "@/assets/gallery/IMG-20250128-WA0023.jpg";
 
-const categories = ["All", "Education", "Healthcare", "Women", "Events", "Community"];
-
 // All gallery images with categories
 const galleryImages = [
   { src: img1, category: "Community", title: "Seva Activities" },
@@ -125,31 +123,13 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-
-  const filteredImages = activeCategory === "All" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeCategory);
-
   const [currentFilteredIndex, setCurrentFilteredIndex] = useState<number | null>(null);
-
-  // Close lightbox when category changes
-  useEffect(() => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex(null);
-      setCurrentFilteredIndex(null);
-    }
-  }, [activeCategory]);
 
   const openLightbox = useCallback((index: number) => {
     setCurrentFilteredIndex(index);
-    // Store the full index for display purposes
-    const fullIndex = activeCategory === "All" 
-      ? index 
-      : galleryImages.findIndex(img => img.src === filteredImages[index].src);
-    setSelectedImageIndex(fullIndex);
-  }, [activeCategory, filteredImages]);
+    setSelectedImageIndex(index);
+  }, []);
 
   const closeLightbox = useCallback(() => {
     setSelectedImageIndex(null);
@@ -157,28 +137,22 @@ const Gallery = () => {
   }, []);
 
   const goToPrevious = useCallback(() => {
-    if (currentFilteredIndex === null || filteredImages.length === 0) return;
+    if (currentFilteredIndex === null || galleryImages.length === 0) return;
     const newIndex = currentFilteredIndex > 0 
       ? currentFilteredIndex - 1 
-      : filteredImages.length - 1; // Loop to last
+      : galleryImages.length - 1; // Loop to last
     setCurrentFilteredIndex(newIndex);
-    const fullIndex = activeCategory === "All" 
-      ? newIndex 
-      : galleryImages.findIndex(img => img.src === filteredImages[newIndex].src);
-    setSelectedImageIndex(fullIndex);
-  }, [currentFilteredIndex, filteredImages, activeCategory]);
+    setSelectedImageIndex(newIndex);
+  }, [currentFilteredIndex]);
 
   const goToNext = useCallback(() => {
-    if (currentFilteredIndex === null || filteredImages.length === 0) return;
-    const newIndex = currentFilteredIndex < filteredImages.length - 1 
+    if (currentFilteredIndex === null || galleryImages.length === 0) return;
+    const newIndex = currentFilteredIndex < galleryImages.length - 1 
       ? currentFilteredIndex + 1 
       : 0; // Loop to first
     setCurrentFilteredIndex(newIndex);
-    const fullIndex = activeCategory === "All" 
-      ? newIndex 
-      : galleryImages.findIndex(img => img.src === filteredImages[newIndex].src);
-    setSelectedImageIndex(fullIndex);
-  }, [currentFilteredIndex, filteredImages, activeCategory]);
+    setSelectedImageIndex(newIndex);
+  }, [currentFilteredIndex]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -220,26 +194,9 @@ const Gallery = () => {
 
       <section className="py-20 bg-background">
         <div className="container">
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 font-medium text-sm uppercase tracking-wider transition-colors ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-primary/10"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
           {/* Gallery Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {filteredImages.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <div 
                 key={index} 
                 className="group relative overflow-hidden cursor-pointer"
@@ -291,27 +248,27 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={filteredImages[currentFilteredIndex || 0].src}
-                alt={filteredImages[currentFilteredIndex || 0].title}
+                src={galleryImages[currentFilteredIndex || 0].src}
+                alt={galleryImages[currentFilteredIndex || 0].title}
                 className="w-full h-full object-contain max-h-[90vh]"
               />
               
               {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <p className="text-primary text-sm uppercase tracking-wider mb-2">
-                  {filteredImages[currentFilteredIndex || 0].category}
+                  {galleryImages[currentFilteredIndex || 0].category}
                 </p>
                 <h3 className="text-white font-heading text-xl font-bold">
-                  {filteredImages[currentFilteredIndex || 0].title}
+                  {galleryImages[currentFilteredIndex || 0].title}
                 </h3>
                 <p className="text-white/70 text-sm mt-2">
-                  {currentFilteredIndex !== null ? currentFilteredIndex + 1 : 1} of {filteredImages.length}
+                  {currentFilteredIndex !== null ? currentFilteredIndex + 1 : 1} of {galleryImages.length}
                 </p>
               </div>
             </motion.div>
 
             {/* Navigation Arrows */}
-            {filteredImages.length > 1 && (
+            {galleryImages.length > 1 && (
               <>
                 <button
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-3 hover:bg-white/10 rounded-full z-10"
