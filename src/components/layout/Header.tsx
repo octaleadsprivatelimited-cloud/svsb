@@ -281,7 +281,7 @@ export const Header = () => {
 
       {/* Main Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-[100] transition-all duration-300 ${
           isScrolled
             ? "bg-background/98 shadow-md backdrop-blur-sm"
             : "bg-background"
@@ -333,12 +333,12 @@ export const Header = () => {
                   <AnimatePresence>
                     {item.megaMenu && openDropdown === item.label && (
                       <motion.div 
-                        className="fixed left-0 right-0 top-[80px] w-full pt-0"
+                        className="fixed left-0 right-0 top-20 w-full"
                         initial="hidden"
                         animate="visible"
                         exit="exit"
                         variants={dropdownVariants}
-                        style={{ zIndex: 100 }}
+                        style={{ zIndex: 90 }}
                       >
                         <div className="bg-background border-t border-b border-border shadow-2xl">
                           <div className="container">
