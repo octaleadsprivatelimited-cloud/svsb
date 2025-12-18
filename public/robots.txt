@@ -1,14 +1,25 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# robots.txt for Swami Vivekananda Seva Brundam
 
 User-agent: *
 Allow: /
+
+# Disallow admin or private areas if any
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all important pages
+Allow: /
+Allow: /about
+Allow: /programs
+Allow: /donate
+Allow: /volunteer
+Allow: /contact
+Allow: /our-impact
+Allow: /gallery
+Allow: /events
+
+# Sitemap location
+Sitemap: https://ysvsb.org/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
