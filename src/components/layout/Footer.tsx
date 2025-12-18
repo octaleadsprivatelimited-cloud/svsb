@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin, ArrowRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const quickLinks = [
@@ -27,21 +29,24 @@ const legalLinks = [
 ];
 
 export const Footer = () => {
+  const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+
   return (
     <footer className="bg-navy-dark text-secondary-foreground">
       {/* Main Footer */}
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* About Section */}
           <div>
-            <div className="mb-6">
+            <div className="mb-4">
               <img 
                 src={logo} 
                 alt="Swami Vivekananda Seva Brundam" 
                 className="h-16 w-auto object-contain bg-white p-2"
               />
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Empowering rural communities through education, healthcare, and sustainable development programs since 2008.
             </p>
             <div className="flex gap-3">
@@ -65,8 +70,45 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-primary">Quick Links</h4>
-            <ul className="space-y-3">
+            <button
+              onClick={() => setIsQuickLinksOpen(!isQuickLinksOpen)}
+              className="md:hidden w-full flex items-center justify-between font-heading text-lg font-bold mb-4 text-primary"
+            >
+              Quick Links
+              <motion.span
+                animate={{ rotate: isQuickLinksOpen ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown size={20} />
+              </motion.span>
+            </button>
+            <h4 className="hidden md:block font-heading text-lg font-bold mb-4 text-primary">Quick Links</h4>
+            {/* Mobile: Collapsible */}
+            <AnimatePresence>
+              {isQuickLinksOpen && (
+                <motion.ul
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="md:hidden space-y-2"
+                >
+                  {quickLinks.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                      >
+                        <ArrowRight size={14} />
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+            {/* Desktop: Always visible */}
+            <ul className="hidden md:block space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link
@@ -83,8 +125,45 @@ export const Footer = () => {
 
           {/* Programs */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-primary">Our Programs</h4>
-            <ul className="space-y-3">
+            <button
+              onClick={() => setIsProgramsOpen(!isProgramsOpen)}
+              className="md:hidden w-full flex items-center justify-between font-heading text-lg font-bold mb-4 text-primary"
+            >
+              Our Programs
+              <motion.span
+                animate={{ rotate: isProgramsOpen ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown size={20} />
+              </motion.span>
+            </button>
+            <h4 className="hidden md:block font-heading text-lg font-bold mb-4 text-primary">Our Programs</h4>
+            {/* Mobile: Collapsible */}
+            <AnimatePresence>
+              {isProgramsOpen && (
+                <motion.ul
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="md:hidden space-y-2"
+                >
+                  {programLinks.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                      >
+                        <ArrowRight size={14} />
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+            {/* Desktop: Always visible */}
+            <ul className="hidden md:block space-y-2">
               {programLinks.map((link) => (
                 <li key={link.path}>
                   <Link
@@ -101,8 +180,8 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-primary">Contact Us</h4>
-            <ul className="space-y-4">
+            <h4 className="font-heading text-lg font-bold mb-4 text-primary">Contact Us</h4>
+            <ul className="space-y-3">
               <li>
                 <a href="tel:+917013570447" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors">
                   <Phone size={18} className="mt-1 flex-shrink-0" />

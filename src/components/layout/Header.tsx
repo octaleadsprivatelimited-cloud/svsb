@@ -283,8 +283,8 @@ export const Header = () => {
       <header
         className={`sticky top-0 z-[100] transition-all duration-300 ${
           isScrolled
-            ? "bg-background/98 shadow-md backdrop-blur-sm"
-            : "bg-background"
+            ? "bg-white shadow-md"
+            : "bg-white"
         }`}
       >
         <div className="container">
@@ -493,81 +493,110 @@ export const Header = () => {
           ))}
         </AnimatePresence>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Opens after header */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
-              className="lg:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="container py-4">
-                {navItems.map((item) => (
-                  <div key={item.label} className="border-b border-border last:border-b-0">
-                    <div className="flex items-center justify-between">
-                      <Link
-                        to={item.path}
-                        className={`flex-1 py-3 font-medium ${
-                          isActive(item.path) ? "text-primary" : "text-foreground"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                      {item.megaMenu && (
-                        <button
-                          onClick={() => toggleMobileItem(item.label)}
-                          className="p-3 text-muted-foreground"
+            <>
+              {/* Backdrop - Below header only */}
+              <motion.div
+                className="fixed top-20 inset-x-0 bottom-0 bg-black/50 z-[99] lg:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              {/* Menu - Positioned right after header */}
+              <motion.div 
+                className="absolute top-full left-0 right-0 lg:hidden bg-background border-t border-border max-h-[calc(100vh-5rem)] overflow-y-auto z-[100] shadow-lg"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="container py-4">
+                  {/* Contact Details */}
+                  <div className="border-b border-border pb-4 mb-4">
+                    <div className="space-y-3">
+                      <a href="tel:+917013570447" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                        <Phone size={18} className="flex-shrink-0" />
+                        <span className="text-sm">+91 70135 70447</span>
+                      </a>
+                      <a href="mailto:info@ysvsb.org" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                        <Mail size={18} className="flex-shrink-0" />
+                        <span className="text-sm">info@ysvsb.org</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Navigation Items */}
+                  {navItems.map((item) => (
+                    <div key={item.label} className="border-b border-border last:border-b-0">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          to={item.path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`flex-1 py-3 font-medium ${
+                            isActive(item.path) ? "text-primary" : "text-foreground"
+                          }`}
                         >
-                          <motion.span
-                            animate={{ rotate: mobileOpenItems.includes(item.label) ? 180 : 0 }}
+                          {item.label}
+                        </Link>
+                        {item.megaMenu && (
+                          <button
+                            onClick={() => toggleMobileItem(item.label)}
+                            className="p-3 text-muted-foreground"
+                          >
+                            <motion.span
+                              animate={{ rotate: mobileOpenItems.includes(item.label) ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <ChevronDown size={18} />
+                            </motion.span>
+                          </button>
+                        )}
+                      </div>
+                      <AnimatePresence>
+                        {item.megaMenu && mobileOpenItems.includes(item.label) && (
+                          <motion.div 
+                            className="pl-4 pb-3 space-y-3"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.2 }}
                           >
-                            <ChevronDown size={18} />
-                          </motion.span>
-                        </button>
-                      )}
-                    </div>
-                    <AnimatePresence>
-                      {item.megaMenu && mobileOpenItems.includes(item.label) && (
-                        <motion.div 
-                          className="pl-4 pb-3 space-y-3"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          {item.megaMenu.map((category) => (
-                            <div key={category.category}>
-                              <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
-                                {category.category}
+                            {item.megaMenu.map((category) => (
+                              <div key={category.category}>
+                                <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
+                                  {category.category}
+                                </div>
+                                {category.items.map((subItem) => (
+                                  <Link
+                                    key={subItem.path}
+                                    to={subItem.path}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={`block py-2 text-sm ${
+                                      isActive(subItem.path)
+                                        ? "text-primary"
+                                        : "text-muted-foreground hover:text-primary"
+                                    }`}
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                ))}
                               </div>
-                              {category.items.map((subItem) => (
-                                <Link
-                                  key={subItem.path}
-                                  to={subItem.path}
-                                  className={`block py-2 text-sm ${
-                                    isActive(subItem.path)
-                                      ? "text-primary"
-                                      : "text-muted-foreground hover:text-primary"
-                                  }`}
-                                >
-                                  {subItem.label}
-                                </Link>
-                              ))}
-                            </div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-                <Link to="/donate" className="block mt-4">
-                  <Button className="btn-primary w-full">Donate Now</Button>
-                </Link>
-              </div>
-            </motion.div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                  <Link to="/donate" onClick={() => setIsMobileMenuOpen(false)} className="block mt-4">
+                    <Button className="btn-primary w-full">Donate Now</Button>
+                  </Link>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </header>
