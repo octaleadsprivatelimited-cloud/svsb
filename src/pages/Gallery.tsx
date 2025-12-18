@@ -1,6 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import all gallery images
 import img1 from "@/assets/gallery/FB_IMG_1589556442752.jpg";
@@ -124,10 +126,89 @@ const galleryImages = [
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const filteredImages = activeCategory === "All" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === activeCategory);
+
+  const [currentFilteredIndex, setCurrentFilteredIndex] = useState<number | null>(null);
+
+  // Close lightbox when category changes
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex(null);
+      setCurrentFilteredIndex(null);
+    }
+  }, [activeCategory]);
+
+  const openLightbox = useCallback((index: number) => {
+    setCurrentFilteredIndex(index);
+    // Store the full index for display purposes
+    const fullIndex = activeCategory === "All" 
+      ? index 
+      : galleryImages.findIndex(img => img.src === filteredImages[index].src);
+    setSelectedImageIndex(fullIndex);
+  }, [activeCategory, filteredImages]);
+
+  const closeLightbox = useCallback(() => {
+    setSelectedImageIndex(null);
+    setCurrentFilteredIndex(null);
+  }, []);
+
+  const goToPrevious = useCallback(() => {
+    if (currentFilteredIndex === null || filteredImages.length === 0) return;
+    const newIndex = currentFilteredIndex > 0 
+      ? currentFilteredIndex - 1 
+      : filteredImages.length - 1; // Loop to last
+    setCurrentFilteredIndex(newIndex);
+    const fullIndex = activeCategory === "All" 
+      ? newIndex 
+      : galleryImages.findIndex(img => img.src === filteredImages[newIndex].src);
+    setSelectedImageIndex(fullIndex);
+  }, [currentFilteredIndex, filteredImages, activeCategory]);
+
+  const goToNext = useCallback(() => {
+    if (currentFilteredIndex === null || filteredImages.length === 0) return;
+    const newIndex = currentFilteredIndex < filteredImages.length - 1 
+      ? currentFilteredIndex + 1 
+      : 0; // Loop to first
+    setCurrentFilteredIndex(newIndex);
+    const fullIndex = activeCategory === "All" 
+      ? newIndex 
+      : galleryImages.findIndex(img => img.src === filteredImages[newIndex].src);
+    setSelectedImageIndex(fullIndex);
+  }, [currentFilteredIndex, filteredImages, activeCategory]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (selectedImageIndex === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      } else if (e.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (e.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImageIndex, goToPrevious, goToNext, closeLightbox]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImageIndex]);
 
   return (
     <Layout>
@@ -162,6 +243,7 @@ const Gallery = () => {
               <div 
                 key={index} 
                 className="group relative overflow-hidden cursor-pointer"
+                onClick={() => openLightbox(index)}
               >
                 <img
                   src={image.src}
@@ -179,6 +261,83 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+            onClick={closeLightbox}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 text-white hover:text-primary transition-colors z-10 p-2 hover:bg-white/10 rounded-full"
+              onClick={closeLightbox}
+              aria-label="Close"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Image Container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-7xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={filteredImages[currentFilteredIndex || 0].src}
+                alt={filteredImages[currentFilteredIndex || 0].title}
+                className="w-full h-full object-contain max-h-[90vh]"
+              />
+              
+              {/* Image Info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p className="text-primary text-sm uppercase tracking-wider mb-2">
+                  {filteredImages[currentFilteredIndex || 0].category}
+                </p>
+                <h3 className="text-white font-heading text-xl font-bold">
+                  {filteredImages[currentFilteredIndex || 0].title}
+                </h3>
+                <p className="text-white/70 text-sm mt-2">
+                  {currentFilteredIndex !== null ? currentFilteredIndex + 1 : 1} of {filteredImages.length}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Navigation Arrows */}
+            {filteredImages.length > 1 && (
+              <>
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-3 hover:bg-white/10 rounded-full z-10"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPrevious();
+                  }}
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft size={40} />
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-3 hover:bg-white/10 rounded-full z-10"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNext();
+                  }}
+                  aria-label="Next image"
+                >
+                  <ChevronRight size={40} />
+                </button>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };
