@@ -35,14 +35,14 @@ export const Footer = () => {
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
 
   return (
-    <footer className="relative text-secondary-foreground overflow-hidden">
+    <footer className="relative text-white overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          // Uncomment the line below and add your image file to src/assets/
+          // Background image - add your image file to src/assets/ and uncomment the import above
           // backgroundImage: `url(${footerBackground})`,
-          // Temporary gradient matching the image description until image is added
+          // Current gradient background matching the image description
           background: 'linear-gradient(135deg, rgba(240, 248, 255, 0.3) 0%, rgba(64, 224, 208, 0.4) 20%, rgba(135, 206, 235, 0.5) 50%, rgba(176, 224, 230, 0.4) 80%, rgba(240, 248, 255, 0.2) 100%)',
         }}
       />
@@ -61,7 +61,7 @@ export const Footer = () => {
                 className="h-16 w-auto object-contain bg-white p-2"
               />
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            <p className="text-white/90 text-sm leading-relaxed mb-4">
               Empowering rural communities through education, healthcare, and sustainable development programs since 2008.
             </p>
             <div className="flex gap-3">
@@ -112,7 +112,7 @@ export const Footer = () => {
                     <li key={link.path}>
                       <Link
                         to={link.path}
-                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                        className="text-white/90 hover:text-primary transition-colors flex items-center gap-2 text-sm"
                       >
                         <ArrowRight size={14} />
                         {link.label}
@@ -128,7 +128,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                    className="text-white/90 hover:text-primary transition-colors flex items-center gap-2 text-sm"
                   >
                     <ArrowRight size={14} />
                     {link.label}
@@ -167,7 +167,7 @@ export const Footer = () => {
                     <li key={link.path}>
                       <Link
                         to={link.path}
-                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                        className="text-white/90 hover:text-primary transition-colors flex items-center gap-2 text-sm"
                       >
                         <ArrowRight size={14} />
                         {link.label}
@@ -183,7 +183,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 text-sm"
+                    className="text-white/90 hover:text-primary transition-colors flex items-center gap-2 text-sm"
                   >
                     <ArrowRight size={14} />
                     {link.label}
@@ -198,19 +198,19 @@ export const Footer = () => {
             <h4 className="font-heading text-lg font-bold mb-4 text-primary">Contact Us</h4>
             <ul className="space-y-3">
               <li>
-                <a href="tel:+917013570447" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+917013570447" className="flex items-start gap-3 text-white/90 hover:text-primary transition-colors">
                   <Phone size={18} className="mt-1 flex-shrink-0" />
                   <span className="text-sm">+91 70135 70447</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@ysvsb.org" className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:info@ysvsb.org" className="flex items-start gap-3 text-white/90 hover:text-primary transition-colors">
                   <Mail size={18} className="mt-1 flex-shrink-0" />
                   <span className="text-sm">info@ysvsb.org</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-muted-foreground">
+                <div className="flex items-start gap-3 text-white/90">
                   <MapPin size={18} className="mt-1 flex-shrink-0" />
                   <span className="text-sm">
                     H No 6-113, Gandhinagar,<br />
@@ -226,10 +226,10 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-secondary/30">
+      <div className="border-t border-white/20">
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-white/90 text-sm">
               © {new Date().getFullYear()} Swami Vivekananda Seva Brundam. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6 mb-4">
@@ -237,13 +237,13 @@ export const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-white/90 hover:text-primary transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-white/90 text-sm">
               Website Donated By <span className="text-primary font-semibold">Octaleads Pvt Ltd.</span>
             </p>
           </div>
