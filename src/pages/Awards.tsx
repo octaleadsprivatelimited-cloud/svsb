@@ -190,7 +190,7 @@ const Awards = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 overflow-auto"
             onClick={() => setSelectedImage(null)}
           >
             <button
@@ -206,13 +206,13 @@ const Awards = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative max-w-7xl max-h-[90vh] w-full"
+              className="relative flex items-center justify-center max-w-7xl w-full h-full"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={galleryImages[selectedImage].src}
                 alt={galleryImages[selectedImage].title}
-                className="w-full h-full object-contain max-h-[90vh]"
+                className="max-w-full max-h-[90vh] w-auto h-auto object-contain"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <span className="text-xs text-primary bg-primary/20 px-2 py-1 mb-2 inline-block">
