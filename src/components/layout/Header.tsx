@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 interface NavChild {
@@ -149,6 +150,52 @@ const navItems: NavItem[] = [
   { label: "Contact", path: "/contact" },
 ];
 
+// Animation variants
+const dropdownVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: -10,
+    scale: 0.98
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.2,
+      staggerChildren: 0.05
+    }
+  },
+  exit: { 
+    opacity: 0, 
+    y: -8,
+    scale: 0.98,
+    transition: {
+      duration: 0.15
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { duration: 0.2 }
+  }
+};
+
+const categoryVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      staggerChildren: 0.03
+    }
+  }
+};
+
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -253,87 +300,142 @@ export const Header = () => {
                   >
                     {item.label}
                     {item.megaMenu && (
-                      <ChevronDown 
-                        size={14} 
-                        className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`}
-                      />
+                      <motion.span
+                        animate={{ rotate: openDropdown === item.label ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown size={14} />
+                      </motion.span>
                     )}
                   </Link>
                   
                   {/* Mega Menu Dropdown */}
-                  {item.megaMenu && openDropdown === item.label && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
-                      <div className="bg-background border border-border shadow-2xl min-w-[700px] animate-fade-in flex">
-                        {/* Left Categories */}
-                        <div className="w-48 bg-muted/30 border-r border-border py-4">
-                          {item.megaMenu.map((category) => (
-                            <button
-                              key={category.category}
-                              onMouseEnter={() => setActiveCategory(category.category)}
-                              className={`w-full text-left px-5 py-3 text-sm font-medium flex items-center justify-between transition-all ${
-                                activeCategory === category.category
-                                  ? "text-primary bg-background border-l-2 border-primary"
-                                  : "text-foreground hover:text-primary hover:bg-background/50"
-                              }`}
-                            >
-                              {category.category}
-                              <ChevronRight size={14} className={activeCategory === category.category ? "text-primary" : "text-muted-foreground"} />
-                            </button>
-                          ))}
-                        </div>
-
-                        {/* Middle - Sub Items */}
-                        <div className="flex-1 p-6">
-                          {item.megaMenu.map((category) => (
-                            activeCategory === category.category && (
-                              <div key={category.category} className="grid grid-cols-2 gap-x-8 gap-y-1">
-                                {category.items.map((subItem) => (
-                                  <Link
-                                    key={subItem.path}
-                                    to={subItem.path}
-                                    className={`group p-3 hover:bg-muted/50 transition-colors ${
-                                      isActive(subItem.path) ? "bg-primary/5" : ""
-                                    }`}
-                                  >
-                                    <div className={`text-sm font-medium group-hover:text-primary transition-colors ${
-                                      isActive(subItem.path) ? "text-primary" : "text-foreground"
-                                    }`}>
-                                      {subItem.label}
-                                    </div>
-                                    {subItem.description && (
-                                      <div className="text-xs text-muted-foreground mt-0.5">
-                                        {subItem.description}
-                                      </div>
-                                    )}
-                                  </Link>
-                                ))}
+                  <AnimatePresence>
+                    {item.megaMenu && openDropdown === item.label && (
+                      <motion.div 
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={dropdownVariants}
+                      >
+                        {/* Arrow indicator */}
+                        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-background border-l border-t border-border rotate-45 z-10" />
+                        
+                        <div className="bg-background border border-border shadow-2xl rounded-lg overflow-hidden min-w-[780px]">
+                          <div className="flex">
+                            {/* Left Categories Sidebar */}
+                            <div className="w-52 bg-muted/20 border-r border-border py-5">
+                              <div className="px-5 mb-3">
+                                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                                  Categories
+                                </span>
                               </div>
-                            )
-                          ))}
-                        </div>
+                              {item.megaMenu.map((category, index) => (
+                                <motion.button
+                                  key={category.category}
+                                  onMouseEnter={() => setActiveCategory(category.category)}
+                                  variants={itemVariants}
+                                  custom={index}
+                                  className={`w-full text-left px-5 py-3.5 text-sm font-medium flex items-center justify-between transition-all duration-200 ${
+                                    activeCategory === category.category
+                                      ? "text-primary bg-background border-l-3 border-primary"
+                                      : "text-foreground hover:text-primary hover:bg-background/60 border-l-3 border-transparent"
+                                  }`}
+                                >
+                                  {category.category}
+                                  <ChevronRight 
+                                    size={14} 
+                                    className={`transition-transform duration-200 ${
+                                      activeCategory === category.category 
+                                        ? "text-primary translate-x-1" 
+                                        : "text-muted-foreground"
+                                    }`} 
+                                  />
+                                </motion.button>
+                              ))}
+                            </div>
 
-                        {/* Right - Featured */}
-                        {item.featured && (
-                          <div className="w-56 bg-primary/5 p-5 border-l border-border">
-                            <span className="text-xs font-semibold text-primary uppercase tracking-wider">Spotlight</span>
-                            <h4 className="font-heading font-bold text-foreground mt-3 text-sm">
-                              {item.featured.title}
-                            </h4>
-                            <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                              {item.featured.description}
-                            </p>
-                            <Link 
-                              to={item.featured.link}
-                              className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 hover:gap-2 transition-all"
-                            >
-                              <ArrowRight size={14} />
-                              {item.featured.linkText}
-                            </Link>
+                            {/* Middle - Sub Items */}
+                            <div className="flex-1 p-6">
+                              <AnimatePresence mode="wait">
+                                {item.megaMenu.map((category) => (
+                                  activeCategory === category.category && (
+                                    <motion.div 
+                                      key={category.category} 
+                                      className="grid grid-cols-2 gap-2"
+                                      initial="hidden"
+                                      animate="visible"
+                                      exit="hidden"
+                                      variants={categoryVariants}
+                                    >
+                                      {category.items.map((subItem, index) => (
+                                        <motion.div
+                                          key={subItem.path}
+                                          variants={itemVariants}
+                                          custom={index}
+                                        >
+                                          <Link
+                                            to={subItem.path}
+                                            className={`group block p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 ${
+                                              isActive(subItem.path) ? "bg-primary/10" : ""
+                                            }`}
+                                          >
+                                            <div className={`text-sm font-semibold group-hover:text-primary transition-colors flex items-center gap-2 ${
+                                              isActive(subItem.path) ? "text-primary" : "text-foreground"
+                                            }`}>
+                                              {subItem.label}
+                                              <ArrowRight 
+                                                size={12} 
+                                                className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" 
+                                              />
+                                            </div>
+                                            {subItem.description && (
+                                              <div className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                                                {subItem.description}
+                                              </div>
+                                            )}
+                                          </Link>
+                                        </motion.div>
+                                      ))}
+                                    </motion.div>
+                                  )
+                                ))}
+                              </AnimatePresence>
+                            </div>
+
+                            {/* Right - Featured */}
+                            {item.featured && (
+                              <motion.div 
+                                className="w-60 bg-gradient-to-br from-primary/5 to-primary/10 p-6 border-l border-border"
+                                variants={itemVariants}
+                              >
+                                <span className="inline-block text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-1 rounded">
+                                  Spotlight
+                                </span>
+                                <h4 className="font-heading font-bold text-foreground mt-4 text-base leading-tight">
+                                  {item.featured.title}
+                                </h4>
+                                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                                  {item.featured.description}
+                                </p>
+                                <Link 
+                                  to={item.featured.link}
+                                  className="inline-flex items-center gap-2 text-primary text-sm font-semibold mt-5 group"
+                                >
+                                  {item.featured.linkText}
+                                  <ArrowRight 
+                                    size={14} 
+                                    className="group-hover:translate-x-1 transition-transform duration-200"
+                                  />
+                                </Link>
+                              </motion.div>
+                            )}
                           </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
             </nav>
@@ -356,64 +458,82 @@ export const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background border-t border-border animate-slide-down max-h-[80vh] overflow-y-auto">
-            <div className="container py-4">
-              {navItems.map((item) => (
-                <div key={item.label} className="border-b border-border last:border-b-0">
-                  <div className="flex items-center justify-between">
-                    <Link
-                      to={item.path}
-                      className={`flex-1 py-3 font-medium ${
-                        isActive(item.path) ? "text-primary" : "text-foreground"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                    {item.megaMenu && (
-                      <button
-                        onClick={() => toggleMobileItem(item.label)}
-                        className="p-3 text-muted-foreground"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="lg:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="container py-4">
+                {navItems.map((item) => (
+                  <div key={item.label} className="border-b border-border last:border-b-0">
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={item.path}
+                        className={`flex-1 py-3 font-medium ${
+                          isActive(item.path) ? "text-primary" : "text-foreground"
+                        }`}
                       >
-                        <ChevronDown 
-                          size={18} 
-                          className={`transition-transform ${mobileOpenItems.includes(item.label) ? "rotate-180" : ""}`}
-                        />
-                      </button>
-                    )}
-                  </div>
-                  {item.megaMenu && mobileOpenItems.includes(item.label) && (
-                    <div className="pl-4 pb-3 space-y-3">
-                      {item.megaMenu.map((category) => (
-                        <div key={category.category}>
-                          <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
-                            {category.category}
-                          </div>
-                          {category.items.map((subItem) => (
-                            <Link
-                              key={subItem.path}
-                              to={subItem.path}
-                              className={`block py-2 text-sm ${
-                                isActive(subItem.path)
-                                  ? "text-primary"
-                                  : "text-muted-foreground hover:text-primary"
-                              }`}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
+                        {item.label}
+                      </Link>
+                      {item.megaMenu && (
+                        <button
+                          onClick={() => toggleMobileItem(item.label)}
+                          className="p-3 text-muted-foreground"
+                        >
+                          <motion.span
+                            animate={{ rotate: mobileOpenItems.includes(item.label) ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <ChevronDown size={18} />
+                          </motion.span>
+                        </button>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-              <Link to="/donate" className="block mt-4">
-                <Button className="btn-primary w-full">Donate Now</Button>
-              </Link>
-            </div>
-          </div>
-        )}
+                    <AnimatePresence>
+                      {item.megaMenu && mobileOpenItems.includes(item.label) && (
+                        <motion.div 
+                          className="pl-4 pb-3 space-y-3"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {item.megaMenu.map((category) => (
+                            <div key={category.category}>
+                              <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
+                                {category.category}
+                              </div>
+                              {category.items.map((subItem) => (
+                                <Link
+                                  key={subItem.path}
+                                  to={subItem.path}
+                                  className={`block py-2 text-sm ${
+                                    isActive(subItem.path)
+                                      ? "text-primary"
+                                      : "text-muted-foreground hover:text-primary"
+                                  }`}
+                                >
+                                  {subItem.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+                <Link to="/donate" className="block mt-4">
+                  <Button className="btn-primary w-full">Donate Now</Button>
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
     </>
   );
