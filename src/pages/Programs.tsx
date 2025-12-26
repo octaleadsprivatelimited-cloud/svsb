@@ -8,7 +8,6 @@ import { GraduationCap, Heart, Users, Leaf, ArrowRight } from "lucide-react";
 
 import heroEducation from "@/assets/hero-education.jpg";
 import healthCamp from "@/assets/health-camp.jpg";
-import womenEmpowerment from "@/assets/women-empowerment.jpg";
 import youthTraining from "@/assets/youth-training.jpg";
 
 const programCategories = [
@@ -27,14 +26,6 @@ const programCategories = [
     path: "/health-camps",
     image: healthCamp,
     features: ["Free Health Checkups", "Medical Camps", "Health Awareness", "Medicine Distribution"],
-  },
-  {
-    title: "Women Empowerment",
-    description: "Building strong, independent women leaders through skill development and support programs.",
-    icon: Users,
-    path: "/women-empowerment",
-    image: womenEmpowerment,
-    features: ["Skill Training", "Entrepreneurship", "Self-Help Groups", "Leadership Programs"],
   },
   {
     title: "Youth Development",

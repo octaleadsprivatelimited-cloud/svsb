@@ -13,7 +13,6 @@ import Volunteer from "./pages/Volunteer";
 import Programs from "./pages/Programs";
 import EducationPrograms from "./pages/EducationPrograms";
 import HealthCamps from "./pages/HealthCamps";
-import WomenEmpowerment from "./pages/WomenEmpowerment";
 import YouthDevelopment from "./pages/YouthDevelopment";
 import Gallery from "./pages/Gallery";
 import FAQs from "./pages/FAQs";
@@ -51,7 +50,6 @@ const App = () => (
           <Route path="/education-programs" element={<EducationPrograms />} />
           <Route path="/rural-education" element={<EducationPrograms />} />
           <Route path="/health-camps" element={<HealthCamps />} />
-          <Route path="/women-empowerment" element={<WomenEmpowerment />} />
           <Route path="/youth-development" element={<YouthDevelopment />} />
           <Route path="/sustainable-development" element={<YouthDevelopment />} />
           <Route path="/community-outreach" element={<OurImpact />} />

@@ -50,9 +50,18 @@ const MediaPress = () => {
                   Download our media kit for logos, photos, and information about SVSB 
                   for press and publication purposes.
                 </p>
-                <Button className="btn-secondary">
-                  <Download className="mr-2" size={18} />
-                  Download Media Kit
+                <Button 
+                  className="btn-secondary"
+                  asChild
+                >
+                  <a 
+                    href="https://drive.google.com/file/d/1xqCyEoLQvaVzQEB24vNWlhMGSw-zNjwO/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="mr-2" size={18} />
+                    Download Media Kit
+                  </a>
                 </Button>
               </div>
               

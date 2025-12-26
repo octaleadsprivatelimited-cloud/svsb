@@ -17,7 +17,6 @@ const quickLinks = [
 const programLinks = [
   { label: "Education Programs", path: "/education-programs" },
   { label: "Health Camps", path: "/health-camps" },
-  { label: "Women Empowerment", path: "/women-empowerment" },
   { label: "Youth Development", path: "/youth-development" },
   { label: "Rural Development", path: "/sustainable-development" },
 ];

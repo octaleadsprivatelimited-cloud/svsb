@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 import heroEducation from "@/assets/hero-education.jpg";
 import healthCamp from "@/assets/health-camp.jpg";
-import womenEmpowerment from "@/assets/women-empowerment.jpg";
 import youthTraining from "@/assets/youth-training.jpg";
 import ruralEducation from "@/assets/rural-education.jpg";
 
@@ -84,7 +83,6 @@ const navItems: NavItem[] = [
         category: "Health & Welfare",
         items: [
           { label: "Health & Medical Camps", path: "/health-camps", description: "Free healthcare services for communities" },
-          { label: "Women Empowerment", path: "/women-empowerment", description: "Building strong, independent women leaders" },
         ],
         image: healthCamp,
       },
@@ -117,7 +115,7 @@ const navItems: NavItem[] = [
           { label: "Donate", path: "/donate", description: "Support our cause with your contribution" },
           { label: "How to Donate", path: "/how-to-donate", description: "Multiple ways to contribute" },
         ],
-        image: womenEmpowerment,
+        image: ruralEducation,
       },
       {
         category: "Partnerships",
@@ -156,7 +154,7 @@ const navItems: NavItem[] = [
           { label: "Awards", path: "/awards", description: "Our achievements and recognition" },
           { label: "Testimonials", path: "/testimonials", description: "Success stories from beneficiaries" },
         ],
-        image: womenEmpowerment,
+        image: ruralEducation,
       },
     ],
     featured: {

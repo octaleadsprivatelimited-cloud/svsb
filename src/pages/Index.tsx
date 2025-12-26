@@ -20,7 +20,6 @@ import {
 import heroImage from "@/assets/hero-education.jpg";
 import founderImage from "@/assets/team-member-4.jpg";
 import healthCampImage from "@/assets/health-camp.jpg";
-import womenEmpowermentImage from "@/assets/women-empowerment.jpg";
 import youthTrainingImage from "@/assets/youth-training.jpg";
 import ruralEducationImage from "@/assets/rural-education.jpg";
 
@@ -45,13 +44,6 @@ const programs = [
     image: healthCampImage,
     link: "/health-camps",
     icon: Heart,
-  },
-  {
-    title: "Women Empowerment",
-    description: "Empowering women through self-help groups, skill training, and income-generating activities for financial independence.",
-    image: womenEmpowermentImage,
-    link: "/women-empowerment",
-    icon: Users,
   },
   {
     title: "Youth Development",
@@ -174,7 +166,7 @@ const Index = () => {
                   <img src={ruralEducationImage} alt="Education" className="w-full h-full object-cover" />
                 </div>
                 <div className="h-64 overflow-hidden">
-                  <img src={womenEmpowermentImage} alt="Women Empowerment" className="w-full h-full object-cover" />
+                  <img src={youthTrainingImage} alt="Community Development" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">

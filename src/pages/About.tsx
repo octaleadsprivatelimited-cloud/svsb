@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Target, Award, Heart, Users, GraduationCap, ArrowRight } from "lucide-react";
 
 import ruralEducationImage from "@/assets/rural-education.jpg";
-import womenEmpowermentImage from "@/assets/women-empowerment.jpg";
 
 const timeline = [
   { year: "2008", title: "Foundation", description: "SVSB was established with a focus on rural education" },
