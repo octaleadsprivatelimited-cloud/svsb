@@ -109,7 +109,7 @@ export const TeamCard = ({ name, role, image, description }: TeamCardProps) => {
       </div>
       <div className="p-6 text-center">
         <h3 className="font-heading text-xl font-bold mb-1">{name}</h3>
-        <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">{role}</p>
+        {role && <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">{role}</p>}
         {description && <p className="text-muted-foreground text-sm">{description}</p>}
       </div>
     </div>

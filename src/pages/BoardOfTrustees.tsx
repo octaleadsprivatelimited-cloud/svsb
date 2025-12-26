@@ -16,27 +16,23 @@ const trustees = [
   },
   { 
     name: "Dr. Ramesh Kumar", 
-    role: "Trustee - Education Programs", 
-    image: teamMember1,
-    description: "Educationist with 25+ years of experience in rural education and skill development initiatives."
+    role: "", 
+    image: teamMember1
   },
   { 
     name: "Dr. Padma Reddy", 
-    role: "Trustee - Healthcare", 
-    image: teamMember2,
-    description: "Medical professional specializing in community health and rural healthcare delivery systems."
+    role: "", 
+    image: teamMember2
   },
   { 
     name: "Smt. Lakshmi Devi", 
-    role: "Trustee - Women Empowerment", 
-    image: teamMember3,
-    description: "Social worker and advocate for women's rights with expertise in SHG management and microfinance."
+    role: "", 
+    image: teamMember3
   },
   { 
     name: "Sri Venkatesh Rao", 
-    role: "Trustee - Finance & Administration", 
-    image: teamMember5,
-    description: "Chartered Accountant with extensive experience in NGO financial management and compliance."
+    role: "", 
+    image: teamMember5
   },
 ];
 

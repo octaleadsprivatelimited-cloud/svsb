@@ -244,7 +244,15 @@ export const Footer = () => {
               ))}
             </div>
             <p className="text-white text-sm font-medium drop-shadow-lg">
-              Website Donated By <span className="text-primary font-semibold">Octaleads Pvt Ltd.</span>
+              Website Donated By{" "}
+              <a 
+                href="https://www.octaleads.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:underline"
+              >
+                Octaleads Pvt Ltd.
+              </a>
             </p>
           </div>
         </div>
