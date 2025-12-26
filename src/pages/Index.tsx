@@ -171,21 +171,37 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="h-48 overflow-hidden">
-                  <img src={ruralEducationImage} alt="Education" className="w-full h-full object-cover" />
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <div className="card-sharp p-8 bg-primary/5 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <GraduationCap className="text-primary" size={32} />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold mb-2">Education</h3>
+                  <p className="text-sm text-muted-foreground">Quality learning for all</p>
                 </div>
-                <div className="h-64 overflow-hidden">
-                  <img src={youthTrainingImage} alt="Community Development" className="w-full h-full object-cover" />
+                <div className="card-sharp p-8 bg-secondary/5 border-2 border-secondary/20 hover:border-secondary/40 transition-all">
+                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+                    <Users className="text-secondary" size={32} />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold mb-2">Community</h3>
+                  <p className="text-sm text-muted-foreground">Building stronger villages</p>
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
-                <div className="h-64 overflow-hidden">
-                  <img src={healthCampImage} alt="Health Camp" className="w-full h-full object-cover" />
+              <div className="space-y-6 pt-8">
+                <div className="card-sharp p-8 bg-accent/5 border-2 border-accent/20 hover:border-accent/40 transition-all">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                    <Heart className="text-accent" size={32} />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold mb-2">Healthcare</h3>
+                  <p className="text-sm text-muted-foreground">Medical care for everyone</p>
                 </div>
-                <div className="h-48 overflow-hidden">
-                  <img src={youthTrainingImage} alt="Youth Training" className="w-full h-full object-cover" />
+                <div className="card-sharp p-8 bg-primary/5 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <Sprout className="text-primary" size={32} />
+                  </div>
+                  <h3 className="font-heading text-lg font-bold mb-2">Development</h3>
+                  <p className="text-sm text-muted-foreground">Sustainable growth</p>
                 </div>
               </div>
             </div>
