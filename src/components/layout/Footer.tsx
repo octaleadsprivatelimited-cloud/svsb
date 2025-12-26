@@ -50,26 +50,46 @@ export const Footer = () => {
           {/* About Section */}
           <div>
             <div className="mb-4">
-              <img 
-                src={logo} 
-                alt="Swamivivekananda Seva Brundam" 
-                className="h-16 w-auto object-contain bg-white p-2"
-              />
+              <div className="bg-white p-2 rounded-xl overflow-hidden inline-block">
+                <img 
+                  src={logo} 
+                  alt="Swamivivekananda Seva Brundam" 
+                  className="h-12 w-32 object-contain"
+                />
+              </div>
             </div>
             <p className="text-white text-sm leading-relaxed mb-4 drop-shadow-md">
               Empowering rural communities through education, healthcare, and sustainable development programs since 2012.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.facebook.com/SwamivivekanandaSevaBrundam" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Visit our Facebook page"
+              >
                 <Facebook size={18} />
               </a>
               <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.instagram.com/swamivivekananda_seva_brundam" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Visit our Instagram page"
+              >
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.youtube.com/@swamivivekanandasevabrunda2675" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Visit our YouTube channel"
+              >
                 <Youtube size={18} />
               </a>
               <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
