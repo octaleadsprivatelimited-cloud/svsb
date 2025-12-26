@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 // Import images
-import heroImage from "@/assets/hero-education.jpg";
+import heroImage from "@/assets/svsb.png";
 import founderImage from "@/assets/team-member-4.jpg";
 import healthCampImage from "@/assets/health-camp.jpg";
 import youthTrainingImage from "@/assets/youth-training.jpg";
@@ -90,43 +90,54 @@ const Index = () => {
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="hero-overlay" />
+        <div className="absolute inset-0 bg-black/20" />
         
         <div className="container relative z-10 py-20">
-          <div className="max-w-3xl">
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
-              Serving Humanity Since 2012
-            </p>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-secondary-foreground mb-6 leading-tight animate-slide-up">
-              "Arise, Awake and Stop Not Till the Goal is Reached"
-            </h1>
-            <p className="text-lg md:text-xl text-secondary-foreground/90 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              — Swami Vivekananda
-            </p>
-            <p className="text-lg text-secondary-foreground/80 mb-10 max-w-2xl animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              Empowering rural communities through education, healthcare, and sustainable development. 
-              Join us in our mission to create lasting change.
-            </p>
-            <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <Link to="/donate">
-                <Button className="btn-primary">
-                  Donate Now
-                  <ArrowRight className="ml-2" size={18} />
-                </Button>
-              </Link>
-              <Link to="/about">
-                <Button className="btn-outline-light">
-                  <Play className="mr-2" size={18} />
-                  Our Story
-                </Button>
-              </Link>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Main Content */}
+              <div className="text-left lg:text-left">
+                <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
+                  Serving Humanity Since 2012
+                </p>
+                
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight animate-slide-up drop-shadow-2xl">
+                  Empowering Rural Communities Through Sustainable Development
+                </h1>
+                
+                <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed animate-slide-up drop-shadow-md" style={{ animationDelay: '0.1s' }}>
+                  We are dedicated to transforming lives through education, healthcare, and community empowerment programs across Telangana.
+                </p>
+                
+                <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                  <Link to="/donate">
+                    <Button className="btn-primary">
+                      Donate Now
+                      <ArrowRight className="ml-2" size={18} />
+                    </Button>
+                  </Link>
+                  <Link to="/about">
+                    <Button className="btn-outline-light">
+                      <Play className="mr-2" size={18} />
+                      Our Story
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Right Column - Quote */}
+              <div className="lg:pl-8 lg:border-l-2 lg:border-primary/30">
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                  <div className="text-6xl text-primary/30 font-heading mb-4">"</div>
+                  <p className="text-xl md:text-2xl text-white font-medium italic leading-relaxed mb-4 drop-shadow-md">
+                    Arise, Awake and Stop Not Till the Goal is Reached
+                  </p>
+                  <p className="text-base text-white/80 font-semibold">
+                    — Swami Vivekananda
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 border-2 border-secondary-foreground/50 flex items-start justify-center pt-2">
-            <div className="w-1 h-3 bg-secondary-foreground/50" />
           </div>
         </div>
       </section>
