@@ -61,7 +61,7 @@ const navItems: NavItem[] = [
     ],
     featured: {
       title: "Our Impact Story",
-      description: "15+ years of transforming rural communities through education, healthcare, and empowerment.",
+      description: "12+ years of transforming rural communities through education, healthcare, and empowerment.",
       link: "/our-impact",
       linkText: "View Impact",
       image: ruralEducation,
@@ -291,7 +291,7 @@ export const Header = () => {
             <Link to="/" className="flex items-center">
               <img 
                 src={logo} 
-                alt="Swami Vivekananda Seva Brundam" 
+                alt="Swamivivekananda Seva Brundam" 
                 className="h-14 md:h-16 w-auto object-contain"
               />
             </Link>

@@ -3,24 +3,40 @@ import { PageHero } from "@/components/common/PageHero";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Target, Award, Heart, Users, GraduationCap, ArrowRight } from "lucide-react";
+import { Target, Award, Heart, Users, GraduationCap, ArrowRight, Shield, Sparkles, TrendingUp, Leaf, BookOpen } from "lucide-react";
 
 import ruralEducationImage from "@/assets/rural-education.jpg";
 
 const timeline = [
-  { year: "2008", title: "Foundation", description: "SVSB was established with a focus on rural education" },
+  { year: "2012", title: "Foundation", description: "SVSB was established with a focus on rural education" },
   { year: "2010", title: "Health Initiative", description: "Launched first medical camp serving 500+ villagers" },
   { year: "2013", title: "Women Empowerment", description: "Started self-help groups and skill training programs" },
   { year: "2016", title: "Youth Development", description: "Established computer training centers in 10 villages" },
   { year: "2020", title: "COVID Response", description: "Provided relief to 10,000+ families during pandemic" },
-  { year: "2024", title: "Expanding Impact", description: "Now serving 100+ villages with integrated programs" },
+  { year: "2024", title: "Expanding Impact", description: "Now serving 1000+ villages/places with integrated programs" },
 ];
 
 const values = [
-  { icon: Heart, title: "Compassion", description: "We serve with love and empathy, treating every individual with dignity." },
-  { icon: Users, title: "Community First", description: "Our programs are designed by and for the communities we serve." },
-  { icon: Target, title: "Integrity", description: "We maintain complete transparency in all our operations and finances." },
-  { icon: GraduationCap, title: "Excellence", description: "We strive for excellence in every program and initiative we undertake." },
+  { 
+    icon: Heart, 
+    title: "Seva (Selfless Service)", 
+    description: "We believe in serving humanity with compassion, humility, and dedication, following Swami Vivekananda's ideal of \"Service to man is service to God.\"" 
+  },
+  { 
+    icon: Shield, 
+    title: "Integrity & Discipline", 
+    description: "We uphold honesty, ethical conduct, and personal discipline in every activity, ensuring trust and accountability." 
+  },
+  { 
+    icon: Sparkles, 
+    title: "Youth Empowerment", 
+    description: "We strive to inspire and guide youth to become responsible, confident, and value-based citizens committed to nation-building." 
+  },
+  { 
+    icon: Users, 
+    title: "Social Responsibility & Compassion", 
+    description: "We work to uplift the needy, protect the environment, and promote a drug-free, healthy, and harmonious society." 
+  },
 ];
 
 const About = () => {
@@ -28,46 +44,41 @@ const About = () => {
     <Layout>
       <PageHero
         title="About Us"
-        subtitle="Empowering rural communities through sustainable development since 2008"
+        subtitle="Empowering rural communities through sustainable development since 2012"
         breadcrumbs={[{ label: "About Us" }]}
       />
 
-      {/* Introduction */}
+      {/* Our Story */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
-                Who We Are
+                Our Story
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-                A Legacy of Service and Empowerment
+                A Journey of Service and Compassion
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Swami Vivekananda Seva Brundam was established with a vision to create meaningful 
-                change in rural communities across India. Founded by National Youth Awardee 
-                Shiva Kumar Gudlanaram, the organization has been working at the grassroots level 
-                for over 15 years.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Initially started to support rural education, it has expanded into education, 
-                healthcare, women empowerment, skill development, youth leadership, and sustainable 
-                rural development. The trust believes in community-driven and sustainable solutions 
-                to create long-term social impact.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Today, SVSB operates across 100+ villages in Telangana, directly impacting over 
-                50,000 lives through our various programs and initiatives.
-              </p>
+              <div className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Swamivivekananda Seva Brundam was founded in the year 2012 with the belief that "Service to man is service to God." Inspired by the teachings and life of Swami Vivekananda, our organization began as a small group of dedicated individuals who wanted to make a meaningful difference in the lives of people in our community.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  What started as simple acts of service—helping the needy, supporting education, organizing health camps, and promoting spiritual values—gradually grew into a committed volunteer movement. Over the years, our members have worked tirelessly to uplift the underprivileged, spread cultural and moral values, and encourage youth participation in nation-building activities.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Today, Swamivivekananda Seva Brundam continues to stand as a beacon of selfless service, unity, and social responsibility, carrying forward Swamiji's message of strength, compassion, and human excellence.
+                </p>
+              </div>
             </div>
             <div className="relative">
               <img 
                 src={ruralEducationImage} 
-                alt="Rural Education Program" 
+                alt="Swamivivekananda Seva Brundam" 
                 className="w-full shadow-lg"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary p-6 text-primary-foreground">
-                <div className="font-heading text-4xl font-bold">15+</div>
+                <div className="font-heading text-4xl font-bold">12+</div>
                 <div className="text-sm uppercase tracking-wider">Years of Service</div>
               </div>
             </div>
@@ -84,22 +95,37 @@ const About = () => {
                 <Target className="text-primary" size={32} />
               </div>
               <h3 className="font-heading text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                A society where every individual, especially from rural and underprivileged 
-                communities, has access to quality education, healthcare, and opportunities 
-                for sustainable livelihoods.
-              </p>
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  To create a compassionate, service-minded, and empowered society inspired by the values of Swami Vivekananda. We aspire to build a community where every individual, especially the youth, is encouraged to serve the needy, protect the environment, and contribute positively to the nation.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We envision a future where social responsibility, human values, education, and unity guide people toward collective growth and harmony. Through dedicated service, awareness, and empowerment, our vision is to help shape a stronger, greener, and more inclusive nation for generations to come.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We envision an empowered society with Nasha Mukth Yuva, where every young person is free from drugs and dedicated to service, values, and nation-building.
+                </p>
+              </div>
             </div>
             <div className="card-sharp p-10 border-t-4 border-t-secondary">
               <div className="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-6">
                 <Award className="text-secondary" size={32} />
               </div>
               <h3 className="font-heading text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To empower rural youth, women, and communities through integrated development 
-                programs focusing on education, skill development, health awareness, and 
-                sustainable practices.
-              </p>
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  To serve humanity with compassion and dedication, following the ideals of Swami Vivekananda. We are committed to uplifting poor and needy individuals by providing food, clothing, and essential support.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We work towards protecting the environment through plantation drives, cleanliness programs, and awareness activities. Our organization conducts health camps, organ donation awareness programs, and other wellness initiatives for community well-being.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We focus on empowering youth through leadership development, value-based programs, and motivation to participate in nation-building. We also strive to spread awareness about government schemes, helping people access welfare benefits.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Additionally, we support students by encouraging co-curricular activities, skill-building, and educational development. Through these efforts, we aim to build a stronger, healthier, and more service-oriented society.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +135,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <SectionTitle
-            label="Our Values"
+            label="Our Core Values"
             title="Principles That Guide Us"
             subtitle="Our work is driven by a set of core values that define who we are"
           />
@@ -123,6 +149,58 @@ const About = () => {
                 <p className="text-muted-foreground text-sm">{value.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Goals */}
+      <section className="py-20 bg-cream">
+        <div className="container">
+          <SectionTitle
+            label="Strategic Goals"
+            title="Our Strategic Goals"
+            subtitle="Key focus areas that guide our initiatives and programs"
+          />
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="card-sharp p-8 border-l-4 border-l-primary">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4">
+                <Users className="text-primary" size={28} />
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-3">1. Community Upliftment & Welfare</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To continually support poor and needy communities through food distribution, essential donations, health services, and awareness about government welfare schemes.
+              </p>
+            </div>
+
+            <div className="card-sharp p-8 border-l-4 border-l-primary">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4">
+                <Sparkles className="text-primary" size={28} />
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-3">2. Youth Development & Drug-Free Society</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To empower youth through leadership training, value-based education, skill development, and Nasha Mukth Yuva initiatives that promote a drug-free, disciplined, and motivated younger generation.
+              </p>
+            </div>
+
+            <div className="card-sharp p-8 border-l-4 border-l-primary">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4">
+                <Leaf className="text-primary" size={28} />
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-3">3. Environmental Protection & Sustainability</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To build a greener and healthier future through continuous plantation drives, cleanliness initiatives, environmental awareness programs, and sustainable community practices.
+              </p>
+            </div>
+
+            <div className="card-sharp p-8 border-l-4 border-l-primary">
+              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4">
+                <BookOpen className="text-primary" size={28} />
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-3">4. Education & Holistic Student Growth</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To encourage students' academic and co-curricular development by providing support, guidance, activities, and opportunities that nurture creativity, confidence, and life skills.
+              </p>
+            </div>
           </div>
         </div>
       </section>

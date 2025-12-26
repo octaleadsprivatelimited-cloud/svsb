@@ -36,6 +36,7 @@ const contactInfo = [
       "Nagarkurnool District,",
       "Telangana State – 509324",
     ],
+    link: "https://maps.app.goo.gl/PeRDRhnsbLHF8Cpo6",
   },
   {
     icon: Clock,
@@ -131,8 +132,16 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold mb-1">{item.title}</h3>
                       {item.link ? (
-                        <a href={item.link} className="text-muted-foreground hover:text-primary transition-colors">
-                          {item.details.join(" ")}
+                        <a 
+                          href={item.link} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm block"
+                        >
+                          {item.details.map((detail, i) => (
+                            <span key={i}>{detail} </span>
+                          ))}
+                          <span className="text-primary text-xs block mt-1">📍 View on Google Maps</span>
                         </a>
                       ) : (
                         <div className="text-muted-foreground text-sm">
@@ -282,6 +291,17 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             />
+            <div className="p-4 bg-background text-center border-t border-border">
+              <a 
+                href="https://maps.app.goo.gl/PeRDRhnsbLHF8Cpo6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-semibold inline-flex items-center gap-2"
+              >
+                <MapPin size={16} />
+                Open in Google Maps
+              </a>
+            </div>
           </div>
         </div>
       </section>

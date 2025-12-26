@@ -1,8 +1,8 @@
-# Swami Vivekananda Seva Brundam
+# Swamivivekananda Seva Brundam
 
 ## Project Overview
 
-This is the official website for Swami Vivekananda Seva Brundam, an organization dedicated to transforming rural communities through education, healthcare, and empowerment.
+This is the official website for Swamivivekananda Seva Brundam, an organization dedicated to transforming rural communities through education, healthcare, and empowerment.
 
 ## Technologies Used
 

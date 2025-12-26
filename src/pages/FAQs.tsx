@@ -10,8 +10,8 @@ import {
 
 const faqs = [
   {
-    question: "What is Swami Vivekananda Seva Brundam?",
-    answer: "Swami Vivekananda Seva Brundam is a registered charitable trust working for the holistic development of rural communities in Telangana. We focus on education, healthcare, women empowerment, youth development, and sustainable rural development.",
+    question: "What is Swamivivekananda Seva Brundam?",
+    answer: "Swamivivekananda Seva Brundam is a registered charitable trust working for the holistic development of rural communities in Telangana. We focus on education, healthcare, women empowerment, youth development, and sustainable rural development.",
   },
   {
     question: "Is my donation tax-deductible?",

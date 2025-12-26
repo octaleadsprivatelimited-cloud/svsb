@@ -9,7 +9,7 @@ const impactStats = [
   { value: "50,000+", label: "Lives Transformed", icon: Users },
   { value: "15,000+", label: "Students Educated", icon: GraduationCap },
   { value: "200+", label: "Health Camps Organized", icon: Heart },
-  { value: "100+", label: "Villages Covered", icon: MapPin },
+  { value: "1000+", label: "Villages/Places Programs", icon: MapPin },
 ];
 
 const impactAreas = [
@@ -28,7 +28,7 @@ const impactAreas = [
       "200+ medical camps conducted",
       "50,000+ free medical check-ups",
       "10,000+ eye surgeries facilitated",
-      "Health awareness in 100+ villages",
+      "Health awareness in 1000+ villages/places",
     ],
   },
   {

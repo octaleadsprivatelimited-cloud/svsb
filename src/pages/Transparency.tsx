@@ -22,7 +22,7 @@ const Transparency = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-muted-foreground leading-relaxed">
-              At Swami Vivekananda Seva Brundam, we believe transparency is fundamental to 
+              At Swamivivekananda Seva Brundam, we believe transparency is fundamental to 
               building trust with our donors, partners, and the communities we serve. We 
               maintain the highest standards of financial accountability and ethical governance.
             </p>

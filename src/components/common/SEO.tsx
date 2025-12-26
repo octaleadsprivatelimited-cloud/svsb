@@ -10,8 +10,8 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: "Swami Vivekananda Seva Brundam | Rural Development NGO in Telangana",
-  description: "Swami Vivekananda Seva Brundam is a registered NGO working for rural development, education, healthcare, women empowerment, and youth skill development in Telangana since 2008.",
+  title: "Swamivivekananda Seva Brundam | Rural Development NGO in Telangana",
+  description: "Swamivivekananda Seva Brundam is a registered NGO working for rural development, education, healthcare, women empowerment, and youth skill development in Telangana since 2012.",
   keywords: "NGO Telangana, rural development, education programs, healthcare camps, women empowerment, youth development, donate NGO, volunteer India, CSR partnerships",
   image: "https://ysvsb.org/logo.png",
   type: "website",
@@ -23,7 +23,7 @@ export const SEO = ({ title, description, keywords, image, type = "website" }: S
   const currentUrl = `${baseUrl}${location.pathname}`;
 
   const seo = {
-    title: title ? `${title} | Swami Vivekananda Seva Brundam` : defaultSEO.title,
+    title: title ? `${title} | Swamivivekananda Seva Brundam` : defaultSEO.title,
     description: description || defaultSEO.description,
     keywords: keywords || defaultSEO.keywords,
     image: image || defaultSEO.image,

@@ -67,7 +67,7 @@ const Volunteer = () => {
               Become a Changemaker
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Volunteering with Swami Vivekananda Seva Brundam is an opportunity to make a 
+              Volunteering with Swamivivekananda Seva Brundam is an opportunity to make a 
               tangible impact in the lives of rural communities. Whether you have a few hours 
               a week or want to commit to a long-term engagement, we have meaningful roles 
               for everyone.

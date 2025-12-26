@@ -46,7 +46,7 @@ const Donate = () => {
                 Your Support Changes Lives
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Every donation to Swami Vivekananda Seva Brundam directly impacts the lives 
+                Every donation to Swamivivekananda Seva Brundam directly impacts the lives 
                 of thousands of people in rural India. Your contribution helps us provide 
                 quality education, healthcare, and opportunities for sustainable livelihoods 
                 to those who need it most.
@@ -154,10 +154,11 @@ const Donate = () => {
               </div>
               <h3 className="font-heading text-xl font-bold mb-3">Bank Transfer</h3>
               <div className="text-left text-sm text-muted-foreground space-y-2">
-                <p><strong>Bank:</strong> State Bank of India</p>
-                <p><strong>Account Name:</strong> Swami Vivekananda Seva Brundam</p>
-                <p><strong>Account No:</strong> XXXXXXXXXXXX</p>
-                <p><strong>IFSC:</strong> SBIN0XXXXXX</p>
+                <p><strong>Account Name:</strong> Yuva Swamy Vivekananda Seva Brundam</p>
+                <p><strong>Account No:</strong> 194310100085345</p>
+                <p><strong>IFSC:</strong> UBIN0819433</p>
+                <p><strong>Bank:</strong> Union Bank Of India</p>
+                <p><strong>Branch:</strong> Union Bank Of India, Kalwakurthy, Nagarkurnool Dist, Telangana</p>
               </div>
             </div>
             
@@ -171,7 +172,7 @@ const Donate = () => {
               </p>
               <img 
                 src={upiQrCode} 
-                alt="UPI QR Code - Swami Vivekananda Seva Brundam" 
+                alt="UPI QR Code - Swamivivekananda Seva Brundam" 
                 className="w-48 h-48 mx-auto mb-4 object-contain"
               />
               <p className="text-sm font-medium break-all">swamivivekanandasevabrundam@ybl</p>

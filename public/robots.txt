@@ -1,4 +1,4 @@
-# robots.txt for Swami Vivekananda Seva Brundam
+# robots.txt for Swamivivekananda Seva Brundam
 
 User-agent: *
 Allow: /

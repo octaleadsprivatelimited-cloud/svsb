@@ -25,7 +25,7 @@ const TermsConditions = () => {
               <div>
                 <h2 className="font-heading text-2xl font-bold mb-4">Donations</h2>
                 <p className="text-muted-foreground">
-                  All donations made to Swami Vivekananda Seva Brundam are voluntary and 
+                  All donations made to Swamivivekananda Seva Brundam are voluntary and 
                   non-refundable. Donations are used for charitable purposes as described 
                   on our website and in our communications.
                 </p>

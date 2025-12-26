@@ -4,7 +4,7 @@ import { TestimonialCard } from "@/components/common/Cards";
 
 const testimonials = [
   {
-    quote: "Swami Vivekananda Seva Brundam transformed our village. My children now have access to quality education and healthcare that we could never have imagined before.",
+    quote: "Swamivivekananda Seva Brundam transformed our village. My children now have access to quality education and healthcare that we could never have imagined before.",
     name: "Lakshmi Devi",
     role: "Beneficiary, Kalwakurthy Village",
   },

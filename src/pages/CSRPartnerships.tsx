@@ -33,7 +33,7 @@ const CSRPartnerships = () => {
                 Create Lasting Impact Through CSR
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Partner with Swami Vivekananda Seva Brundam to fulfill your Corporate Social 
+                Partner with Swamivivekananda Seva Brundam to fulfill your Corporate Social 
                 Responsibility objectives while creating meaningful change in rural communities. 
                 Our programs are fully compliant with CSR guidelines under the Companies Act 2013.
               </p>

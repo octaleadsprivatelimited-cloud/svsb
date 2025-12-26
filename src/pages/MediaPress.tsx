@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Newspaper, Download, ArrowRight } from "lucide-react";
+import { Newspaper, Download, ArrowRight, ExternalLink } from "lucide-react";
 
 const pressReleases = [
   { date: "Dec 2023", title: "SVSB Launches New Digital Learning Centers in 10 Villages" },
@@ -11,16 +11,99 @@ const pressReleases = [
   { date: "Sep 2023", title: "SVSB Receives State Award for Rural Development" },
 ];
 
+const publishedArticles = [
+  {
+    title: "Turning pain into purpose: Telangana youth campaigns for organ donation, organic agriculture",
+    source: "The New Indian Express",
+    date: "April 6, 2025",
+    description: "National Youth Award winner Shiva Kumar Gudlanaram's journey from losing his parents to becoming a beacon of hope, campaigning for organ donation awareness and organic agriculture across rural Telangana.",
+    url: "https://www.newindianexpress.com/states/telangana/2025/Apr/06/turning-pain-into-purpose-andhra-youth-campaigns-for-organ-donation-organic-agriculture",
+    sourceLogo: "The New Indian Express"
+  },
+  {
+    title: "Serving The Society Since The Age Of 13: G Shivkumar's Insightful Journey Building his NGO",
+    source: "Inspiration Unlimited (iU)",
+    date: "March 21, 2017",
+    description: "The inspiring story of G Shivkumar who started serving society at 13, building Yuva Swamivivekananda Seva Brundam and creating a wave of goodness to make the world a better place.",
+    url: "https://www.iuemag.com/m17/aw/serving-the-society-g-shivakumar.php",
+    sourceLogo: "Inspiration Unlimited"
+  },
+  {
+    title: "Kalwakurthy lad receives 'National Youth Award'",
+    source: "The Hans India",
+    date: "April 5, 2025",
+    description: "Shiva Kumar, President of Swamivivekananda Seva Brundam, was honored with the National Youth Award at Delhi Parliament by Union Minister Mansukh Mandaviya, being the only recipient from both Telugu states.",
+    url: "https://www.thehansindia.com/telangana/kalwakurthy-lad-receives-national-youth-award-960127",
+    sourceLogo: "The Hans India"
+  },
+  {
+    title: "National Youth Awards 2022-23",
+    source: "Press Information Bureau, Government of India",
+    date: "2024",
+    description: "Official announcement of National Youth Awards 2022-23, recognizing outstanding contributions to youth development and community service.",
+    url: "https://pib.gov.in/PressReleasePage.aspx?PRID=2118541&reg=3&lang=2",
+    sourceLogo: "PIB India"
+  },
+];
+
 const MediaPress = () => {
   return (
     <Layout>
       <PageHero
         title="Media & Press"
-        subtitle="News and updates from Swami Vivekananda Seva Brundam"
+        subtitle="News and updates from Swamivivekananda Seva Brundam"
         breadcrumbs={[{ label: "Resources" }, { label: "Media & Press" }]}
       />
 
+      {/* Published Articles Section */}
       <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Published Articles</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Media coverage and articles featuring our work, achievements, and impact
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            {publishedArticles.map((article, index) => (
+              <a
+                key={index}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-sharp p-6 hover:border-primary transition-all duration-300 group block"
+              >
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Newspaper className="text-primary" size={18} />
+                      <span className="text-xs text-primary font-semibold uppercase tracking-wider">
+                        {article.sourceLogo}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-2">{article.date}</p>
+                  </div>
+                  <ExternalLink className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" size={18} />
+                </div>
+                <h3 className="font-heading text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+                  {article.description}
+                </p>
+                <div className="flex items-center gap-2 text-primary text-sm font-semibold">
+                  <span>Read Article</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Press Releases & Media Kit Section */}
+      <section className="py-20 bg-cream">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
@@ -45,7 +128,7 @@ const MediaPress = () => {
             
             <div>
               <h2 className="font-heading text-2xl font-bold mb-6">Media Kit</h2>
-              <div className="card-sharp p-6 bg-cream">
+              <div className="card-sharp p-6 bg-background">
                 <p className="text-muted-foreground mb-6">
                   Download our media kit for logos, photos, and information about SVSB 
                   for press and publication purposes.

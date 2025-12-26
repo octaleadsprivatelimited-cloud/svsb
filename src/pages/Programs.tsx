@@ -56,7 +56,7 @@ const Programs = () => {
               Empowering Communities Through Action
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Swami Vivekananda Seva Brundam is committed to transforming rural communities through 
+              Swamivivekananda Seva Brundam is committed to transforming rural communities through 
               education, healthcare, and empowerment programs. Our comprehensive approach addresses 
               multiple aspects of community development to create lasting positive change.
             </p>

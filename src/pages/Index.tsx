@@ -24,9 +24,9 @@ import youthTrainingImage from "@/assets/youth-training.jpg";
 import ruralEducationImage from "@/assets/rural-education.jpg";
 
 const stats = [
-  { value: "15+", label: "Years of Service", icon: Award },
+  { value: "12+", label: "Years of Service", icon: Award },
   { value: "50,000+", label: "Lives Impacted", icon: Heart },
-  { value: "100+", label: "Villages Reached", icon: MapPin },
+  { value: "1000+", label: "Villages/Places Programs", icon: MapPin },
   { value: "500+", label: "Volunteers", icon: Users },
 ];
 
@@ -56,7 +56,7 @@ const programs = [
 
 const testimonials = [
   {
-    quote: "Swami Vivekananda Seva Brundam transformed our village. My children now have access to quality education and healthcare that we could never have imagined.",
+    quote: "Swamivivekananda Seva Brundam transformed our village. My children now have access to quality education and healthcare that we could never have imagined.",
     name: "Lakshmi Devi",
     role: "Beneficiary, Kalwakurthy Village",
   },
@@ -94,7 +94,7 @@ const Index = () => {
         <div className="container relative z-10 py-20">
           <div className="max-w-3xl">
             <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
-              Serving Humanity Since 2008
+              Serving Humanity Since 2012
             </p>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-secondary-foreground mb-6 leading-tight animate-slide-up">
               "Arise, Awake and Stop Not Till the Goal is Reached"
@@ -143,7 +143,7 @@ const Index = () => {
                 Creating Meaningful Change in Rural India
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Swami Vivekananda Seva Brundam was established with a vision to create meaningful 
+                Swamivivekananda Seva Brundam was established with a vision to create meaningful 
                 change in rural communities across India. Founded by National Youth Awardee 
                 Shiva Kumar Gudlanaram, the organization has been working at the grassroots level 
                 for over 15 years.
@@ -284,9 +284,9 @@ const Index = () => {
                 India that Swami Vivekananda envisioned."
               </blockquote>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Under his visionary leadership, Swami Vivekananda Seva Brundam has grown from 
+                Under his visionary leadership, Swamivivekananda Seva Brundam has grown from 
                 a small initiative to a comprehensive rural development organization impacting 
-                over 50,000 lives across 100+ villages in Telangana.
+                over 50,000 lives across 1000+ villages/places in Telangana.
               </p>
               <Link to="/founder-message">
                 <Button className="btn-secondary">

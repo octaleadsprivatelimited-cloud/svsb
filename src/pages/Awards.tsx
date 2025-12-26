@@ -27,10 +27,11 @@ import award19 from "@/assets/awards/IMG-20250110-WA0024.jpg";
 import award20 from "@/assets/awards/IMG-20250423-WA0001.jpg";
 
 const awards = [
-  { year: "2018", title: "National Youth Award", org: "Government of India", description: "Awarded to Founder Shiva Kumar Gudlanaram for exceptional contribution to youth development and community service." },
-  { year: "2020", title: "Best NGO Award", org: "Government of Telangana", description: "Recognition for outstanding work in rural development and community empowerment." },
-  { year: "2021", title: "COVID Relief Excellence", org: "District Administration", description: "For exemplary relief work during the COVID-19 pandemic." },
-  { year: "2023", title: "Education Excellence Award", org: "Rotary Club", description: "For contribution to rural education and scholarship programs." },
+  { year: "2025", title: "National Yuva Award", org: "Bharathiya Vikas Sangh - Karnataka", description: "Recognition for outstanding contribution to youth development and community service." },
+  { year: "2024", title: "Best Youth Club Award", org: "District Magistrate, Collector - Nagarkurnool", description: "Awarded for excellence in youth club activities and community engagement." },
+  { year: "2022-23", title: "National Youth Award", org: "Government of India, Ministry of Youth Affairs & Sports", description: "National recognition for exceptional contribution to youth development and community service." },
+  { year: "2022-23", title: "Best Youth Club Award", org: "My Bharat - Mahabubnagar, Government of India, Ministry of Youth Affairs & Sports", description: "Recognition for outstanding youth club initiatives and community impact." },
+  { year: "2019", title: "Best Youth Club On Organ Donation Awareness", org: "Government of Telangana, Jeevandan Organization", description: "Awarded for significant contribution to organ donation awareness campaigns." },
 ];
 
 const galleryImages = [

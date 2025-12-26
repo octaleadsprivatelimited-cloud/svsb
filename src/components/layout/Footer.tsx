@@ -52,12 +52,12 @@ export const Footer = () => {
             <div className="mb-4">
               <img 
                 src={logo} 
-                alt="Swami Vivekananda Seva Brundam" 
+                alt="Swamivivekananda Seva Brundam" 
                 className="h-16 w-auto object-contain bg-white p-2"
               />
             </div>
             <p className="text-white text-sm leading-relaxed mb-4 drop-shadow-md">
-              Empowering rural communities through education, healthcare, and sustainable development programs since 2008.
+              Empowering rural communities through education, healthcare, and sustainable development programs since 2012.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
@@ -205,7 +205,12 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-white drop-shadow-md">
+                <a 
+                  href="https://maps.app.goo.gl/PeRDRhnsbLHF8Cpo6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-white hover:text-primary transition-colors drop-shadow-md"
+                >
                   <MapPin size={18} className="mt-1 flex-shrink-0" />
                   <span className="text-sm">
                     H No 6-113, Gandhinagar,<br />
@@ -213,7 +218,7 @@ export const Footer = () => {
                     Nagarkurnool District,<br />
                     Telangana – 509324
                   </span>
-                </div>
+                </a>
               </li>
             </ul>
           </div>
@@ -225,7 +230,7 @@ export const Footer = () => {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm font-medium drop-shadow-lg">
-              © {new Date().getFullYear()} Swami Vivekananda Seva Brundam. All rights reserved.
+              © {new Date().getFullYear()} Swamivivekananda Seva Brundam. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6 mb-4">
               {legalLinks.map((link) => (

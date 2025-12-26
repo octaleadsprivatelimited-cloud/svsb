@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Award } from "lucide-react";
+import { ArrowRight, Award, Play } from "lucide-react";
 
 import founderImage from "@/assets/team-member-4.jpg";
 
@@ -52,7 +52,7 @@ const FounderMessage = () => {
                 </p>
                 <p>
                   It is with immense gratitude and humility that I share our journey with you. 
-                  Swami Vivekananda Seva Brundam was born from a simple yet profound belief – 
+                  Swamivivekananda Seva Brundam was born from a simple yet profound belief – 
                   that true service begins when we see the divine in every human being.
                 </p>
                 <p>
@@ -64,7 +64,7 @@ const FounderMessage = () => {
                 <p>
                   What started as a small initiative to support a few children's education has 
                   now grown into a comprehensive development organization touching over 50,000 
-                  lives across 100+ villages. This transformation would not have been possible 
+                  lives across 1000+ villages/places. This transformation would not have been possible 
                   without the unwavering support of our donors, volunteers, partners, and most 
                   importantly, the communities we serve.
                 </p>
@@ -106,6 +106,92 @@ const FounderMessage = () => {
                     Get in Touch
                   </Button>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Videos Section */}
+      <section className="py-20 bg-cream">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Videos
+            </h2>
+            <p className="text-muted-foreground">
+              Watch our founder's message and organization highlights
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="card-sharp overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/OvO3Iq3Yzec"
+                  title="Founder Video 1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+            <div className="card-sharp overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/1m-Z_3kxLtw"
+                  title="Founder Video 2"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+            <div className="card-sharp overflow-hidden">
+              <div className="aspect-video relative group cursor-pointer">
+                {/* YouTube thumbnail as background */}
+                <img
+                  src="https://img.youtube.com/vi/HwpFat8u76c/maxresdefault.jpg"
+                  alt="Founder Video 3"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to standard thumbnail if maxresdefault doesn't exist
+                    e.currentTarget.src = "https://img.youtube.com/vi/HwpFat8u76c/hqdefault.jpg";
+                  }}
+                />
+                {/* Play button overlay */}
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                  <div className="bg-primary rounded-full p-4 group-hover:scale-110 transition-transform">
+                    <Play className="text-primary-foreground" size={32} fill="currentColor" />
+                  </div>
+                </div>
+                {/* Clickable link to YouTube */}
+                <a
+                  href="https://www.youtube.com/watch?v=HwpFat8u76c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0"
+                  aria-label="Watch Founder Video 3 on YouTube"
+                />
+              </div>
+            </div>
+            <div className="card-sharp overflow-hidden">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/SDbdnQyV6Co"
+                  title="Founder Video 4"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
