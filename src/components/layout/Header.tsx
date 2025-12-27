@@ -142,7 +142,6 @@ const navItems: NavItem[] = [
         category: "Media",
         items: [
           { label: "Gallery", path: "/gallery", description: "Photos & videos from our programs" },
-          { label: "Events", path: "/events", description: "Upcoming activities and campaigns" },
           { label: "Media & Press", path: "/media-press", description: "News coverage and press releases" },
         ],
         image: heroEducation,
@@ -150,7 +149,6 @@ const navItems: NavItem[] = [
       {
         category: "Reports",
         items: [
-          { label: "Annual Reports", path: "/annual-reports", description: "Yearly documentation of our work" },
           { label: "Awards", path: "/awards", description: "Our achievements and recognition" },
           { label: "Testimonials", path: "/testimonials", description: "Success stories from beneficiaries" },
         ],
@@ -158,10 +156,10 @@ const navItems: NavItem[] = [
       },
     ],
     featured: {
-      title: "Annual Report 2024",
-      description: "Our journey of impact, transparency, and community transformation.",
-      link: "/annual-reports",
-      linkText: "Read Report",
+      title: "Our Awards",
+      description: "Recognition for our commitment to community transformation and social impact.",
+      link: "/awards",
+      linkText: "View Awards",
       image: ruralEducation,
     },
   },

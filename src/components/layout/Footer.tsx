@@ -10,7 +10,7 @@ const quickLinks = [
   { label: "Our Programs", path: "/education-programs" },
   { label: "Donate", path: "/donate" },
   { label: "Volunteer", path: "/volunteer" },
-  { label: "Events", path: "/events" },
+  { label: "Gallery", path: "/gallery" },
   { label: "Contact Us", path: "/contact" },
 ];
 
@@ -25,7 +25,6 @@ const legalLinks = [
   { label: "Privacy Policy", path: "/privacy-policy" },
   { label: "Terms & Conditions", path: "/terms-conditions" },
   { label: "Transparency", path: "/transparency" },
-  { label: "Annual Reports", path: "/annual-reports" },
 ];
 
 export const Footer = () => {
