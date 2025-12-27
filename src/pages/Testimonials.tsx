@@ -28,6 +28,11 @@ const testimonials = [
     name: "Fathima Begum",
     role: "Anganwadi Teacher, Gandhinagar",
   },
+  {
+    quote: "As an Excise and Prohibition Circle Inspector, I sincerely appreciate the efforts of Swami Vivekananda Seva Brundam in conducting awareness programs and seminars on drug addiction and substance abuse. Their Nasha Mukt Yuva initiatives have played an important role in educating youth about the harmful effects of drugs and guiding them toward a disciplined and responsible life. These programs strongly support the vision of Viksit Bharat by building a healthy, aware, and addiction-free generation. The organization's commitment to social responsibility and youth empowerment is truly commendable.",
+    name: "Venkat Reddy Garu",
+    role: "Circle Inspector, Excise & Prohibition Department",
+  },
 ];
 
 const Testimonials = () => {
