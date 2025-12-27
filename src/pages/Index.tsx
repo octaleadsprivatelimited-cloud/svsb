@@ -200,8 +200,8 @@ const Index = () => {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <Sprout className="text-primary" size={32} />
                   </div>
-                  <h3 className="font-heading text-lg font-bold mb-2">Development</h3>
-                  <p className="text-sm text-muted-foreground">Sustainable growth</p>
+                  <h3 className="font-heading text-lg font-bold mb-2">Youth Empowerment</h3>
+                  <p className="text-sm text-muted-foreground">Building future leaders</p>
                 </div>
               </div>
             </div>
