@@ -20,9 +20,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import FounderMessage from "./pages/FounderMessage";
 import BoardOfTrustees from "./pages/BoardOfTrustees";
-import AnnualReports from "./pages/AnnualReports";
 import Awards from "./pages/Awards";
-import Events from "./pages/Events";
 import Testimonials from "./pages/Testimonials";
 import CSRPartnerships from "./pages/CSRPartnerships";
 import Transparency from "./pages/Transparency";
@@ -60,10 +58,8 @@ const App = () => (
           <Route path="/government-projects" element={<OurImpact />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/media-press" element={<MediaPress />} />
-          <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/annual-reports" element={<AnnualReports />} />
           <Route path="/transparency" element={<Transparency />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />

@@ -3,9 +3,9 @@ import { PageHero } from "@/components/common/PageHero";
 import { Shield, FileText, Users, Eye } from "lucide-react";
 
 const compliance = [
-  { icon: Shield, title: "Registered Trust", description: "Registered under Indian Trusts Act, 1882" },
+  { icon: Shield, title: "Registered Society", description: "Registered under AP Societies Registration Act, 2001" },
   { icon: FileText, title: "80G Certification", description: "All donations are tax-exempt under Section 80G" },
-  { icon: Users, title: "FCRA Compliance", description: "Registered for receiving foreign contributions" },
+  { icon: Users, title: "Govt of Telangana", description: "Reg No: 670/2016" },
   { icon: Eye, title: "Annual Audits", description: "Audited financial statements published annually" },
 ];
 
@@ -44,20 +44,21 @@ const Transparency = () => {
             <h3 className="font-heading text-2xl font-bold mb-6 text-center">Registration Details</h3>
             <div className="grid md:grid-cols-2 gap-6 text-sm">
               <div>
-                <p className="text-muted-foreground">Trust Registration No.</p>
-                <p className="font-bold">SVSB/REG/2008/XXXX</p>
+                <p className="text-muted-foreground">Registered Under</p>
+                <p className="font-bold">Andhra Pradesh Societies Registration Act, 2001</p>
+                <p className="text-muted-foreground text-xs mt-1">Govt of Telangana</p>
               </div>
               <div>
-                <p className="text-muted-foreground">80G Registration No.</p>
-                <p className="font-bold">DIT(E)/HYD/80G/XXX/XXXX</p>
+                <p className="text-muted-foreground">Registration No.</p>
+                <p className="font-bold text-lg text-primary">670/2016</p>
+              </div>
+              <div>
+                <p className="text-muted-foreground">80G Registration</p>
+                <p className="font-bold">Available for Tax Benefits</p>
               </div>
               <div>
                 <p className="text-muted-foreground">PAN Number</p>
-                <p className="font-bold">AAXXXXXXXX</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">FCRA Registration No.</p>
-                <p className="font-bold">XXXXXXXXXX</p>
+                <p className="font-bold">Available on Request</p>
               </div>
             </div>
           </div>

@@ -247,18 +247,25 @@ const About = () => {
           />
           <div className="max-w-3xl mx-auto">
             <div className="card-sharp p-8">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <div className="border-b md:border-b-0 md:border-r border-border pb-4 md:pb-0 md:pr-6">
                   <h4 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-2">
                     Registered Under
                   </h4>
-                  <p className="text-foreground">Indian Trusts Act, 1882</p>
+                  <p className="text-foreground">Andhra Pradesh Societies Registration Act, 2001</p>
+                  <p className="text-muted-foreground text-sm mt-1">Govt of Telangana</p>
                 </div>
-                <div className="md:pl-6">
+                <div className="border-b md:border-b-0 md:border-r border-border pb-4 md:pb-0 md:px-6">
                   <h4 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-2">
                     Registration Number
                   </h4>
-                  <p className="text-foreground">SVSB/REG/2008/XXXX</p>
+                  <p className="text-foreground font-semibold text-lg">670/2016</p>
+                </div>
+                <div className="md:pl-6">
+                  <h4 className="font-bold text-sm uppercase tracking-wider text-muted-foreground mb-2">
+                    Status
+                  </h4>
+                  <p className="text-primary font-semibold">Active & Compliant</p>
                 </div>
               </div>
               <div className="border-t border-border mt-6 pt-6">
