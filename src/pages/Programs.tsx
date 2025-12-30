@@ -4,11 +4,21 @@ import { SectionTitle } from "@/components/common/SectionTitle";
 import { ProgramCard } from "@/components/common/Cards";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { GraduationCap, Heart, Users, Leaf, ArrowRight } from "lucide-react";
+import { GraduationCap, Heart, Users, Leaf, ArrowRight, Gift, Stethoscope, Activity, BookOpen, Megaphone } from "lucide-react";
 
 import heroEducation from "@/assets/hero-education.jpg";
 import healthCamp from "@/assets/health-camp.jpg";
 import youthTraining from "@/assets/youth-training.jpg";
+// Gallery images for events - using public folder paths
+const galleryImages = {
+  1: '/gallery/svsb-gallery-1.jpg',
+  2: '/gallery/svsb-gallery-2.jpg',
+  3: '/gallery/svsb-gallery-3.jpg',
+  4: '/gallery/svsb-gallery-4.jpg',
+  5: '/gallery/svsb-gallery-5.jpg',
+  6: '/gallery/svsb-gallery-6.jpg',
+  7: '/gallery/svsb-gallery-7.jpg',
+};
 
 const programCategories = [
   {
@@ -34,6 +44,62 @@ const programCategories = [
     path: "/youth-development",
     image: youthTraining,
     features: ["Skill Development", "Career Guidance", "Sustainable Development", "Community Outreach"],
+  },
+  {
+    title: "Seva Doots – Community Service Day",
+    description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
+    icon: Gift,
+    path: "/programs",
+    image: galleryImages[1],
+    features: ["Food Distribution", "Clothes Distribution", "Essential Items", "Community Support"],
+  },
+  {
+    title: "Green Bharat – Plantation & Environment Drive",
+    description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
+    icon: Leaf,
+    path: "/programs",
+    image: galleryImages[2],
+    features: ["Tree Plantation", "Cleanliness Drives", "Eco-friendly Initiatives", "Environmental Awareness"],
+  },
+  {
+    title: "Swasthya Mela – Health & Wellness Camp",
+    description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
+    icon: Stethoscope,
+    path: "/health-camps",
+    image: galleryImages[3],
+    features: ["Free Medical Checkups", "Blood Donation", "Wellness Programs", "Health Awareness"],
+  },
+  {
+    title: "Organ Donation Campaigns",
+    description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
+    icon: Activity,
+    path: "/programs",
+    image: galleryImages[4],
+    features: ["Awareness Sessions", "Registration Drives", "Community Programs", "Life Saving"],
+  },
+  {
+    title: "Yuva Shakti – Youth Empowerment Workshop",
+    description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
+    icon: Users,
+    path: "/youth-development",
+    image: galleryImages[5],
+    features: ["Leadership Training", "Skill Development", "Motivational Talks", "Drug-Free Campaigns"],
+  },
+  {
+    title: "Vidya Utsav – Student Development & Co-Curricular Event",
+    description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
+    icon: BookOpen,
+    path: "/education-programs",
+    image: galleryImages[6],
+    features: ["Competitions", "Workshops", "Creative Activities", "Life Skills Development"],
+  },
+  {
+    title: "Awareness & Social Campaigns",
+    description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
+    icon: Megaphone,
+    path: "/programs",
+    image: galleryImages[7],
+    features: ["Government Schemes", "Health Awareness", "Sanitation Programs", "Social Responsibility"],
   },
 ];
 
@@ -77,7 +143,7 @@ const Programs = () => {
             subtitle="Explore our diverse range of programs designed to uplift communities"
           />
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programCategories.map((category, index) => {
               const Icon = category.icon;
               return (

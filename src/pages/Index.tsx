@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/common/SectionTitle";
@@ -13,7 +14,13 @@ import {
   ArrowRight,
   Play,
   Building,
-  MapPin
+  MapPin,
+  Gift,
+  Leaf,
+  Stethoscope,
+  Activity,
+  BookOpen,
+  Megaphone
 } from "lucide-react";
 
 // Import images
@@ -22,6 +29,28 @@ import founderImage from "@/assets/team-member-4.jpg";
 import healthCampImage from "@/assets/health-camp.jpg";
 import youthTrainingImage from "@/assets/youth-training.jpg";
 import ruralEducationImage from "@/assets/rural-education.jpg";
+
+// Gallery images for events - using public folder paths to avoid import issues
+// Note: These images should be in public folder or use import.meta.glob
+const galleryImages = {
+  1: '/gallery/svsb-gallery-1.jpg',
+  2: '/gallery/svsb-gallery-2.jpg',
+  3: '/gallery/svsb-gallery-3.jpg',
+  4: '/gallery/svsb-gallery-4.jpg',
+  5: '/gallery/svsb-gallery-5.jpg',
+  6: '/gallery/svsb-gallery-6.jpg',
+  7: '/gallery/svsb-gallery-7.jpg',
+};
+
+// Hero background images array - using public folder paths
+// Images were moved to public folder to avoid import issues with special characters
+const heroBackgrounds = [
+  '/hero-bg-1.jpg',
+  '/hero-bg-2.jpg',
+  '/hero-bg-3.jpg',
+  '/hero-bg-4.jpg',
+  '/hero-bg-5.jpg',
+];
 
 const stats = [
   { value: "12+", label: "Years of Service", icon: Award },
@@ -52,6 +81,55 @@ const programs = [
     link: "/youth-development",
     icon: Sprout,
   },
+  {
+    title: "Seva Doots – Community Service Day",
+    description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
+    image: galleryImages[1],
+    link: "/programs",
+    icon: Gift,
+  },
+  {
+    title: "Green Bharat – Plantation & Environment Drive",
+    description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
+    image: galleryImages[2],
+    link: "/programs",
+    icon: Leaf,
+  },
+  {
+    title: "Swasthya Mela – Health & Wellness Camp",
+    description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
+    image: galleryImages[3],
+    link: "/health-camps",
+    icon: Stethoscope,
+  },
+  {
+    title: "Organ Donation Campaigns",
+    description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
+    image: galleryImages[4],
+    link: "/programs",
+    icon: Activity,
+  },
+  {
+    title: "Yuva Shakti – Youth Empowerment Workshop",
+    description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
+    image: galleryImages[5],
+    link: "/youth-development",
+    icon: Users,
+  },
+  {
+    title: "Vidya Utsav – Student Development & Co-Curricular Event",
+    description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
+    image: galleryImages[6],
+    link: "/education-programs",
+    icon: BookOpen,
+  },
+  {
+    title: "Awareness & Social Campaigns",
+    description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
+    image: galleryImages[7],
+    link: "/programs",
+    icon: Megaphone,
+  },
 ];
 
 const testimonials = [
@@ -81,61 +159,103 @@ const partners = [
 ];
 
 const Index = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Preload images to ensure they're ready and catch any errors
+  useEffect(() => {
+    heroBackgrounds.forEach((src) => {
+      const img = new Image();
+      img.onload = () => {
+        // Image loaded successfully
+      };
+      img.onerror = () => {
+        console.error(`Failed to load hero background image: ${src}`);
+      };
+      img.src = src;
+    });
+  }, []);
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroBackgrounds.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Carousel */}
+        <div className="absolute inset-0">
+          {heroBackgrounds.map((bg, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+                index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 z-0'
+              }`}
+              style={{ 
+                backgroundImage: `url(${bg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            />
+          ))}
+        </div>
         <div className="hero-overlay" />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/20 z-10" />
+        
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroBackgrounds.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-primary w-8' 
+                  : 'bg-white/50 w-2 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
         
         <div className="container relative z-10 py-20">
           <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Main Content */}
-              <div className="text-left lg:text-left">
-                <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
-                  Serving Humanity Since 2012
-                </p>
-                
-                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight animate-slide-up drop-shadow-2xl">
-                  Empowering Rural Communities Through Sustainable Development
-                </h1>
-                
-                <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed animate-slide-up drop-shadow-md" style={{ animationDelay: '0.1s' }}>
-                  We are dedicated to transforming lives through education, healthcare, and community empowerment programs across Telangana.
-                </p>
-                
-                <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                  <Link to="/donate">
-                    <Button className="btn-primary">
-                      Donate Now
-                      <ArrowRight className="ml-2" size={18} />
-                    </Button>
-                  </Link>
-                  <Link to="/about">
-                    <Button className="btn-outline-light">
-                      <Play className="mr-2" size={18} />
-                      Our Story
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+            <div className="text-center">
+              <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
+                Serving Humanity Since 2012
+              </p>
               
-              {/* Right Column - Quote */}
-              <div className="lg:pl-8 lg:border-l-2 lg:border-primary/30">
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                  <div className="text-6xl text-primary/30 font-heading mb-4">"</div>
-                  <p className="text-xl md:text-2xl text-white font-medium italic leading-relaxed mb-4 drop-shadow-md">
-                    Arise, Awake and Stop Not Till the Goal is Reached
-                  </p>
-                  <p className="text-base text-white/80 font-semibold">
-                    — Swami Vivekananda
-                  </p>
-                </div>
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight animate-slide-up drop-shadow-2xl">
+                Empowering Youth And Society For Sustainable Development
+              </h1>
+              
+              <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed animate-slide-up drop-shadow-md max-w-3xl mx-auto" style={{ animationDelay: '0.1s' }}>
+                We are dedicated to transforming lives through education, healthcare, and community empowerment programs across Telangana.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <Link to="/donate">
+                  <Button className="btn-primary">
+                    Donate Now
+                    <ArrowRight className="ml-2" size={18} />
+                  </Button>
+                </Link>
+                <Link to="/about">
+                  <Button className="btn-outline-light">
+                    <Play className="mr-2" size={18} />
+                    Our Story
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -182,10 +302,10 @@ const Index = () => {
                 </div>
                 <div className="card-sharp p-8 bg-secondary/5 border-2 border-secondary/20 hover:border-secondary/40 transition-all">
                   <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                    <Users className="text-secondary" size={32} />
+                    <Leaf className="text-secondary" size={32} />
                   </div>
-                  <h3 className="font-heading text-lg font-bold mb-2">Community</h3>
-                  <p className="text-sm text-muted-foreground">Building stronger villages</p>
+                  <h3 className="font-heading text-lg font-bold mb-2">Environment</h3>
+                  <p className="text-sm text-muted-foreground">Building greener communities</p>
                 </div>
               </div>
               <div className="space-y-6 pt-8">
@@ -262,7 +382,7 @@ const Index = () => {
             title="Our Key Focus Areas"
             subtitle="We work across multiple sectors to bring holistic development to rural communities"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program, index) => (
               <ProgramCard key={index} {...program} />
             ))}

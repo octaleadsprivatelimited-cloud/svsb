@@ -62,6 +62,26 @@ import img54 from "@/assets/gallery/IMG-20250128-WA0011.jpg";
 import img55 from "@/assets/gallery/IMG-20250128-WA0015.jpg";
 import img56 from "@/assets/gallery/IMG-20250128-WA0023.jpg";
 
+// Import svsb gallery images - using public folder paths to avoid import issues
+const svsbGallery1 = '/gallery/svsb-gallery-1.jpg';
+const svsbGallery2 = '/gallery/svsb-gallery-2.jpg';
+const svsbGallery3 = '/gallery/svsb-gallery-3.jpg';
+const svsbGallery4 = '/gallery/svsb-gallery-4.jpg';
+const svsbGallery5 = '/gallery/svsb-gallery-5.jpg';
+const svsbGallery6 = '/gallery/svsb-gallery-6.jpg';
+const svsbGallery7 = '/gallery/svsb-gallery-7.jpg';
+const svsbGallery8 = '/gallery/svsb-gallery-8.jpg';
+const svsbGallery9 = '/gallery/svsb-gallery-9.jpg';
+const svsbGallery10 = '/gallery/svsb-gallery-10.jpg';
+const svsbGallery11 = '/gallery/svsb-gallery-11.jpg';
+const svsbGallery12 = '/gallery/svsb-gallery-12.jpg';
+const svsbGallery13 = '/gallery/svsb-gallery-13.jpg';
+const svsbGallery14 = '/gallery/svsb-gallery-14.jpg';
+const svsbGallery15 = '/gallery/svsb-gallery-15.jpg';
+const svsbGallery16 = '/gallery/svsb-gallery-16.jpg';
+const svsbGallery17 = '/gallery/svsb-gallery-17.jpg';
+const svsbGallery18 = '/gallery/svsb-gallery-18.jpg';
+
 // All gallery images with categories
 const galleryImages = [
   { src: img1, category: "Community", title: "Seva Activities" },
@@ -120,6 +140,24 @@ const galleryImages = [
   { src: img54, category: "Events", title: "Community Program" },
   { src: img55, category: "Events", title: "Community Gathering" },
   { src: img56, category: "Events", title: "Community Event" },
+  { src: svsbGallery1, category: "Events", title: "Seva Doots - Community Service" },
+  { src: svsbGallery2, category: "Environment", title: "Green Bharat - Plantation Drive" },
+  { src: svsbGallery3, category: "Healthcare", title: "Swasthya Mela - Health Camp" },
+  { src: svsbGallery4, category: "Awareness", title: "Organ Donation Campaign" },
+  { src: svsbGallery5, category: "Youth", title: "Yuva Shakti - Youth Workshop" },
+  { src: svsbGallery6, category: "Education", title: "Vidya Utsav - Student Event" },
+  { src: svsbGallery7, category: "Awareness", title: "Social Awareness Campaign" },
+  { src: svsbGallery8, category: "Events", title: "Community Event" },
+  { src: svsbGallery9, category: "Events", title: "Community Program" },
+  { src: svsbGallery10, category: "Events", title: "Community Gathering" },
+  { src: svsbGallery11, category: "Events", title: "Community Event" },
+  { src: svsbGallery12, category: "Events", title: "Community Program" },
+  { src: svsbGallery13, category: "Events", title: "Community Gathering" },
+  { src: svsbGallery14, category: "Events", title: "Community Event" },
+  { src: svsbGallery15, category: "Events", title: "Community Program" },
+  { src: svsbGallery16, category: "Events", title: "Community Gathering" },
+  { src: svsbGallery17, category: "Events", title: "Community Event" },
+  { src: svsbGallery18, category: "Events", title: "Community Program" },
 ];
 
 const Gallery = () => {
