@@ -48,49 +48,31 @@ const FounderMessage = () => {
               
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  Dear Friends and Supporters,
+                  I am <strong>Shiva Kumar Gudlanaram</strong>, Founder of <strong>Swami Vivekananda Seva Brundam</strong>, National Youth Awardee. This organization was born from a deep concern for the real challenges faced by our society and a strong belief that sustainable change is possible only through collective effort, discipline, and service.
                 </p>
                 <p>
-                  It is with immense gratitude and humility that I share our journey with you. 
-                  Swamivivekananda Seva Brundam was born from a simple yet profound belief – 
-                  that true service begins when we see the divine in every human being.
+                  Inspired by the teachings of Swami Vivekananda, we believe that service to society is the highest form of worship. Our focus is on <strong>practical solutions</strong> that improve lives at the grassroots level. We work towards <strong>environment protection</strong> by promoting tree plantation, cleanliness drives, water conservation, and awareness on sustainable living, understanding that protecting nature is essential for the future of our nation.
                 </p>
                 <p>
-                  Growing up in rural Telangana, I witnessed firsthand the challenges faced by 
-                  our villages – limited access to quality education, inadequate healthcare, 
-                  and scarce opportunities for economic advancement. These experiences ignited 
-                  a fire within me to dedicate my life to serving my people.
+                  <strong>Youth development</strong> is at the heart of our mission. India's youth are its greatest strength, and through skill development programs, leadership training, and value-based guidance, we aim to prepare responsible and confident citizens who can contribute meaningfully to the vision of <strong>Viksit Bharat 2047</strong>.
                 </p>
                 <p>
-                  What started as a small initiative to support a few children's education has 
-                  now grown into a comprehensive development organization touching over 50,000 
-                  lives across 1000+ villages/places. This transformation would not have been possible 
-                  without the unwavering support of our donors, volunteers, partners, and most 
-                  importantly, the communities we serve.
+                  We strongly support <strong>self-employment and entrepreneurship</strong>, especially for rural youth and women, by encouraging skill-based livelihoods, small businesses, and traditional occupations. Alongside this, we work for <strong>agriculture development</strong> by supporting farmers with awareness programs, sustainable farming practices, and community-based initiatives that strengthen rural economies.
                 </p>
                 <p>
-                  Our work is guided by the teachings of Swami Vivekananda, who said, "Arise, 
-                  awake and stop not till the goal is reached." This philosophy drives us to 
-                  continuously expand our reach, deepen our impact, and innovate our approaches.
+                  Recognizing the importance of health, Swami Vivekananda Seva Brundam organizes <strong>health camps</strong>, medical awareness programs, and preventive healthcare initiatives to ensure basic health support reaches underserved communities.
                 </p>
                 <p>
-                  We believe in empowering communities rather than creating dependency. Our 
-                  programs are designed to build local capacity, foster leadership, and create 
-                  sustainable change. We work with the people, not for them.
+                  Our journey is driven by sincerity, transparency, and commitment to nation-building. With the support of dedicated volunteers, well-wishers, and partners, we continue to work towards a self-reliant, healthy, and environmentally conscious India.
                 </p>
                 <p>
-                  As we look to the future, our vision remains unchanged – a society where 
-                  every individual has the opportunity to realize their full potential. We 
-                  invite you to join us in this noble mission.
-                </p>
-                <p>
-                  Together, we can build the India that our great leaders envisioned – an 
-                  India where rural and urban, rich and poor, stand together as equals in 
-                  dignity and opportunity.
+                  I invite you to be a part of this mission and contribute to building a stronger, inclusive, and developed Bharat.
                 </p>
                 <p className="font-semibold text-foreground">
-                  With gratitude and determination,<br />
-                  Shiva Kumar Gudlanaram
+                  With sincere commitment,<br />
+                  <strong>Shiva Kumar Gudlanaram</strong><br />
+                  Founder<br />
+                  <em>Swami Vivekananda Seva Brundam</em>
                 </p>
               </div>
 

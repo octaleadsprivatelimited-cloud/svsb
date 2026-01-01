@@ -18,6 +18,17 @@ const galleryImages = {
   5: '/gallery/svsb-gallery-5.jpg',
   6: '/gallery/svsb-gallery-6.jpg',
   7: '/gallery/svsb-gallery-7.jpg',
+  8: '/gallery/svsb-gallery-8.jpg',
+  9: '/gallery/svsb-gallery-9.jpg',
+  10: '/gallery/svsb-gallery-10.jpg',
+  11: '/gallery/svsb-gallery-11.jpg',
+  12: '/gallery/svsb-gallery-12.jpg',
+  13: '/gallery/svsb-gallery-13.jpg',
+  14: '/gallery/svsb-gallery-14.jpg',
+  15: '/gallery/svsb-gallery-15.jpg',
+  16: '/gallery/svsb-gallery-16.jpg',
+  17: '/gallery/svsb-gallery-17.jpg',
+  18: '/gallery/svsb-gallery-18.jpg',
 };
 
 const programCategories = [
@@ -50,7 +61,7 @@ const programCategories = [
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
     icon: Gift,
     path: "/programs",
-    image: galleryImages[1],
+    image: heroEducation,
     features: ["Food Distribution", "Clothes Distribution", "Essential Items", "Community Support"],
   },
   {
@@ -58,7 +69,7 @@ const programCategories = [
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
     icon: Leaf,
     path: "/programs",
-    image: galleryImages[2],
+    image: youthTraining,
     features: ["Tree Plantation", "Cleanliness Drives", "Eco-friendly Initiatives", "Environmental Awareness"],
   },
   {
@@ -66,7 +77,7 @@ const programCategories = [
     description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
     icon: Stethoscope,
     path: "/health-camps",
-    image: galleryImages[3],
+    image: healthCamp,
     features: ["Free Medical Checkups", "Blood Donation", "Wellness Programs", "Health Awareness"],
   },
   {
@@ -74,7 +85,7 @@ const programCategories = [
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
     icon: Activity,
     path: "/programs",
-    image: galleryImages[4],
+    image: healthCamp,
     features: ["Awareness Sessions", "Registration Drives", "Community Programs", "Life Saving"],
   },
   {
@@ -82,7 +93,7 @@ const programCategories = [
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
     icon: Users,
     path: "/youth-development",
-    image: galleryImages[5],
+    image: youthTraining,
     features: ["Leadership Training", "Skill Development", "Motivational Talks", "Drug-Free Campaigns"],
   },
   {
@@ -90,7 +101,7 @@ const programCategories = [
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
     icon: BookOpen,
     path: "/education-programs",
-    image: galleryImages[6],
+    image: heroEducation,
     features: ["Competitions", "Workshops", "Creative Activities", "Life Skills Development"],
   },
   {
@@ -98,7 +109,7 @@ const programCategories = [
     description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
     icon: Megaphone,
     path: "/programs",
-    image: galleryImages[7],
+    image: youthTraining,
     features: ["Government Schemes", "Health Awareness", "Sanitation Programs", "Social Responsibility"],
   },
 ];
@@ -121,15 +132,17 @@ const Programs = () => {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
               Empowering Communities Through Action
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Swamivivekananda Seva Brundam is committed to transforming rural communities through 
-              education, healthcare, and empowerment programs. Our comprehensive approach addresses 
-              multiple aspects of community development to create lasting positive change.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              With over 15 years of dedicated service, we have impacted thousands of lives across 
-              Telangana, creating opportunities for education, health, and economic empowerment.
-            </p>
+            <div className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                To serve humanity with compassion and dedication, following the ideals of Swami Vivekananda. We are committed to uplifting poor and needy individuals by providing food, clothing, and essential support.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We work towards protecting the environment through plantation drives, cleanliness programs, and awareness activities. Our organization conducts health camps, organ donation awareness programs, and other wellness initiatives for community well-being.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We focus on empowering youth through leadership development, value-based programs, and motivation to participate in nation-building. We also strive to spread awareness about government schemes, helping people access welfare benefits. Additionally, we support students by encouraging co-curricular activities, skill-building, and educational development. Through these efforts, we aim to build a stronger, healthier, and more service-oriented society.
+              </p>
+            </div>
           </div>
         </div>
       </section>

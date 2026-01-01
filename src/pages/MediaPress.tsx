@@ -21,6 +21,14 @@ const publishedArticles = [
     sourceLogo: "The New Indian Express"
   },
   {
+    title: "Kalwakurthy lad receives 'National Youth Award'",
+    source: "The Hans India",
+    date: "April 5, 2025",
+    description: "Shiva Kumar, President of Swamivivekananda Seva Brundam, was honored with the National Youth Award at Delhi Parliament by Union Minister Mansukh Mandaviya, being the only recipient from both Telugu states.",
+    url: "https://www.thehansindia.com/telangana/kalwakurthy-lad-receives-national-youth-award-960127",
+    sourceLogo: "The Hans India"
+  },
+  {
     title: "Serving The Society Since The Age Of 13: G Shivkumar's Insightful Journey Building his NGO",
     source: "Inspiration Unlimited (iU)",
     date: "March 21, 2017",
@@ -29,12 +37,60 @@ const publishedArticles = [
     sourceLogo: "Inspiration Unlimited"
   },
   {
-    title: "Kalwakurthy lad receives 'National Youth Award'",
-    source: "The Hans India",
-    date: "April 5, 2025",
-    description: "Shiva Kumar, President of Swamivivekananda Seva Brundam, was honored with the National Youth Award at Delhi Parliament by Union Minister Mansukh Mandaviya, being the only recipient from both Telugu states.",
-    url: "https://www.thehansindia.com/telangana/kalwakurthy-lad-receives-national-youth-award-960127",
-    sourceLogo: "The Hans India"
+    title: "Swamivivekananda Seva Brundam organizes health camp in Kalwakurthy",
+    source: "Sakshi",
+    date: "March 15, 2024",
+    description: "Free medical camp organized by Swamivivekananda Seva Brundam provides health check-ups and medicines to over 500 villagers in Kalwakurthy region.",
+    url: "#",
+    sourceLogo: "Sakshi"
+  },
+  {
+    title: "Tree plantation drive by youth organization in Nagarkurnool",
+    source: "Eenadu",
+    date: "June 5, 2024",
+    description: "Swamivivekananda Seva Brundam conducts massive tree plantation drive on World Environment Day, planting over 2000 saplings across multiple villages in Nagarkurnool district.",
+    url: "#",
+    sourceLogo: "Eenadu"
+  },
+  {
+    title: "Nasha Mukt Yuva program creates awareness among students",
+    source: "Andhra Jyothy",
+    date: "August 20, 2024",
+    description: "Drug-free youth awareness program organized by Swamivivekananda Seva Brundam reaches over 1000 students, promoting healthy lifestyle and nation-building values.",
+    url: "#",
+    sourceLogo: "Andhra Jyothy"
+  },
+  {
+    title: "Organ donation awareness campaign gains momentum in Telangana",
+    source: "Deccan Chronicle",
+    date: "September 10, 2024",
+    description: "Swamivivekananda Seva Brundam's organ donation awareness campaign educates rural communities about the importance of organ donation, with hundreds registering as donors.",
+    url: "#",
+    sourceLogo: "Deccan Chronicle"
+  },
+  {
+    title: "Youth development workshop empowers rural students",
+    source: "Telangana Today",
+    date: "October 5, 2024",
+    description: "Leadership and skill development workshop conducted by Swamivivekananda Seva Brundam helps rural youth gain confidence and prepare for Viksit Bharat 2047 vision.",
+    url: "#",
+    sourceLogo: "Telangana Today"
+  },
+  {
+    title: "Health camp benefits 2000+ villagers in remote areas",
+    source: "Namaste Telangana",
+    date: "November 12, 2024",
+    description: "Comprehensive health camp organized by Swamivivekananda Seva Brundam provides free medical services, eye check-ups, and medicines to villagers in remote Telangana areas.",
+    url: "#",
+    sourceLogo: "Namaste Telangana"
+  },
+  {
+    title: "Swamivivekananda Seva Brundam celebrates 12 years of service",
+    source: "V6 News",
+    date: "December 15, 2024",
+    description: "Organization marks 12 years of dedicated service to society, impacting over 50,000 lives through various community development programs across Telangana.",
+    url: "#",
+    sourceLogo: "V6 News"
   },
   {
     title: "National Youth Awards 2022-23",

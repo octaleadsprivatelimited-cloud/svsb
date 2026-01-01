@@ -3,13 +3,13 @@ import { PageHero } from "@/components/common/PageHero";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, GraduationCap, Heart, MapPin, Building, ArrowRight } from "lucide-react";
+import { Users, GraduationCap, Heart, MapPin, Building, ArrowRight, Leaf } from "lucide-react";
 
 const impactStats = [
   { value: "50,000+", label: "Lives Transformed", icon: Users },
   { value: "15,000+", label: "Students Educated", icon: GraduationCap },
   { value: "200+", label: "Health Camps Organized", icon: Heart },
-  { value: "1000+", label: "Villages/Places Programs", icon: MapPin },
+  { value: "1000+", label: "Programs", icon: MapPin },
 ];
 
 const impactAreas = [
@@ -32,12 +32,12 @@ const impactAreas = [
     ],
   },
   {
-    title: "Women Empowerment",
+    title: "Environment Protection",
     stats: [
-      "500+ self-help groups formed",
-      "5,000+ women trained in skills",
-      "2,000+ women entrepreneurs created",
-      "₹5 Cr+ micro-loans disbursed",
+      "100+ tree plantation drives conducted",
+      "50,000+ trees planted across communities",
+      "200+ cleanliness and awareness campaigns",
+      "Water conservation initiatives in 100+ villages",
     ],
   },
   {
@@ -119,12 +119,6 @@ const OurImpact = () => {
               <Button className="btn-primary">
                 <Heart className="mr-2" size={18} />
                 Donate Now
-              </Button>
-            </Link>
-            <Link to="/annual-reports">
-              <Button className="btn-outline-light">
-                View Annual Reports
-                <ArrowRight className="ml-2" size={18} />
               </Button>
             </Link>
           </div>

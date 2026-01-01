@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "How is my donation used?",
-    answer: "Your donation is used directly for our programs including education support, healthcare camps, women skill training, and youth development. We maintain complete transparency and publish annual reports detailing fund utilization.",
+    answer: "Your donation is used directly for our programs including education support, healthcare camps, women skill training, and youth development. We maintain complete transparency in all our operations and fund utilization.",
   },
   {
     question: "Can I volunteer with SVSB?",

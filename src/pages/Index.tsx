@@ -53,9 +53,9 @@ const heroBackgrounds = [
 ];
 
 const stats = [
-  { value: "12+", label: "Years of Service", icon: Award },
+  { value: "14+", label: "Years of Service", icon: Award },
   { value: "50,000+", label: "Lives Impacted", icon: Heart },
-  { value: "1000+", label: "Villages/Places Programs", icon: MapPin },
+  { value: "1000+", label: "Programs", icon: MapPin },
   { value: "500+", label: "Volunteers", icon: Users },
 ];
 
@@ -84,49 +84,49 @@ const programs = [
   {
     title: "Seva Doots – Community Service Day",
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
-    image: galleryImages[1],
+    image: ruralEducationImage,
     link: "/programs",
     icon: Gift,
   },
   {
     title: "Green Bharat – Plantation & Environment Drive",
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
-    image: galleryImages[2],
+    image: youthTrainingImage,
     link: "/programs",
     icon: Leaf,
   },
   {
     title: "Swasthya Mela – Health & Wellness Camp",
     description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
-    image: galleryImages[3],
+    image: healthCampImage,
     link: "/health-camps",
     icon: Stethoscope,
   },
   {
     title: "Organ Donation Campaigns",
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
-    image: galleryImages[4],
+    image: healthCampImage,
     link: "/programs",
     icon: Activity,
   },
   {
     title: "Yuva Shakti – Youth Empowerment Workshop",
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
-    image: galleryImages[5],
+    image: youthTrainingImage,
     link: "/youth-development",
     icon: Users,
   },
   {
     title: "Vidya Utsav – Student Development & Co-Curricular Event",
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
-    image: galleryImages[6],
+    image: ruralEducationImage,
     link: "/education-programs",
     icon: BookOpen,
   },
   {
     title: "Awareness & Social Campaigns",
     description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
-    image: galleryImages[7],
+    image: youthTrainingImage,
     link: "/programs",
     icon: Megaphone,
   },
@@ -134,28 +134,29 @@ const programs = [
 
 const testimonials = [
   {
-    quote: "Swamivivekananda Seva Brundam transformed our village. My children now have access to quality education and healthcare that we could never have imagined.",
-    name: "Lakshmi Devi",
-    role: "Beneficiary, Kalwakurthy Village",
+    quote: "I am deeply grateful for the free medical camps conducted by Swami Vivekananda Seva Brundam in our village. Many families received checkups, medicines, and health advice that we could never afford. Their compassion and dedication to community health make a real difference.",
+    name: "M. Naresh Goud",
+    role: "Thotapally Village",
   },
   {
-    quote: "The skill development program gave me the confidence and training to start my own tailoring business. I am now financially independent and can support my family.",
-    name: "Padma Kumari",
-    role: "Women Empowerment Program",
+    quote: "The environmental awareness drives and tree-planting activities led by Swami Vivekananda Seva Brundam have brought positive change to our surroundings. They taught us the value of protecting nature and keeping our village clean. Their efforts encourage all of us to take part and care for the environment.",
+    name: "M. Durga Prasad",
+    role: "Kalwakurthy",
   },
   {
-    quote: "As a volunteer, working with SVSB has been the most fulfilling experience. The dedication to rural communities is truly inspiring.",
-    name: "Rajesh Kumar",
-    role: "Volunteer, Hyderabad",
+    quote: "I am a school teacher from Kerala, and during the difficult days of the COVID-19 pandemic, Swami Vivekananda Seva Brundam stood by me with great compassion and support. When my family faced financial and emotional stress due to the lockdown, their timely help through the donation of food supplies and essential household needs helped us survive those challenging times with dignity. Along with material support, their moral encouragement gave us strength and hope. Their selfless service showed true humanity, and I will always remain grateful for their kindness and dedication to society.",
+    name: "Kerala Teacher",
+    role: "School Teacher, Kerala",
   },
 ];
 
 const partners = [
-  "Government of Telangana",
-  "NABARD",
-  "Ministry of Rural Development",
-  "UNICEF India",
-  "District Administration",
+  { name: "Partner 1", logo: "/partners/partner-1.png" },
+  { name: "Partner 2", logo: "/partners/partner-2.png" },
+  { name: "Partner 3", logo: "/partners/partner-3.jpeg" },
+  { name: "Partner 4", logo: "/partners/partner-4.png" },
+  { name: "Partner 5", logo: "/partners/partner-5.jpg" },
+  { name: "Partner 6", logo: "/partners/partner-6.jpg" },
 ];
 
 const Index = () => {
@@ -240,7 +241,7 @@ const Index = () => {
               </h1>
               
               <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed animate-slide-up drop-shadow-md max-w-3xl mx-auto" style={{ animationDelay: '0.1s' }}>
-                We are dedicated to transforming lives through education, healthcare, and community empowerment programs across Telangana.
+                We are dedicated to transforming lives through education, healthcare, and community empowerment programs all over India.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -271,13 +272,13 @@ const Index = () => {
                 About the Trust
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-                Creating Meaningful Change in Rural India
+                Creating Meaningful Change in Society
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Swamivivekananda Seva Brundam was established with a vision to create meaningful 
                 change in rural communities across India. Founded by National Youth Awardee 
                 Shiva Kumar Gudlanaram, the organization has been working at the grassroots level 
-                for over 15 years.
+                for over 14 years.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Initially started to support rural education, it has expanded into education, 
@@ -338,22 +339,31 @@ const Index = () => {
                 <Target className="text-primary" size={32} />
               </div>
               <h3 className="font-heading text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                A society where every individual, especially from rural and underprivileged 
-                communities, has access to quality education, healthcare, and opportunities 
-                for sustainable livelihoods.
-              </p>
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  To create a compassionate, service-minded, and empowered society inspired by the values of Swami Vivekananda. We aspire to build a community where every individual, especially the youth, is encouraged to serve the needy, protect the environment, and contribute positively to the nation.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We envision a future where social responsibility, human values, education, and unity guide people toward collective growth and harmony. Through dedicated service, awareness, and empowerment, our vision is to help shape a stronger, greener, and more inclusive nation for generations to come and an empowered society with Nasha Mukth Yuva, where every young person is free from drugs and dedicated to service, values, and nation-building.
+                </p>
+              </div>
             </div>
             <div className="card-sharp p-10 border-t-4 border-t-secondary">
               <div className="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-6">
                 <Award className="text-secondary" size={32} />
               </div>
               <h3 className="font-heading text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To empower rural youth, women, and communities through integrated development 
-                programs focusing on education, skill development, health awareness, and 
-                sustainable practices.
-              </p>
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  To serve humanity with compassion and dedication, following the ideals of Swami Vivekananda. We are committed to uplifting poor and needy individuals by providing food, clothing, and essential support.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We work towards protecting the environment through plantation drives, cleanliness programs, and awareness activities. Our organization conducts health camps, organ donation awareness programs, and other wellness initiatives for community well-being.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We focus on empowering youth through leadership development, value-based programs, and motivation to participate in nation-building. We also strive to spread awareness about government schemes, helping people access welfare benefits. Additionally, we support students by encouraging co-curricular activities, skill-building, and educational development. Through these efforts, we aim to build a stronger, healthier, and more service-oriented society.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -425,15 +435,17 @@ const Index = () => {
                 National Youth Awardee
               </p>
               <blockquote className="border-l-4 border-primary pl-6 italic text-muted-foreground leading-relaxed mb-6">
-                "True service begins when we see the divine in every human being. Our work 
-                is not charity; it is our duty to our fellow citizens. Every child we educate, 
-                every woman we empower, and every village we develop brings us closer to the 
-                India that Swami Vivekananda envisioned."
+                "Service to society is the highest form of worship. Our focus is on practical solutions 
+                that improve lives at the grassroots level. We work towards environment protection, 
+                youth development aligned with Viksit Bharat 2047, self-employment, agriculture development, 
+                and health camps to build a self-reliant, healthy, and environmentally conscious India."
               </blockquote>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Under his visionary leadership, Swamivivekananda Seva Brundam has grown from 
-                a small initiative to a comprehensive rural development organization impacting 
-                over 50,000 lives across 1000+ villages/places in Telangana.
+                Swami Vivekananda Seva Brundam was born from a deep concern for the real challenges faced 
+                by our society and a strong belief that sustainable change is possible only through collective 
+                effort, discipline, and service. Inspired by the teachings of Swami Vivekananda, we are 
+                committed to empowering youth, protecting the environment, supporting farmers, and ensuring 
+                healthcare reaches underserved communities.
               </p>
               <Link to="/founder-message">
                 <Button className="btn-secondary">
@@ -470,9 +482,12 @@ const Index = () => {
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {partners.map((partner, index) => (
-              <div key={index} className="flex items-center gap-3 text-muted-foreground">
-                <Building size={20} />
-                <span className="font-medium">{partner}</span>
+              <div key={index} className="flex items-center justify-center">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </div>

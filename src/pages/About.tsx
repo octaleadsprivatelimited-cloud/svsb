@@ -8,12 +8,13 @@ import { Target, Award, Heart, Users, GraduationCap, ArrowRight, Shield, Sparkle
 import ruralEducationImage from "@/assets/rural-education.jpg";
 
 const timeline = [
-  { year: "2012", title: "Foundation", description: "SVSB was established with a focus on rural education" },
-  { year: "2010", title: "Health Initiative", description: "Launched first medical camp serving 500+ villagers" },
-  { year: "2013", title: "Women Empowerment", description: "Started self-help groups and skill training programs" },
-  { year: "2016", title: "Youth Development", description: "Established computer training centers in 10 villages" },
-  { year: "2020", title: "COVID Response", description: "Provided relief to 10,000+ families during pandemic" },
-  { year: "2024", title: "Expanding Impact", description: "Now serving 1000+ villages/places with integrated programs" },
+  { year: "2012", title: "Foundation", description: "Swamivivekananda Seva Brundam was established with a vision to serve humanity and empower communities through selfless service" },
+  { year: "2014", title: "Environment Protection Activities", description: "Launched comprehensive tree plantation drives, cleanliness programs, and environmental awareness campaigns to build greener communities" },
+  { year: "2016", title: "Youth Development Programs", description: "Initiated comprehensive youth empowerment initiatives including leadership training, skill development, and Nasha Mukt Yuva programs" },
+  { year: "2018", title: "Social Awareness Programmes", description: "Expanded community awareness initiatives on social welfare, government schemes, health, sanitation, and ethical living practices" },
+  { year: "2020", title: "Covid Response", description: "Provided essential support, food supplies, and relief to thousands of families during the challenging pandemic period" },
+  { year: "2024", title: "Helping Poor And Health Camps", description: "Intensified efforts in healthcare services, medical camps, and support for underprivileged communities across Telangana" },
+  { year: "2025", title: "National Recognisazation", description: "Achieved national recognition for outstanding service, dedication, and transformative impact in community development" },
 ];
 
 const values = [
@@ -78,7 +79,7 @@ const About = () => {
                 className="w-full shadow-lg"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary p-6 text-primary-foreground">
-                <div className="font-heading text-4xl font-bold">12+</div>
+                <div className="font-heading text-4xl font-bold">14+</div>
                 <div className="text-sm uppercase tracking-wider">Years of Service</div>
               </div>
             </div>
@@ -100,10 +101,7 @@ const About = () => {
                   To create a compassionate, service-minded, and empowered society inspired by the values of Swami Vivekananda. We aspire to build a community where every individual, especially the youth, is encouraged to serve the needy, protect the environment, and contribute positively to the nation.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We envision a future where social responsibility, human values, education, and unity guide people toward collective growth and harmony. Through dedicated service, awareness, and empowerment, our vision is to help shape a stronger, greener, and more inclusive nation for generations to come.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  We envision an empowered society with Nasha Mukth Yuva, where every young person is free from drugs and dedicated to service, values, and nation-building.
+                  We envision a future where social responsibility, human values, education, and unity guide people toward collective growth and harmony. Through dedicated service, awareness, and empowerment, our vision is to help shape a stronger, greener, and more inclusive nation for generations to come and an empowered society with Nasha Mukth Yuva, where every young person is free from drugs and dedicated to service, values, and nation-building.
                 </p>
               </div>
             </div>

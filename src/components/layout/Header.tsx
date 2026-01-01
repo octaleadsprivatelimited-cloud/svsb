@@ -61,7 +61,7 @@ const navItems: NavItem[] = [
     ],
     featured: {
       title: "Our Impact Story",
-      description: "12+ years of transforming rural communities through education, healthcare, and empowerment.",
+      description: "14+ years of transforming rural communities through education, healthcare, and empowerment.",
       link: "/our-impact",
       linkText: "View Impact",
       image: ruralEducation,
