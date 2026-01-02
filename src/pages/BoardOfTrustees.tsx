@@ -6,6 +6,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 import teamMember3 from "@/assets/team-member-3.jpg";
 import teamMember4 from "@/assets/team-member-4.jpg";
 import teamMember5 from "@/assets/team-member-5.jpg";
+import teamMember6 from "@/assets/IMG_3414.JPG";
 
 const trustees = [
   { 
@@ -15,24 +16,29 @@ const trustees = [
     description: "National Youth Awardee 2018, dedicated to rural development and community empowerment for over 14 years."
   },
   { 
-    name: "Dr. Ramesh Kumar", 
-    role: "", 
+    name: "M Santhosh", 
+    role: "Member", 
     image: teamMember1
   },
   { 
-    name: "Dr. Padma Reddy", 
-    role: "", 
+    name: "Mogili Harshith", 
+    role: "Member", 
     image: teamMember2
   },
   { 
-    name: "Smt. Lakshmi Devi", 
+    name: "Laxmi Narasimha", 
     role: "", 
     image: teamMember3
   },
   { 
-    name: "Sri Venkatesh Rao", 
-    role: "", 
+    name: "Manish Goud", 
+    role: "Vice President", 
     image: teamMember5
+  },
+  { 
+    name: "M.Sai teja", 
+    role: "Member", 
+    image: teamMember6
   },
 ];
 

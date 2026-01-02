@@ -518,8 +518,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Collaborators Section - Temporarily commented out for debugging */}
-      {/* <section className="py-16 bg-background">
+      {/* Collaborators Section */}
+      <section className="py-16 bg-background">
         <div className="container">
           <h3 className="text-center font-heading text-xl font-bold mb-8 text-foreground">
             Our Collaborators
@@ -536,7 +536,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Final CTA */}
       <section className="py-20 bg-secondary relative overflow-hidden">
