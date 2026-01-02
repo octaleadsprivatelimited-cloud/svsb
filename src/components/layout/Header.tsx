@@ -4,10 +4,14 @@ import { Menu, X, Phone, Mail, ChevronDown, ChevronRight, ArrowRight } from "luc
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
-import heroEducation from "@/assets/hero-education.jpg";
-import healthCamp from "@/assets/health-camp.jpg";
-import youthTraining from "@/assets/youth-training.jpg";
-import ruralEducation from "@/assets/rural-education.jpg";
+// Import actual event photos from gallery (not AI-generated images)
+import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
+import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
+import healthImg1 from "@/assets/gallery/IMG_20240208_150503.jpg";
+import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
+import communityImg2 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
+import communityImg3 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
+import eventImg2 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
 
 interface NavChild {
   label: string;
@@ -48,7 +52,7 @@ const navItems: NavItem[] = [
           { label: "Our Story", path: "/our-story", description: "How we started transforming lives" },
           { label: "Vision & Mission", path: "/vision-mission", description: "Our guiding principles" },
         ],
-        image: heroEducation,
+        image: educationImg1,
       },
       {
         category: "Leadership",
@@ -56,7 +60,7 @@ const navItems: NavItem[] = [
           { label: "Founder Message", path: "/founder-message", description: "Words from our National Youth Awardee founder" },
           { label: "Board of Trustees", path: "/board-of-trustees", description: "Meet our visionary leaders" },
         ],
-        image: youthTraining,
+        image: communityImg3,
       },
     ],
     featured: {
@@ -64,7 +68,7 @@ const navItems: NavItem[] = [
       description: "14+ years of transforming rural communities through education, healthcare, and empowerment.",
       link: "/our-impact",
       linkText: "View Impact",
-      image: ruralEducation,
+      image: communityImg2,
     },
   },
   {
@@ -77,14 +81,14 @@ const navItems: NavItem[] = [
           { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives for all" },
           { label: "Rural Education", path: "/rural-education", description: "Reaching remote areas with quality education" },
         ],
-        image: heroEducation,
+        image: educationImg2,
       },
       {
         category: "Health & Welfare",
         items: [
           { label: "Health & Medical Camps", path: "/health-camps", description: "Free healthcare services for communities" },
         ],
-        image: healthCamp,
+        image: healthImg1,
       },
       {
         category: "Development",
@@ -93,7 +97,7 @@ const navItems: NavItem[] = [
           { label: "Sustainable Development", path: "/sustainable-development", description: "Eco-friendly community initiatives" },
           { label: "Community Outreach", path: "/community-outreach", description: "Grassroots programs for change" },
         ],
-        image: youthTraining,
+        image: eventImg2,
       },
     ],
     featured: {
@@ -101,7 +105,7 @@ const navItems: NavItem[] = [
       description: "Youth Leadership Training - Shaping tomorrow's leaders through skill development and mentorship.",
       link: "/youth-development",
       linkText: "Learn More",
-      image: youthTraining,
+      image: communityImg3,
     },
   },
   {
@@ -115,14 +119,14 @@ const navItems: NavItem[] = [
           { label: "Donate", path: "/donate", description: "Support our cause with your contribution" },
           { label: "How to Donate", path: "/how-to-donate", description: "Multiple ways to contribute" },
         ],
-        image: ruralEducation,
+        image: communityImg2,
       },
       {
         category: "Partnerships",
         items: [
           { label: "CSR Partnerships", path: "/csr-partnerships", description: "Corporate social responsibility collaborations" },
         ],
-        image: ruralEducation,
+        image: communityImg3,
       },
     ],
     featured: {
@@ -130,7 +134,7 @@ const navItems: NavItem[] = [
       description: "Your contribution transforms lives. Join thousands who support our mission.",
       link: "/donate",
       linkText: "Donate Now",
-      image: healthCamp,
+      image: healthImg2,
     },
   },
   { label: "Our Impact", path: "/our-impact" },
@@ -144,7 +148,7 @@ const navItems: NavItem[] = [
           { label: "Gallery", path: "/gallery", description: "Photos & videos from our programs" },
           { label: "Media & Press", path: "/media-press", description: "News coverage and press releases" },
         ],
-        image: heroEducation,
+        image: educationImg1,
       },
       {
         category: "Reports",
@@ -152,7 +156,7 @@ const navItems: NavItem[] = [
           { label: "Awards", path: "/awards", description: "Our achievements and recognition" },
           { label: "Testimonials", path: "/testimonials", description: "Success stories from beneficiaries" },
         ],
-        image: ruralEducation,
+        image: communityImg2,
       },
     ],
     featured: {
@@ -160,7 +164,7 @@ const navItems: NavItem[] = [
       description: "Recognition for our commitment to community transformation and social impact.",
       link: "/awards",
       linkText: "View Awards",
-      image: ruralEducation,
+      image: eventImg2,
     },
   },
   { label: "Contact", path: "/contact" },
