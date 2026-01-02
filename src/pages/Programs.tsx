@@ -6,9 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { GraduationCap, Heart, Users, Leaf, ArrowRight, Gift, Stethoscope, Activity, BookOpen, Megaphone } from "lucide-react";
 
-import heroEducation from "@/assets/hero-education.jpg";
-import healthCamp from "@/assets/health-camp.jpg";
-import youthTraining from "@/assets/youth-training.jpg";
+// Import actual event photos from gallery (not newspaper clippings)
+import communityImg2 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
+import communityImg3 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
+import communityImg4 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
+import healthImg1 from "@/assets/gallery/IMG_20240208_150503.jpg";
+import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
+import healthImg3 from "@/assets/gallery/IMG_20190526_151013.jpg";
+import eventImg1 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
+import eventImg2 from "@/assets/gallery/IMG-20241028-WA0004.jpg";
+import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
+import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
 // Gallery images for events - using public folder paths
 const galleryImages = {
   1: '/gallery/svsb-gallery-1.jpg',
@@ -37,7 +45,7 @@ const programCategories = [
     description: "Comprehensive learning initiatives for all ages, from primary education to adult literacy programs.",
     icon: GraduationCap,
     path: "/education-programs",
-    image: heroEducation,
+    image: educationImg1,
     features: ["Primary Education", "Scholarships", "Digital Learning", "Adult Literacy"],
   },
   {
@@ -45,7 +53,7 @@ const programCategories = [
     description: "Free healthcare services and medical camps for communities in rural areas.",
     icon: Heart,
     path: "/health-camps",
-    image: healthCamp,
+    image: healthImg1,
     features: ["Free Health Checkups", "Medical Camps", "Health Awareness", "Medicine Distribution"],
   },
   {
@@ -53,7 +61,7 @@ const programCategories = [
     description: "Building future leaders with skills, mentorship, and sustainable development programs.",
     icon: Leaf,
     path: "/youth-development",
-    image: youthTraining,
+    image: communityImg2,
     features: ["Skill Development", "Career Guidance", "Sustainable Development", "Community Outreach"],
   },
   {
@@ -61,7 +69,7 @@ const programCategories = [
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
     icon: Gift,
     path: "/programs",
-    image: heroEducation,
+    image: communityImg3,
     features: ["Food Distribution", "Clothes Distribution", "Essential Items", "Community Support"],
   },
   {
@@ -69,7 +77,7 @@ const programCategories = [
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
     icon: Leaf,
     path: "/programs",
-    image: youthTraining,
+    image: communityImg4,
     features: ["Tree Plantation", "Cleanliness Drives", "Eco-friendly Initiatives", "Environmental Awareness"],
   },
   {
@@ -77,7 +85,7 @@ const programCategories = [
     description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
     icon: Stethoscope,
     path: "/health-camps",
-    image: healthCamp,
+    image: healthImg2,
     features: ["Free Medical Checkups", "Blood Donation", "Wellness Programs", "Health Awareness"],
   },
   {
@@ -85,7 +93,7 @@ const programCategories = [
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
     icon: Activity,
     path: "/programs",
-    image: healthCamp,
+    image: '/gallery/svsb-gallery-4.jpg',
     features: ["Awareness Sessions", "Registration Drives", "Community Programs", "Life Saving"],
   },
   {
@@ -93,7 +101,7 @@ const programCategories = [
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
     icon: Users,
     path: "/youth-development",
-    image: youthTraining,
+    image: eventImg2,
     features: ["Leadership Training", "Skill Development", "Motivational Talks", "Drug-Free Campaigns"],
   },
   {
@@ -101,7 +109,7 @@ const programCategories = [
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
     icon: BookOpen,
     path: "/education-programs",
-    image: heroEducation,
+    image: educationImg2,
     features: ["Competitions", "Workshops", "Creative Activities", "Life Skills Development"],
   },
   {
@@ -109,7 +117,7 @@ const programCategories = [
     description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
     icon: Megaphone,
     path: "/programs",
-    image: youthTraining,
+    image: eventImg1,
     features: ["Government Schemes", "Health Awareness", "Sanitation Programs", "Social Responsibility"],
   },
 ];

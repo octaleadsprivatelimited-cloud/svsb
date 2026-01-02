@@ -26,9 +26,22 @@ import {
 // Import images
 import heroImage from "@/assets/svsb.png";
 import founderImage from "@/assets/team-member-4.jpg";
-import healthCampImage from "@/assets/health-camp.jpg";
-import youthTrainingImage from "@/assets/youth-training.jpg";
-import ruralEducationImage from "@/assets/rural-education.jpg";
+// Import actual event photos from gallery (not newspaper clippings)
+import communityImg2 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
+import communityImg3 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
+import communityImg4 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
+import communityImg5 from "@/assets/gallery/FB_IMG_1731571070600.jpg";
+import communityImg6 from "@/assets/gallery/FB_IMG_1731577899565.jpg";
+import healthImg1 from "@/assets/gallery/IMG_20240208_150503.jpg";
+import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
+import healthImg3 from "@/assets/gallery/IMG_20190526_151013.jpg";
+import eventImg1 from "@/assets/gallery/IMG-20241002-WA0009.jpg";
+import eventImg2 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
+import eventImg3 from "@/assets/gallery/IMG-20241028-WA0004.jpg";
+import eventImg4 from "@/assets/gallery/IMG-20250110-WA0017.jpg";
+import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
+import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
+import educationImg3 from "@/assets/gallery/IMG_20190412_111301.jpg";
 
 // Gallery images for events - using public folder paths to avoid import issues
 // Note: These images should be in public folder or use import.meta.glob
@@ -63,70 +76,70 @@ const programs = [
   {
     title: "Education Programs",
     description: "Providing quality education to underprivileged children in rural areas through schools, scholarships, and learning centers.",
-    image: ruralEducationImage,
+    image: educationImg1,
     link: "/education-programs",
     icon: GraduationCap,
   },
   {
     title: "Health & Medical Camps",
     description: "Organizing regular health camps, medical check-ups, and awareness programs to ensure healthcare reaches every village.",
-    image: healthCampImage,
+    image: healthImg1,
     link: "/health-camps",
     icon: Heart,
   },
   {
     title: "Youth Development",
     description: "Training rural youth with modern skills, computer education, and vocational programs for better employment opportunities.",
-    image: youthTrainingImage,
+    image: communityImg3,
     link: "/youth-development",
     icon: Sprout,
   },
   {
     title: "Seva Doots – Community Service Day",
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
-    image: ruralEducationImage,
+    image: communityImg2,
     link: "/programs",
     icon: Gift,
   },
   {
     title: "Green Bharat – Plantation & Environment Drive",
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
-    image: youthTrainingImage,
+    image: communityImg4,
     link: "/programs",
     icon: Leaf,
   },
   {
     title: "Swasthya Mela – Health & Wellness Camp",
     description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
-    image: healthCampImage,
+    image: healthImg2,
     link: "/health-camps",
     icon: Stethoscope,
   },
   {
     title: "Organ Donation Campaigns",
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
-    image: healthCampImage,
+    image: '/gallery/svsb-gallery-4.jpg',
     link: "/programs",
     icon: Activity,
   },
   {
     title: "Yuva Shakti – Youth Empowerment Workshop",
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
-    image: youthTrainingImage,
+    image: eventImg3,
     link: "/youth-development",
     icon: Users,
   },
   {
     title: "Vidya Utsav – Student Development & Co-Curricular Event",
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
-    image: ruralEducationImage,
+    image: educationImg2,
     link: "/education-programs",
     icon: BookOpen,
   },
   {
     title: "Awareness & Social Campaigns",
     description: "Educating communities about welfare schemes and social responsibility. Conduct campaigns on government schemes, health, sanitation, and ethical living practices.",
-    image: youthTrainingImage,
+    image: eventImg2,
     link: "/programs",
     icon: Megaphone,
   },
@@ -157,6 +170,17 @@ const partners = [
   { name: "Partner 4", logo: "/partners/partner-4.png" },
   { name: "Partner 5", logo: "/partners/partner-5.jpg" },
   { name: "Partner 6", logo: "/partners/partner-6.jpg" },
+  { name: "Partner 7", logo: "/partners/partner-7.jpeg" },
+];
+
+const collaborators = [
+  { name: "Collaborator 1", logo: "/collaborators/collaborator-1.jpeg" },
+  { name: "Andhra Pradesh Government", logo: "/collaborators/collaborator-2.png" },
+  { name: "UN Volunteers", logo: "/collaborators/collaborator-3.png" },
+  { name: "Collaborator 4", logo: "/collaborators/collaborator-4.jpeg" },
+  { name: "Collaborator 5", logo: "/collaborators/collaborator-5.png" },
+  { name: "Collaborator 6", logo: "/collaborators/collaborator-6.png" },
+  { name: "Ministry of Youth Affairs and Sports", logo: "/collaborators/collaborator-7.png" },
 ];
 
 const Index = () => {
@@ -493,6 +517,26 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Collaborators Section - Temporarily commented out for debugging */}
+      {/* <section className="py-16 bg-background">
+        <div className="container">
+          <h3 className="text-center font-heading text-xl font-bold mb-8 text-foreground">
+            Our Collaborators
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {collaborators.map((collaborator, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <img 
+                  src={collaborator.logo} 
+                  alt={collaborator.name}
+                  className="h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
 
       {/* Final CTA */}
       <section className="py-20 bg-secondary relative overflow-hidden">

@@ -3,12 +3,12 @@ import { PageHero } from "@/components/common/PageHero";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, GraduationCap, Heart, MapPin, Building, ArrowRight, Leaf } from "lucide-react";
+import { Users, GraduationCap, Heart, MapPin, Building, ArrowRight, Leaf, Gift } from "lucide-react";
 
 const impactStats = [
   { value: "50,000+", label: "Lives Transformed", icon: Users },
   { value: "15,000+", label: "Students Educated", icon: GraduationCap },
-  { value: "200+", label: "Health Camps Organized", icon: Heart },
+  { value: "100+", label: "Food Donations", icon: Gift },
   { value: "1000+", label: "Programs", icon: MapPin },
 ];
 

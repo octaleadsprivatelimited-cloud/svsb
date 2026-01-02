@@ -84,7 +84,6 @@ const svsbGallery18 = '/gallery/svsb-gallery-18.jpg';
 
 // All gallery images with categories
 const galleryImages = [
-  { src: img1, category: "Community", title: "Seva Activities" },
   { src: img2, category: "Community", title: "Community Service" },
   { src: img3, category: "Events", title: "Community Event" },
   { src: img4, category: "Events", title: "Community Gathering" },
@@ -141,7 +140,6 @@ const galleryImages = [
   { src: img55, category: "Events", title: "Community Gathering" },
   { src: img56, category: "Events", title: "Community Event" },
   { src: svsbGallery1, category: "Events", title: "Seva Doots - Community Service" },
-  { src: svsbGallery2, category: "Environment", title: "Green Bharat - Plantation Drive" },
   { src: svsbGallery3, category: "Healthcare", title: "Swasthya Mela - Health Camp" },
   { src: svsbGallery4, category: "Awareness", title: "Organ Donation Campaign" },
   { src: svsbGallery5, category: "Youth", title: "Yuva Shakti - Youth Workshop" },
