@@ -9,7 +9,6 @@ import img1 from "@/assets/gallery/FB_IMG_1589556442752.jpg";
 import img2 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
 import img3 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
 import img4 from "@/assets/gallery/FB_IMG_1707393194803.jpg";
-import img5 from "@/assets/gallery/FB_IMG_1707393205634.jpg";
 import img6 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
 import img7 from "@/assets/gallery/FB_IMG_1731571070600.jpg";
 import img8 from "@/assets/gallery/FB_IMG_1731577899565.jpg";
@@ -28,16 +27,13 @@ import img20 from "@/assets/gallery/IMG_20190214_115332.jpg";
 import img21 from "@/assets/gallery/IMG_20190331_113706.jpg";
 import img22 from "@/assets/gallery/IMG_20190412_111301.jpg";
 import img23 from "@/assets/gallery/IMG_20190413_182110.jpg";
-import img24 from "@/assets/gallery/IMG_20190413_182122.jpg";
 import img25 from "@/assets/gallery/IMG_20190526_151013.jpg";
-import img26 from "@/assets/gallery/IMG_20190604_222647.jpg";
 import img27 from "@/assets/gallery/IMG_20240208_131855.jpg";
 import img28 from "@/assets/gallery/IMG_20240208_131914.jpg";
 import img29 from "@/assets/gallery/IMG_20240208_131959.jpg";
 import img30 from "@/assets/gallery/IMG_20240208_132137.jpg";
 import img31 from "@/assets/gallery/IMG_20240208_150503.jpg";
 import img32 from "@/assets/gallery/IMG_20240208_150619.jpg";
-import img33 from "@/assets/gallery/IMG_20250203_180300.jpg";
 import img34 from "@/assets/gallery/IMG_20250923_174113.jpg";
 import img35 from "@/assets/gallery/IMG_20250923_174254.jpg";
 import img36 from "@/assets/gallery/IMG_20250923_180309.jpg";
@@ -50,44 +46,22 @@ import img42 from "@/assets/gallery/IMG-20250110-WA0017.jpg";
 import img43 from "@/assets/gallery/IMG-20250121-WA0023.jpg";
 import img44 from "@/assets/gallery/IMG-20250121-WA0026.jpg";
 import img45 from "@/assets/gallery/IMG-20250123-WA0004.jpg";
-import img46 from "@/assets/gallery/IMG-20250909-WA0004.jpg";
 import img47 from "@/assets/gallery/IMG-20250909-WA0005.jpg";
 import img48 from "@/assets/gallery/IMG-20250909-WA0006.jpg";
 import img49 from "@/assets/gallery/IMG-20250909-WA0008.jpg";
 import img50 from "@/assets/gallery/IMG-20250909-WA0010.jpg";
-import img51 from "@/assets/gallery/IMG_20190604_222647(1).jpg";
 import img52 from "@/assets/gallery/IMG_7444_1.jpg";
 import img53 from "@/assets/gallery/IMG_7456.jpg";
 import img54 from "@/assets/gallery/IMG-20250128-WA0011.jpg";
 import img55 from "@/assets/gallery/IMG-20250128-WA0015.jpg";
 import img56 from "@/assets/gallery/IMG-20250128-WA0023.jpg";
 
-// Import svsb gallery images - using public folder paths to avoid import issues
-const svsbGallery1 = '/gallery/svsb-gallery-1.jpg';
-const svsbGallery2 = '/gallery/svsb-gallery-2.jpg';
-const svsbGallery3 = '/gallery/svsb-gallery-3.jpg';
-const svsbGallery4 = '/gallery/svsb-gallery-4.jpg';
-const svsbGallery5 = '/gallery/svsb-gallery-5.jpg';
-const svsbGallery6 = '/gallery/svsb-gallery-6.jpg';
-const svsbGallery7 = '/gallery/svsb-gallery-7.jpg';
-const svsbGallery8 = '/gallery/svsb-gallery-8.jpg';
-const svsbGallery9 = '/gallery/svsb-gallery-9.jpg';
-const svsbGallery10 = '/gallery/svsb-gallery-10.jpg';
-const svsbGallery11 = '/gallery/svsb-gallery-11.jpg';
-const svsbGallery12 = '/gallery/svsb-gallery-12.jpg';
-const svsbGallery13 = '/gallery/svsb-gallery-13.jpg';
-const svsbGallery14 = '/gallery/svsb-gallery-14.jpg';
-const svsbGallery15 = '/gallery/svsb-gallery-15.jpg';
-const svsbGallery16 = '/gallery/svsb-gallery-16.jpg';
-const svsbGallery17 = '/gallery/svsb-gallery-17.jpg';
-const svsbGallery18 = '/gallery/svsb-gallery-18.jpg';
 
 // All gallery images with categories
 const galleryImages = [
   { src: img2, category: "Community", title: "Community Service" },
   { src: img3, category: "Events", title: "Community Event" },
   { src: img4, category: "Events", title: "Community Gathering" },
-  { src: img5, category: "Community", title: "Seva Activities" },
   { src: img6, category: "Events", title: "Community Program" },
   { src: img7, category: "Community", title: "Service Activities" },
   { src: img8, category: "Events", title: "Community Event" },
@@ -106,16 +80,13 @@ const galleryImages = [
   { src: img21, category: "Education", title: "Learning Activities" },
   { src: img22, category: "Education", title: "Educational Event" },
   { src: img23, category: "Education", title: "Learning Program" },
-  { src: img24, category: "Education", title: "Education Initiative" },
   { src: img25, category: "Healthcare", title: "Health Camp" },
-  { src: img26, category: "Healthcare", title: "Medical Services" },
   { src: img27, category: "Healthcare", title: "Health Program" },
   { src: img28, category: "Healthcare", title: "Medical Camp" },
   { src: img29, category: "Healthcare", title: "Health Services" },
   { src: img30, category: "Healthcare", title: "Medical Program" },
   { src: img31, category: "Healthcare", title: "Health Initiative" },
   { src: img32, category: "Healthcare", title: "Medical Services" },
-  { src: img33, category: "Women", title: "Women Empowerment" },
   { src: img34, category: "Women", title: "Women's Program" },
   { src: img35, category: "Women", title: "Women Empowerment" },
   { src: img36, category: "Women", title: "Women's Initiative" },
@@ -128,34 +99,15 @@ const galleryImages = [
   { src: img43, category: "Community", title: "Community Service" },
   { src: img44, category: "Community", title: "Seva Activities" },
   { src: img45, category: "Community", title: "Service Activities" },
-  { src: img46, category: "Events", title: "Community Event" },
   { src: img47, category: "Events", title: "Community Program" },
   { src: img48, category: "Events", title: "Community Gathering" },
   { src: img49, category: "Events", title: "Community Event" },
   { src: img50, category: "Events", title: "Community Program" },
-  { src: img51, category: "Events", title: "Community Event" },
   { src: img52, category: "Community", title: "Seva Activities" },
   { src: img53, category: "Community", title: "Service Activities" },
   { src: img54, category: "Events", title: "Community Program" },
   { src: img55, category: "Events", title: "Community Gathering" },
   { src: img56, category: "Events", title: "Community Event" },
-  { src: svsbGallery1, category: "Events", title: "Seva Doots - Community Service" },
-  { src: svsbGallery3, category: "Healthcare", title: "Swasthya Mela - Health Camp" },
-  { src: svsbGallery4, category: "Awareness", title: "Organ Donation Campaign" },
-  { src: svsbGallery5, category: "Youth", title: "Yuva Shakti - Youth Workshop" },
-  { src: svsbGallery6, category: "Education", title: "Vidya Utsav - Student Event" },
-  { src: svsbGallery7, category: "Awareness", title: "Social Awareness Campaign" },
-  { src: svsbGallery8, category: "Events", title: "Community Event" },
-  { src: svsbGallery9, category: "Events", title: "Community Program" },
-  { src: svsbGallery10, category: "Events", title: "Community Gathering" },
-  { src: svsbGallery11, category: "Events", title: "Community Event" },
-  { src: svsbGallery12, category: "Events", title: "Community Program" },
-  { src: svsbGallery13, category: "Events", title: "Community Gathering" },
-  { src: svsbGallery14, category: "Events", title: "Community Event" },
-  { src: svsbGallery15, category: "Events", title: "Community Program" },
-  { src: svsbGallery16, category: "Events", title: "Community Gathering" },
-  { src: svsbGallery17, category: "Events", title: "Community Event" },
-  { src: svsbGallery18, category: "Events", title: "Community Program" },
 ];
 
 const Gallery = () => {

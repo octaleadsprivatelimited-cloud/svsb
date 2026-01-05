@@ -79,7 +79,6 @@ const navItems: NavItem[] = [
         category: "Education",
         items: [
           { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives for all" },
-          { label: "Rural Education", path: "/rural-education", description: "Reaching remote areas with quality education" },
         ],
         image: educationImg2,
       },

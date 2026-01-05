@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, Stethoscope, Eye, Baby, ArrowRight } from "lucide-react";
 
-import healthCampImage from "@/assets/health-camp.jpg";
+import healthCampImage from "@/assets/health-camp-section.jpg";
 
 const services = [
   {
@@ -48,14 +48,8 @@ const HealthCamps = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
                 Healthcare for Every Village
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Access to basic healthcare remains a challenge in many rural areas. Our medical 
-                camps bring doctors, medicines, and health services directly to villages, 
-                ensuring that no one is left behind.
-              </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We have conducted over 200 medical camps, providing free check-ups and 
-                treatment to more than 50,000 villagers.
+                Swami Vivekananda Seva Brundam is committed to promoting the <strong>health, well-being, and awareness</strong> of our communities. We regularly organize <strong>free health camps and liver test camps</strong> to provide essential medical services, early detection, and preventive care for all. Alongside healthcare, we run <strong>awareness programs on alcohol and substance abuse</strong>, inspiring youth and communities to lead a <strong>nasha-mukt (addiction-free) life</strong>. We also actively promote <strong>organ donation awareness</strong>, educating the public about its life-saving impact and encouraging individuals to give hope to those in need. Through these initiatives, we strive to build a <strong>healthy, responsible, and socially conscious society</strong>, guided by the values of service and compassion taught by Swami Vivekananda.
               </p>
               <Link to="/donate">
                 <Button className="btn-primary">

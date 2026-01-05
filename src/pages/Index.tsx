@@ -32,7 +32,7 @@ import communityImg3 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
 import communityImg4 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
 import communityImg5 from "@/assets/gallery/FB_IMG_1731571070600.jpg";
 import communityImg6 from "@/assets/gallery/FB_IMG_1731577899565.jpg";
-import healthImg1 from "@/assets/gallery/IMG_20240208_150503.jpg";
+import healthImg1 from "@/assets/health-camp-new.jpg";
 import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
 import healthImg3 from "@/assets/gallery/IMG_20190526_151013.jpg";
 import eventImg1 from "@/assets/gallery/IMG-20241002-WA0009.jpg";
@@ -42,6 +42,15 @@ import eventImg4 from "@/assets/gallery/IMG-20250110-WA0017.jpg";
 import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
 import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
 import educationImg3 from "@/assets/gallery/IMG_20190412_111301.jpg";
+import sevaDootsImage from "@/assets/seva-doots.jpg";
+import yuvaShaktiImage from "@/assets/yuva-shakti.jpg";
+import vidyaUtsavImage from "@/assets/vidya-utsav.jpg";
+// Import gallery images for hero backgrounds
+import heroBg1 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
+import heroBg2 from "@/assets/gallery/FB_IMG_1731571070600.jpg";
+import heroBg3 from "@/assets/gallery/FB_IMG_1731577899565.jpg";
+import heroBg4 from "@/assets/gallery/IMG_20190214_115332.jpg";
+import heroBg5 from "@/assets/gallery/IMG_20190331_113706.jpg";
 
 // Gallery images for events - using public folder paths to avoid import issues
 // Note: These images should be in public folder or use import.meta.glob
@@ -55,14 +64,13 @@ const galleryImages = {
   7: '/gallery/svsb-gallery-7.jpg',
 };
 
-// Hero background images array - using public folder paths
-// Images were moved to public folder to avoid import issues with special characters
+// Hero background images array - using actual gallery images
 const heroBackgrounds = [
-  '/hero-bg-1.jpg',
-  '/hero-bg-2.jpg',
-  '/hero-bg-3.jpg',
-  '/hero-bg-4.jpg',
-  '/hero-bg-5.jpg',
+  heroBg1,
+  heroBg2,
+  heroBg3,
+  heroBg4,
+  heroBg5,
 ];
 
 const stats = [
@@ -97,42 +105,35 @@ const programs = [
   {
     title: "Seva Doots – Community Service Day",
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
-    image: communityImg2,
+    image: '/gallery/svsb-gallery-4.jpg',
     link: "/programs",
     icon: Gift,
   },
   {
     title: "Green Bharat – Plantation & Environment Drive",
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
-    image: communityImg4,
+    image: eventImg3,
     link: "/programs",
     icon: Leaf,
   },
   {
-    title: "Swasthya Mela – Health & Wellness Camp",
-    description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
-    image: healthImg2,
-    link: "/health-camps",
-    icon: Stethoscope,
-  },
-  {
     title: "Organ Donation Campaigns",
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
-    image: '/gallery/svsb-gallery-4.jpg',
+    image: sevaDootsImage,
     link: "/programs",
     icon: Activity,
   },
   {
     title: "Yuva Shakti – Youth Empowerment Workshop",
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
-    image: eventImg3,
+    image: yuvaShaktiImage,
     link: "/youth-development",
     icon: Users,
   },
   {
     title: "Vidya Utsav – Student Development & Co-Curricular Event",
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
-    image: educationImg2,
+    image: vidyaUtsavImage,
     link: "/education-programs",
     icon: BookOpen,
   },
@@ -174,13 +175,13 @@ const partners = [
 ];
 
 const collaborators = [
-  { name: "Collaborator 1", logo: "/collaborators/collaborator-1.jpeg" },
+  { name: "Ministry of Youth Affairs and Sports", logo: "/collaborators/collaborator-7.png" },
   { name: "Andhra Pradesh Government", logo: "/collaborators/collaborator-2.png" },
   { name: "UN Volunteers", logo: "/collaborators/collaborator-3.png" },
   { name: "Collaborator 4", logo: "/collaborators/collaborator-4.jpeg" },
   { name: "Collaborator 5", logo: "/collaborators/collaborator-5.png" },
   { name: "Collaborator 6", logo: "/collaborators/collaborator-6.png" },
-  { name: "Ministry of Youth Affairs and Sports", logo: "/collaborators/collaborator-7.png" },
+  { name: "Collaborator 1", logo: "/collaborators/collaborator-1.jpeg" },
 ];
 
 const Index = () => {
@@ -305,7 +306,7 @@ const Index = () => {
                 for over 14 years.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Initially started to support rural education, it has expanded into education, 
+                Initially started to support education, it has expanded into comprehensive education programs, 
                 healthcare, women empowerment, skill development, youth leadership, and sustainable 
                 rural development.
               </p>
@@ -502,7 +503,7 @@ const Index = () => {
       <section className="py-16 bg-muted">
         <div className="container">
           <h3 className="text-center font-heading text-xl font-bold mb-8 text-muted-foreground">
-            Our Partners & Supporters
+            Our media supporters
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {partners.map((partner, index) => (

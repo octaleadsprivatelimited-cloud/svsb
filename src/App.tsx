@@ -27,6 +27,14 @@ import CSRPartnerships from "./pages/CSRPartnerships";
 import Transparency from "./pages/Transparency";
 import MediaPress from "./pages/MediaPress";
 import NotFound from "./pages/NotFound";
+import HealthCampKalwakurthy from "./pages/articles/HealthCampKalwakurthy";
+import TreePlantationNagarkurnool from "./pages/articles/TreePlantationNagarkurnool";
+import NashaMuktYuva from "./pages/articles/NashaMuktYuva";
+import OrganDonationAwareness from "./pages/articles/OrganDonationAwareness";
+import YouthDevelopmentWorkshop from "./pages/articles/YouthDevelopmentWorkshop";
+import HealthCampRemoteAreas from "./pages/articles/HealthCampRemoteAreas";
+import TwelveYearsService from "./pages/articles/TwelveYearsService";
+import ServingSocietySince13 from "./pages/articles/ServingSocietySince13";
 
 const queryClient = new QueryClient();
 
@@ -48,7 +56,6 @@ const App = () => (
             <Route path="/our-impact" element={<OurImpact />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/education-programs" element={<EducationPrograms />} />
-            <Route path="/rural-education" element={<EducationPrograms />} />
             <Route path="/health-camps" element={<HealthCamps />} />
             <Route path="/youth-development" element={<YouthDevelopment />} />
             <Route path="/sustainable-development" element={<YouthDevelopment />} />
@@ -60,6 +67,14 @@ const App = () => (
             <Route path="/government-projects" element={<OurImpact />} />
             <Route path="/awards" element={<Awards />} />
             <Route path="/media-press" element={<MediaPress />} />
+            <Route path="/articles/health-camp-kalwakurthy" element={<HealthCampKalwakurthy />} />
+            <Route path="/articles/tree-plantation-nagarkurnool" element={<TreePlantationNagarkurnool />} />
+            <Route path="/articles/nasha-mukt-yuva" element={<NashaMuktYuva />} />
+            <Route path="/articles/organ-donation-awareness" element={<OrganDonationAwareness />} />
+            <Route path="/articles/youth-development-workshop" element={<YouthDevelopmentWorkshop />} />
+            <Route path="/articles/health-camp-remote-areas" element={<HealthCampRemoteAreas />} />
+            <Route path="/articles/twelve-years-service" element={<TwelveYearsService />} />
+            <Route path="/articles/serving-society-since-13" element={<ServingSocietySince13 />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/transparency" element={<Transparency />} />

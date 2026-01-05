@@ -10,13 +10,16 @@ import { GraduationCap, Heart, Users, Leaf, ArrowRight, Gift, Stethoscope, Activ
 import communityImg2 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
 import communityImg3 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
 import communityImg4 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
-import healthImg1 from "@/assets/gallery/IMG_20240208_150503.jpg";
+import healthImg1 from "@/assets/health-camp-new.jpg";
 import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
 import healthImg3 from "@/assets/gallery/IMG_20190526_151013.jpg";
 import eventImg1 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
 import eventImg2 from "@/assets/gallery/IMG-20241028-WA0004.jpg";
 import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
 import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
+import sevaDootsImage from "@/assets/seva-doots.jpg";
+import yuvaShaktiImage from "@/assets/yuva-shakti.jpg";
+import vidyaUtsavImage from "@/assets/vidya-utsav.jpg";
 // Gallery images for events - using public folder paths
 const galleryImages = {
   1: '/gallery/svsb-gallery-1.jpg',
@@ -69,7 +72,7 @@ const programCategories = [
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
     icon: Gift,
     path: "/programs",
-    image: communityImg3,
+    image: '/gallery/svsb-gallery-4.jpg',
     features: ["Food Distribution", "Clothes Distribution", "Essential Items", "Community Support"],
   },
   {
@@ -77,23 +80,15 @@ const programCategories = [
     description: "Promoting environmental sustainability and awareness. Organize tree plantation campaigns, cleanliness drives, and eco-friendly initiatives to create a greener community.",
     icon: Leaf,
     path: "/programs",
-    image: communityImg4,
+    image: eventImg2,
     features: ["Tree Plantation", "Cleanliness Drives", "Eco-friendly Initiatives", "Environmental Awareness"],
-  },
-  {
-    title: "Swasthya Mela – Health & Wellness Camp",
-    description: "Providing accessible healthcare and raising health awareness. Conduct free medical check-ups, blood donation drives, and wellness programs.",
-    icon: Stethoscope,
-    path: "/health-camps",
-    image: healthImg2,
-    features: ["Free Medical Checkups", "Blood Donation", "Wellness Programs", "Health Awareness"],
   },
   {
     title: "Organ Donation Campaigns",
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
     icon: Activity,
     path: "/programs",
-    image: '/gallery/svsb-gallery-4.jpg',
+    image: sevaDootsImage,
     features: ["Awareness Sessions", "Registration Drives", "Community Programs", "Life Saving"],
   },
   {
@@ -101,7 +96,7 @@ const programCategories = [
     description: "Empowering youth and promoting a drug-free, responsible generation. Leadership training, skill development sessions, motivational talks, and Nasha Mukth Yuva programs.",
     icon: Users,
     path: "/youth-development",
-    image: eventImg2,
+    image: yuvaShaktiImage,
     features: ["Leadership Training", "Skill Development", "Motivational Talks", "Drug-Free Campaigns"],
   },
   {
@@ -109,7 +104,7 @@ const programCategories = [
     description: "Fostering academic and holistic growth among students. Organize competitions, workshops, and activities to develop creativity, confidence, and life skills.",
     icon: BookOpen,
     path: "/education-programs",
-    image: educationImg2,
+    image: vidyaUtsavImage,
     features: ["Competitions", "Workshops", "Creative Activities", "Life Skills Development"],
   },
   {

@@ -6,28 +6,49 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { GraduationCap, BookOpen, School, Award, ArrowRight } from "lucide-react";
 
-import ruralEducationImage from "@/assets/rural-education.jpg";
+import educationImage from "@/assets/education-programs.jpg";
+
 
 const programs = [
   {
-    title: "Primary Education Support",
-    description: "Providing quality primary education to children in rural areas through learning centers and government school support programs.",
-    features: ["Learning materials", "Qualified teachers", "Regular assessments"],
+    title: "Talent Development",
+    description: "Co-Curricular Education Programs focused on nurturing artistic and creative talents in students.",
+    features: [
+      "Music & Vocal Training",
+      "Dance & Performing Arts",
+      "Drawing & Painting",
+      "Drama & Theatre"
+    ],
   },
   {
-    title: "Scholarship Programs",
-    description: "Financial support for meritorious students from underprivileged families to continue their education.",
-    features: ["Merit-based selection", "Annual scholarships", "Higher education support"],
+    title: "Skill Enhancement",
+    description: "Programs designed to develop essential life skills and communication abilities.",
+    features: [
+      "Communication Skills",
+      "Leadership Training",
+      "Public Speaking & Debates",
+      "Life Skills Workshops"
+    ],
   },
   {
-    title: "Digital Learning Centers",
-    description: "Computer education centers in rural areas to bridge the digital divide and prepare students for modern careers.",
-    features: ["Computer labs", "Internet access", "Digital literacy"],
+    title: "Sports & Yoga",
+    description: "Physical fitness and mental well-being through sports and yoga activities.",
+    features: [
+      "Indoor & Outdoor Games",
+      "Yoga & Meditation",
+      "Physical Fitness Activities",
+      "Discipline & Team Building"
+    ],
   },
   {
-    title: "Adult Literacy Programs",
-    description: "Evening classes for adults who missed formal education opportunities.",
-    features: ["Basic literacy", "Functional literacy", "Financial literacy"],
+    title: "Cultural & Creative Activities",
+    description: "Promoting cultural awareness and creative expression through various activities.",
+    features: [
+      "Cultural Festivals & Events",
+      "Traditional Arts & Crafts",
+      "Value-Based Storytelling",
+      "National & Social Awareness Programs"
+    ],
   },
 ];
 
@@ -48,17 +69,22 @@ const EducationPrograms = () => {
                 Our Approach
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-                Education as the Foundation of Change
+                Educational Programs
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                We believe that education is the most powerful tool for breaking the cycle of 
-                poverty. Our education programs focus on providing quality learning opportunities 
-                to children, youth, and adults in underserved rural communities.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Through our various initiatives, we have supported over 15,000 students 
-                and established 50+ learning centers across Telangana.
-              </p>
+              <div className="space-y-4 mb-8">
+                <p className="text-muted-foreground leading-relaxed">
+                  Swami Vivekananda Seva Brundam believes that true education goes beyond textbooks and examinations. Inspired by the teachings of Swami Vivekananda, our educational programs focus on the <strong>holistic development of children and youth</strong>, nurturing not only their academic knowledge but also their talents, skills, character, and confidence.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Along with academic support, we actively promote <strong>co-curricular activities</strong> such as arts, sports, music, yoga, debates, cultural programs, leadership activities, and life-skills training. These activities help students discover their hidden potential, enhance creativity, improve communication skills, and build teamwork and discipline.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our programs emphasize <strong>value-based education</strong>, moral ethics, self-reliance, and social responsibility. Through workshops, competitions, personality development sessions, and mentorship, we aim to shape individuals who are confident, skilled, and prepared to face real-life challenges.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  At Swami Vivekananda Seva Brundam, education is a tool for <strong>character building and nation building</strong>, empowering young minds to become responsible citizens and future leaders.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Link to="/donate">
                   <Button className="btn-primary">
@@ -73,7 +99,7 @@ const EducationPrograms = () => {
               </div>
             </div>
             <div>
-              <img src={ruralEducationImage} alt="Rural Education" className="w-full shadow-lg" />
+              <img src={educationImage} alt="Education Programs" className="w-full shadow-lg" />
             </div>
           </div>
         </div>
@@ -84,7 +110,7 @@ const EducationPrograms = () => {
         <div className="container">
           <SectionTitle
             label="Our Programs"
-            title="Education Initiatives"
+            title="Co-Curricular Education Programs"
             subtitle="Comprehensive programs to address education needs at every level"
           />
           
@@ -103,34 +129,6 @@ const EducationPrograms = () => {
                 </ul>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-16 bg-secondary">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <GraduationCap className="mx-auto mb-3 text-primary" size={40} />
-              <div className="font-heading text-3xl font-bold text-secondary-foreground">15,000+</div>
-              <div className="text-secondary-foreground/70 text-sm">Students Supported</div>
-            </div>
-            <div>
-              <School className="mx-auto mb-3 text-primary" size={40} />
-              <div className="font-heading text-3xl font-bold text-secondary-foreground">50+</div>
-              <div className="text-secondary-foreground/70 text-sm">Learning Centers</div>
-            </div>
-            <div>
-              <Award className="mx-auto mb-3 text-primary" size={40} />
-              <div className="font-heading text-3xl font-bold text-secondary-foreground">5,000+</div>
-              <div className="text-secondary-foreground/70 text-sm">Scholarships Given</div>
-            </div>
-            <div>
-              <BookOpen className="mx-auto mb-3 text-primary" size={40} />
-              <div className="font-heading text-3xl font-bold text-secondary-foreground">1,000+</div>
-              <div className="text-secondary-foreground/70 text-sm">Completed Higher Education</div>
-            </div>
           </div>
         </div>
       </section>

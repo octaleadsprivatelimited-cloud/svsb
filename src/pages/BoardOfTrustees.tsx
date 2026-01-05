@@ -7,6 +7,7 @@ import teamMember3 from "@/assets/team-member-3.jpg";
 import teamMember4 from "@/assets/team-member-4.jpg";
 import teamMember5 from "@/assets/team-member-5.jpg";
 import teamMember6 from "@/assets/IMG_3414.JPG";
+import mSanthoshImage from "@/assets/m-santhosh.jpg";
 
 const trustees = [
   { 
@@ -18,7 +19,7 @@ const trustees = [
   { 
     name: "M Santhosh", 
     role: "Member", 
-    image: teamMember1
+    image: mSanthoshImage
   },
   { 
     name: "Mogili Harshith", 
@@ -27,7 +28,7 @@ const trustees = [
   },
   { 
     name: "Laxmi Narasimha", 
-    role: "", 
+    role: "Member", 
     image: teamMember3
   },
   { 

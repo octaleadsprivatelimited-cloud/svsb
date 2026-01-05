@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Award, Heart, Users, GraduationCap, ArrowRight, Shield, Sparkles, TrendingUp, Leaf, BookOpen } from "lucide-react";
 
-import ruralEducationImage from "@/assets/rural-education.jpg";
+import journeyOfServiceImage from "@/assets/journey-of-service.jpg";
 
 const timeline = [
   { year: "2012", title: "Foundation", description: "Swamivivekananda Seva Brundam was established with a vision to serve humanity and empower communities through selfless service" },
@@ -74,7 +74,7 @@ const About = () => {
             </div>
             <div className="relative">
               <img 
-                src={ruralEducationImage} 
+                src={journeyOfServiceImage} 
                 alt="Swamivivekananda Seva Brundam" 
                 className="w-full shadow-lg"
               />
