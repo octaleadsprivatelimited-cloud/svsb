@@ -1,6 +1,29 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
-import { Award, Calendar } from "lucide-react";
+import { Award, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Import award images (excluding newspaper clippings)
+import award3 from "@/assets/awards/1743410358840.jpg";
+import award6 from "@/assets/awards/FB_IMG_1705996728421.jpg";
+import award7 from "@/assets/awards/FB_IMG_1724327069118.jpg";
+import award8 from "@/assets/awards/FB_IMG_1731395668744.jpg";
+import award14 from "@/assets/awards/IMG_20191210_161635.jpg";
+import award16 from "@/assets/awards/IMG_20250131_221952.jpg";
+import award19 from "@/assets/awards/IMG-20250110-WA0024.jpg";
+import award20 from "@/assets/awards/IMG-20250423-WA0001.jpg";
+
+const galleryImages = [
+  { src: award3, title: "Recognition Event", category: "Awards" },
+  { src: award6, title: "Award Recognition", category: "Awards" },
+  { src: award7, title: "Award Ceremony", category: "Awards" },
+  { src: award8, title: "Recognition Event", category: "Awards" },
+  { src: award14, title: "Award Presentation", category: "Awards" },
+  { src: award16, title: "Award Recognition", category: "Awards" },
+  { src: award19, title: "Award Presentation", category: "Awards" },
+  { src: award20, title: "Honor Ceremony", category: "Awards" },
+];
 
 const awards = [
   { year: "2025", title: "National Yuva Award", org: "Bharathiya Vikas Sangh - Karnataka", description: "Recognition for outstanding contribution to youth development and community service." },
@@ -11,6 +34,53 @@ const awards = [
 ];
 
 const Awards = () => {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const goToPrevious = useCallback(() => {
+    if (selectedImage === null || galleryImages.length === 0) return;
+    const newIndex = selectedImage > 0 
+      ? selectedImage - 1 
+      : galleryImages.length - 1;
+    setSelectedImage(newIndex);
+  }, [selectedImage]);
+
+  const goToNext = useCallback(() => {
+    if (selectedImage === null || galleryImages.length === 0) return;
+    const newIndex = selectedImage < galleryImages.length - 1 
+      ? selectedImage + 1 
+      : 0;
+    setSelectedImage(newIndex);
+  }, [selectedImage]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (selectedImage === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      } else if (e.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (e.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage, goToPrevious, goToNext]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   return (
     <Layout>
@@ -48,6 +118,120 @@ const Awards = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Award Gallery</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Moments of recognition and celebration of our achievements
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative aspect-square overflow-hidden cursor-pointer bg-background border border-border"
+                onClick={() => setSelectedImage(index)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <span className="text-xs text-primary-foreground/80 bg-primary px-2 py-1 mb-2 inline-block">
+                      {image.category}
+                    </span>
+                    <h3 className="text-sm font-medium text-background line-clamp-2">
+                      {image.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 overflow-auto"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              className="absolute top-4 right-4 text-white hover:text-primary transition-colors z-10 p-2 hover:bg-white/10 rounded-full"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close"
+            >
+              <X size={32} />
+            </button>
+            
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative flex items-center justify-center max-w-7xl w-full h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={galleryImages[selectedImage].src}
+                alt={galleryImages[selectedImage].title}
+                className="max-w-full max-h-[90vh] w-auto h-auto object-contain"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <span className="text-xs text-primary bg-primary/20 px-2 py-1 mb-2 inline-block">
+                  {galleryImages[selectedImage].category}
+                </span>
+                <h3 className="text-lg font-medium text-white">
+                  {galleryImages[selectedImage].title}
+                </h3>
+                <p className="text-white/70 text-sm mt-2">
+                  {selectedImage + 1} of {galleryImages.length}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Navigation arrows */}
+            {galleryImages.length > 1 && (
+              <>
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-3 hover:bg-white/10 rounded-full z-10"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPrevious();
+                  }}
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft size={40} />
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors p-3 hover:bg-white/10 rounded-full z-10"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNext();
+                  }}
+                  aria-label="Next image"
+                >
+                  <ChevronRight size={40} />
+                </button>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };

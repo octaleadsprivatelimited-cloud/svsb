@@ -11,7 +11,7 @@ import healthImg1 from "@/assets/health-camp-section.jpg";
 import eventImg1 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
 import eventImg2 from "@/assets/gallery/IMG-20241028-WA0004.jpg";
 import educationImg1 from "@/assets/education-programs.jpg";
-import youthTrainingImage from "@/assets/youth-training.jpg";
+import donatingFoodClothsImage from "@/assets/donating-food-cloths.jpg";
 import organDonationImage from "@/assets/gallery/IMG_20190214_115332.jpg";
 import sevaDootsImage from "@/assets/seva-doots.jpg";
 import yuvaShaktiImage from "@/assets/yuva-shakti.jpg";
@@ -60,7 +60,7 @@ const programCategories = [
     description: "Reducing food wastage by collecting remaining, hygienic food from function halls and distributing it to poor people, homeless individuals, orphanages, and old-age homes. Also organizing old clothes collection drives.",
     icon: Leaf,
     path: "/youth-development",
-    image: youthTrainingImage,
+    image: donatingFoodClothsImage,
     features: ["Remaining Food Collection", "Food Donation to the Needy", "Old Clothes Collection Drive", "Clothes Distribution in Slum Areas"],
   },
   {

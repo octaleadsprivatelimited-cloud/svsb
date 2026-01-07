@@ -43,7 +43,7 @@ import educationImg1 from "@/assets/education-programs.jpg";
 import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
 import educationImg3 from "@/assets/gallery/IMG_20190412_111301.jpg";
 import organDonationImage from "@/assets/gallery/IMG_20190214_115332.jpg";
-import youthTrainingImage from "@/assets/youth-training.jpg";
+import donatingFoodClothsImage from "@/assets/donating-food-cloths.jpg";
 import sevaDootsImage from "@/assets/seva-doots.jpg";
 import yuvaShaktiImage from "@/assets/yuva-shakti.jpg";
 import vidyaUtsavImage from "@/assets/vidya-utsav.jpg";
@@ -100,7 +100,7 @@ const programs = [
   {
     title: "Donating Food & Cloths",
     description: "Reducing food wastage by collecting remaining, hygienic food from function halls and distributing it to poor people, homeless individuals, orphanages, and old-age homes. Also organizing old clothes collection drives.",
-    image: youthTrainingImage,
+    image: donatingFoodClothsImage,
     link: "/youth-development",
     icon: Sprout,
   },

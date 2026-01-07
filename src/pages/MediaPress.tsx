@@ -32,30 +32,6 @@ const publishedArticles = [
     sourceLogo: "Inspiration Unlimited"
   },
   {
-    title: "Swamivivekananda Seva Brundam organizes health camp in Kalwakurthy",
-    source: "Sakshi",
-    date: "March 15, 2024",
-    description: "Free medical camp organized by Swamivivekananda Seva Brundam provides health check-ups and medicines to over 500 villagers in Kalwakurthy region.",
-    url: "/articles/health-camp-kalwakurthy",
-    sourceLogo: "Sakshi"
-  },
-  {
-    title: "Tree plantation drive by youth organization in Nagarkurnool",
-    source: "Eenadu",
-    date: "June 5, 2024",
-    description: "Swamivivekananda Seva Brundam conducts massive tree plantation drive on World Environment Day, planting over 2000 saplings across multiple villages in Nagarkurnool district.",
-    url: "/articles/tree-plantation-nagarkurnool",
-    sourceLogo: "Eenadu"
-  },
-  {
-    title: "Nasha Mukt Yuva program creates awareness among students",
-    source: "Andhra Jyothy",
-    date: "August 20, 2024",
-    description: "Drug-free youth awareness program organized by Swamivivekananda Seva Brundam reaches over 1000 students, promoting healthy lifestyle and nation-building values.",
-    url: "/articles/nasha-mukt-yuva",
-    sourceLogo: "Andhra Jyothy"
-  },
-  {
     title: "National Youth Awards 2022-23",
     source: "Press Information Bureau, Government of India",
     date: "2024",
