@@ -64,10 +64,10 @@ const navItems: NavItem[] = [
       },
     ],
     featured: {
-      title: "Our Impact Story",
-      description: "14+ years of transforming rural communities through education, healthcare, and empowerment.",
+      title: "Social Awareness Programs",
+      description: "Building a knowledgeable, healthy, and socially responsible community through awareness initiatives.",
       link: "/our-impact",
-      linkText: "View Impact",
+      linkText: "Learn More",
       image: communityImg2,
     },
   },
@@ -79,6 +79,7 @@ const navItems: NavItem[] = [
         category: "Education",
         items: [
           { label: "Education Programs", path: "/education-programs", description: "Comprehensive learning initiatives for all" },
+          { label: "Agriculture Trainings", path: "/agriculture-trainings", description: "Modern farming techniques and sustainable agriculture" },
         ],
         image: educationImg2,
       },
@@ -92,9 +93,9 @@ const navItems: NavItem[] = [
       {
         category: "Development",
         items: [
-          { label: "Youth Skill Development", path: "/youth-development", description: "Building future leaders with skills" },
-          { label: "Sustainable Development", path: "/sustainable-development", description: "Eco-friendly community initiatives" },
-          { label: "Community Outreach", path: "/community-outreach", description: "Grassroots programs for change" },
+          { label: "Donating Food & Cloths", path: "/youth-development", description: "Food and clothes distribution to the needy" },
+          { label: "Environment Protection", path: "/sustainable-development", description: "Environmental protection and sustainability initiatives" },
+          { label: "Social Awareness", path: "/community-outreach", description: "Awareness programs for social, health, and national issues" },
         ],
         image: eventImg2,
       },
@@ -136,7 +137,7 @@ const navItems: NavItem[] = [
       image: healthImg2,
     },
   },
-  { label: "Our Impact", path: "/our-impact" },
+  { label: "Social Awareness", path: "/our-impact" },
   {
     label: "Resources",
     path: "/gallery",

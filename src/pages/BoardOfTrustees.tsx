@@ -13,8 +13,7 @@ const trustees = [
   { 
     name: "Shiva Kumar Gudlanaram", 
     role: "Founder & Managing Trustee", 
-    image: teamMember4,
-    description: "National Youth Awardee 2018, dedicated to rural development and community empowerment for over 14 years."
+    image: teamMember4
   },
   { 
     name: "M Santhosh", 

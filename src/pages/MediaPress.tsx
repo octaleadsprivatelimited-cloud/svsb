@@ -56,38 +56,6 @@ const publishedArticles = [
     sourceLogo: "Andhra Jyothy"
   },
   {
-    title: "Organ donation awareness campaign gains momentum in Telangana",
-    source: "Deccan Chronicle",
-    date: "September 10, 2024",
-    description: "Swamivivekananda Seva Brundam's organ donation awareness campaign educates rural communities about the importance of organ donation, with hundreds registering as donors.",
-    url: "/articles/organ-donation-awareness",
-    sourceLogo: "Deccan Chronicle"
-  },
-  {
-    title: "Youth development workshop empowers rural students",
-    source: "Telangana Today",
-    date: "October 5, 2024",
-    description: "Leadership and skill development workshop conducted by Swamivivekananda Seva Brundam helps rural youth gain confidence and prepare for Viksit Bharat 2047 vision.",
-    url: "/articles/youth-development-workshop",
-    sourceLogo: "Telangana Today"
-  },
-  {
-    title: "Health camp benefits 2000+ villagers in remote areas",
-    source: "Namaste Telangana",
-    date: "November 12, 2024",
-    description: "Comprehensive health camp organized by Swamivivekananda Seva Brundam provides free medical services, eye check-ups, and medicines to villagers in remote Telangana areas.",
-    url: "/articles/health-camp-remote-areas",
-    sourceLogo: "Namaste Telangana"
-  },
-  {
-    title: "Swamivivekananda Seva Brundam celebrates 12 years of service",
-    source: "V6 News",
-    date: "December 15, 2024",
-    description: "Organization marks 12 years of dedicated service to society, impacting over 50,000 lives through various community development programs across Telangana.",
-    url: "/articles/twelve-years-service",
-    sourceLogo: "V6 News"
-  },
-  {
     title: "National Youth Awards 2022-23",
     source: "Press Information Bureau, Government of India",
     date: "2024",

@@ -17,8 +17,8 @@ const quickLinks = [
 const programLinks = [
   { label: "Education Programs", path: "/education-programs" },
   { label: "Health Camps", path: "/health-camps" },
-  { label: "Youth Development", path: "/youth-development" },
-  { label: "Rural Development", path: "/sustainable-development" },
+  { label: "Donating Food & Cloths", path: "/youth-development" },
+  { label: "Environment Protection", path: "/sustainable-development" },
 ];
 
 const legalLinks = [
@@ -70,7 +70,13 @@ export const Footer = () => {
               >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://x.com/Ysvsb2012" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Visit our Twitter page"
+              >
                 <Twitter size={18} />
               </a>
               <a 
@@ -91,7 +97,13 @@ export const Footer = () => {
               >
                 <Youtube size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.linkedin.com/in/swamivivekananda-seva-brundam-1410763a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-secondary/50 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Visit our LinkedIn page"
+              >
                 <Linkedin size={18} />
               </a>
             </div>

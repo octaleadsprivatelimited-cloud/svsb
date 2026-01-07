@@ -7,16 +7,12 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Heart, Users, Leaf, ArrowRight, Gift, Stethoscope, Activity, BookOpen, Megaphone } from "lucide-react";
 
 // Import actual event photos from gallery (not newspaper clippings)
-import communityImg2 from "@/assets/gallery/FB_IMG_1707392981507.jpg";
-import communityImg3 from "@/assets/gallery/FB_IMG_1589556515707.jpg";
-import communityImg4 from "@/assets/gallery/FB_IMG_1731571065678.jpg";
-import healthImg1 from "@/assets/health-camp-new.jpg";
-import healthImg2 from "@/assets/gallery/IMG_20240208_150619.jpg";
-import healthImg3 from "@/assets/gallery/IMG_20190526_151013.jpg";
+import healthImg1 from "@/assets/health-camp-section.jpg";
 import eventImg1 from "@/assets/gallery/IMG-20241018-WA0011.jpg";
 import eventImg2 from "@/assets/gallery/IMG-20241028-WA0004.jpg";
-import educationImg1 from "@/assets/gallery/IMG_20190214_115332.jpg";
-import educationImg2 from "@/assets/gallery/IMG_20190331_113706.jpg";
+import educationImg1 from "@/assets/education-programs.jpg";
+import youthTrainingImage from "@/assets/youth-training.jpg";
+import organDonationImage from "@/assets/gallery/IMG_20190214_115332.jpg";
 import sevaDootsImage from "@/assets/seva-doots.jpg";
 import yuvaShaktiImage from "@/assets/yuva-shakti.jpg";
 import vidyaUtsavImage from "@/assets/vidya-utsav.jpg";
@@ -60,19 +56,19 @@ const programCategories = [
     features: ["Free Health Checkups", "Medical Camps", "Health Awareness", "Medicine Distribution"],
   },
   {
-    title: "Youth Development",
-    description: "Building future leaders with skills, mentorship, and sustainable development programs.",
+    title: "Donating Food & Cloths",
+    description: "Reducing food wastage by collecting remaining, hygienic food from function halls and distributing it to poor people, homeless individuals, orphanages, and old-age homes. Also organizing old clothes collection drives.",
     icon: Leaf,
     path: "/youth-development",
-    image: communityImg2,
-    features: ["Skill Development", "Career Guidance", "Sustainable Development", "Community Outreach"],
+    image: youthTrainingImage,
+    features: ["Remaining Food Collection", "Food Donation to the Needy", "Old Clothes Collection Drive", "Clothes Distribution in Slum Areas"],
   },
   {
     title: "Seva Doots – Community Service Day",
     description: "Supporting underprivileged communities with basic necessities. Volunteers distribute food, clothes, and essential items, bringing hope and comfort to those in need.",
     icon: Gift,
     path: "/programs",
-    image: '/gallery/svsb-gallery-4.jpg',
+    image: sevaDootsImage,
     features: ["Food Distribution", "Clothes Distribution", "Essential Items", "Community Support"],
   },
   {
@@ -88,7 +84,7 @@ const programCategories = [
     description: "Raising awareness about organ donation and saving lives. Organize awareness sessions, registration drives, and community programs to promote organ donation.",
     icon: Activity,
     path: "/programs",
-    image: sevaDootsImage,
+    image: organDonationImage,
     features: ["Awareness Sessions", "Registration Drives", "Community Programs", "Life Saving"],
   },
   {

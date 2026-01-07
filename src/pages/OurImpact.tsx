@@ -1,53 +1,35 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
-import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, GraduationCap, Heart, MapPin, Building, ArrowRight, Leaf, Gift } from "lucide-react";
+import { Megaphone, Shield, GraduationCap, Heart, ArrowRight } from "lucide-react";
 
-const impactStats = [
-  { value: "50,000+", label: "Lives Transformed", icon: Users },
-  { value: "15,000+", label: "Students Educated", icon: GraduationCap },
-  { value: "100+", label: "Food Donations", icon: Gift },
-  { value: "1000+", label: "Programs", icon: MapPin },
-];
+import socialAwarenessImage from "@/assets/social-awareness.jpg";
 
-const impactAreas = [
+const initiatives = [
   {
-    title: "Education",
-    stats: [
-      "Empowering Minds Through Education",
-      "Knowledge for Character Building",
-      "Developing Co-curricullar activities",
-      "Value-Based Education Initiatives",
-    ],
+    title: "Nasha Mukth Yuva – Anti-Drug & Non-Alcohol Awareness",
+    description:
+      "Conducting Nasha Mukth Yuva – Bharat Awareness Programs in colleges and educational institutions, focusing on anti-drug and non-alcohol messages. These programs guide youth to stay away from harmful habits and lead disciplined, healthy lives.",
+    icon: Shield,
   },
   {
-    title: "Health Care",
-    stats: [
-      "Caring for Life and Well-Being",
-      "Service Through Compassionate Healthcare",
-      "Health for All, Service for Humanity",
-      "Preventive and Community Health Programs",
-    ],
+    title: "Youth Awareness Programs in Colleges",
+    description:
+      "Organizing various awareness programs to educate and empower youth on important social, health, and national issues, building a responsible, informed, and healthy society inspired by the ideals of Swami Vivekananda.",
+    icon: GraduationCap,
   },
   {
-    title: "Environment Protection",
-    stats: [
-      "Protecting Nature, Preserving Life",
-      "Green Initiatives for a Sustainable Future",
-      "Harmony Between Humanity and Nature",
-      "Environmental Awareness and Action",
-    ],
+    title: "Central Government Schemes Awareness",
+    description:
+      "Conducting awareness programs on Central Government Welfare Schemes, helping the public understand available benefits related to education, health, employment, women empowerment, and social security.",
+    icon: Megaphone,
   },
   {
-    title: "Youth Development",
-    stats: [
-      "Shaping Future Leaders",
-      "Empowering Youth with Values",
-      "Strengthening Youth for Nation Building",
-      "Character, Confidence, and Commitment",
-    ],
+    title: "Public Health & Child Protection Awareness",
+    description:
+      "Organizing public health awareness programs on issues such as AIDS prevention, liver health, and general well-being, educating people about prevention, healthy lifestyles, and early care. Also conducting child protection awareness programs, emphasizing child rights, safety, education, and protection from abuse.",
+    icon: Heart,
   },
 ];
 
@@ -55,72 +37,80 @@ const OurImpact = () => {
   return (
     <Layout>
       <PageHero
-        title="Our Impact"
-        subtitle="Measuring the difference we make in rural communities"
-        breadcrumbs={[{ label: "Our Impact" }]}
+        title="Social Awareness"
+        subtitle="Building a knowledgeable, healthy, and socially responsible community"
+        breadcrumbs={[{ label: "Programs" }, { label: "Social Awareness" }]}
       />
 
-      {/* Impact Stats */}
-      <section className="py-20 bg-primary">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {impactStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <stat.icon className="mx-auto mb-4 text-primary-foreground" size={48} />
-                <div className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-primary-foreground/80 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact by Area */}
       <section className="py-20 bg-background">
         <div className="container">
-          <SectionTitle
-            label="Impact Areas"
-            title="Creating Holistic Change"
-            subtitle="Our integrated approach ensures sustainable development across all sectors"
-          />
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {impactAreas.map((area, index) => (
-              <div key={index} className="card-sharp p-8 border-l-4 border-l-primary">
-                <h3 className="font-heading text-2xl font-bold mb-6">{area.title}</h3>
-                <ul className="space-y-3">
-                  {area.stats.map((stat, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{stat}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
+                Our Mission
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+                Social Awareness
+              </h2>
+              <div className="space-y-4 mb-8">
+                <p className="text-muted-foreground leading-relaxed">
+                  Swami Vivekananda Seva Brundam organizes various awareness programs to educate and empower youth and the general public on important social, health, and national issues. Our aim is to build a responsible, informed, and healthy society inspired by the ideals of Swami Vivekananda.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We conduct <strong>Nasha Mukth Yuva – Bharat Awareness Programs</strong> in colleges and educational institutions, focusing on anti-drug and non-alcohol messages. These programs guide youth to stay away from harmful habits and lead disciplined, healthy lives.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our organization also conducts awareness programs on <strong>Central Government Welfare Schemes</strong>, helping the public understand available benefits related to education, health, employment, women empowerment, and social security.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  In addition, we organize public health awareness programs on issues such as <strong>AIDS prevention, liver health, and general well-being</strong>, educating people about prevention, healthy lifestyles, and early care. We also actively conduct <strong>child protection awareness programs</strong>, emphasizing child rights, safety, education, and protection from abuse.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Through these awareness initiatives, Swami Vivekananda Seva Brundam works towards creating a knowledgeable, healthy, and socially responsible community.
+                </p>
               </div>
-            ))}
+              <div className="flex flex-wrap gap-4">
+                <Link to="/donate">
+                  <Button className="btn-primary">
+                    Support Awareness Programs
+                    <ArrowRight className="ml-2" size={18} />
+                  </Button>
+                </Link>
+                <Link to="/volunteer">
+                  <Button className="btn-outline">
+                    Become a Volunteer
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div>
+              <img src={socialAwarenessImage} alt="Social Awareness Programs" className="w-full shadow-lg" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-secondary">
-        <div className="container text-center">
-          <h3 className="font-heading text-2xl font-bold text-secondary-foreground mb-4">
-            Be Part of This Impact Story
-          </h3>
-          <p className="text-secondary-foreground/80 mb-6 max-w-2xl mx-auto">
-            Join us in our mission to transform more lives. Your support can help us 
-            expand our reach to more villages and communities.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/donate">
-              <Button className="btn-primary">
-                <Heart className="mr-2" size={18} />
-                Donate Now
-              </Button>
-            </Link>
+      <section className="py-20 bg-cream">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl font-bold mb-4">Our Key Initiatives</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive awareness programs to build a responsible and informed society
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {initiatives.map((initiative, index) => {
+              const Icon = initiative.icon;
+              return (
+                <div key={index} className="card-sharp p-8">
+                  <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="text-primary" size={28} />
+                  </div>
+                  <h3 className="font-heading text-xl font-bold mb-3">{initiative.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{initiative.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
