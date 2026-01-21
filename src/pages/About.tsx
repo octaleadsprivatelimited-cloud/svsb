@@ -3,6 +3,7 @@ import { PageHero } from "@/components/common/PageHero";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/common/SEO";
 import { Target, Award, Heart, Users, GraduationCap, ArrowRight, Shield, Sparkles, TrendingUp, Leaf, BookOpen } from "lucide-react";
 
 import journeyOfServiceImage from "@/assets/journey-of-service.jpg";
@@ -43,6 +44,11 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Us"
+        description="Learn about Swamivivekananda Seva Brundam - A registered NGO working for rural development, education, healthcare, and youth empowerment in Telangana since 2012."
+        keywords="about NGO Telangana, Swamivivekananda Seva Brundam history, rural development organization, community service Telangana"
+      />
       <PageHero
         title="About Us"
         subtitle="Empowering rural communities through sustainable development since 2012"

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { StatCard, ProgramCard, TestimonialCard } from "@/components/common/Cards";
+import { SEO } from "@/components/common/SEO";
 import { 
   GraduationCap, 
   Heart, 
@@ -188,6 +189,42 @@ const collaborators = [
 
 const Index = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Swamivivekananda Seva Brundam",
+    "alternateName": "SVSB",
+    "url": "https://ysvsb.org",
+    "logo": "https://ysvsb.org/logo.png",
+    "description": "Registered NGO working for rural development, education, healthcare, and youth skill development in Telangana since 2012",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "H No 6-113, Gandhinagar, Kalwakurthy Village & Mandal",
+      "addressLocality": "Nagarkurnool District",
+      "addressRegion": "Telangana",
+      "postalCode": "509324",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-70135-70447",
+      "contactType": "Customer Service",
+      "email": "info@ysvsb.org"
+    },
+    "foundingDate": "2012",
+    "founder": {
+      "@type": "Person",
+      "name": "Shiva Kumar Gudlanaram"
+    },
+    "award": "National Youth Award 2018",
+    "sameAs": [
+      "https://www.facebook.com/ysvsb",
+      "https://www.twitter.com/ysvsb",
+      "https://www.instagram.com/ysvsb",
+      "https://www.linkedin.com/company/ysvsb"
+    ]
+  };
 
   // Preload images to ensure they're ready and catch any errors
   useEffect(() => {
@@ -218,6 +255,12 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Home"
+        description="Swamivivekananda Seva Brundam - Empowering rural communities through education, healthcare, and sustainable development in Telangana since 2012. Join us in transforming lives."
+        keywords="NGO Telangana, rural development, education programs, healthcare camps, youth development, donate NGO, volunteer India, CSR partnerships"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Carousel */}

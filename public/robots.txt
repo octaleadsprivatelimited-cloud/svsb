@@ -1,4 +1,5 @@
 # robots.txt for Swamivivekananda Seva Brundam
+# https://ysvsb.org/robots.txt
 
 User-agent: *
 Allow: /
@@ -7,18 +8,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-# Allow all important pages
-Allow: /
-Allow: /about
-Allow: /programs
-Allow: /donate
-Allow: /volunteer
-Allow: /contact
-Allow: /our-impact
-Allow: /gallery
-Allow: /events
-
-# Sitemap location
+# Sitemap location (required by Google Search Console)
 Sitemap: https://ysvsb.org/sitemap.xml
 
 # Crawl-delay (optional, adjust as needed)

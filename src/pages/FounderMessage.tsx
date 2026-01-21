@@ -2,13 +2,32 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/common/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/common/SEO";
 import { ArrowRight, Award, Play } from "lucide-react";
 
 import founderImage from "@/assets/team-member-4.jpg";
 
 const FounderMessage = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shiva Kumar Gudlanaram",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "NGO",
+      "name": "Swamivivekananda Seva Brundam"
+    },
+    "award": "National Youth Award 2018"
+  };
+
   return (
     <Layout>
+      <SEO
+        title="Founder's Message"
+        description="Read the inspiring message from Shiva Kumar Gudlanaram, National Youth Awardee and Founder of Swamivivekananda Seva Brundam, on our mission to transform rural communities."
+        keywords="founder message, Shiva Kumar Gudlanaram, National Youth Awardee, NGO founder Telangana"
+        structuredData={structuredData}
+      />
       <PageHero
         title="Founder's Message"
         subtitle="A word from our visionary leader"

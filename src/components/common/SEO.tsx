@@ -7,6 +7,8 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   type?: string;
+  noindex?: boolean;
+  structuredData?: object;
 }
 
 const defaultSEO = {
@@ -17,7 +19,15 @@ const defaultSEO = {
   type: "website",
 };
 
-export const SEO = ({ title, description, keywords, image, type = "website" }: SEOProps) => {
+export const SEO = ({ 
+  title, 
+  description, 
+  keywords, 
+  image, 
+  type = "website",
+  noindex = false,
+  structuredData
+}: SEOProps) => {
   const location = useLocation();
   const baseUrl = "https://ysvsb.org";
   const currentUrl = `${baseUrl}${location.pathname}`;
@@ -32,8 +42,8 @@ export const SEO = ({ title, description, keywords, image, type = "website" }: S
   };
 
   useEffect(() => {
-    // Update document title
-    document.title = seo.title;
+    // Update document title (max 60 characters recommended by Google)
+    document.title = seo.title.length > 60 ? seo.title.substring(0, 57) + "..." : seo.title;
 
     // Update or create meta tags
     const updateMetaTag = (name: string, content: string, attribute: string = "name") => {
@@ -47,23 +57,39 @@ export const SEO = ({ title, description, keywords, image, type = "website" }: S
     };
 
     // Primary meta tags
-    updateMetaTag("description", seo.description);
+    updateMetaTag("description", seo.description.length > 160 ? seo.description.substring(0, 157) + "..." : seo.description);
     updateMetaTag("keywords", seo.keywords);
-    updateMetaTag("title", seo.title);
+    
+    // Robots meta tag
+    updateMetaTag("robots", noindex ? "noindex, nofollow" : "index, follow");
+    
+    // Author
+    updateMetaTag("author", "Swamivivekananda Seva Brundam");
+    
+    // Language
+    updateMetaTag("language", "English");
+    
+    // Geo tags
+    updateMetaTag("geo.region", "IN-TG");
+    updateMetaTag("geo.placename", "Telangana");
 
-    // Open Graph tags
+    // Open Graph tags (required for social sharing)
     updateMetaTag("og:title", seo.title, "property");
     updateMetaTag("og:description", seo.description, "property");
     updateMetaTag("og:image", seo.image, "property");
     updateMetaTag("og:url", seo.url, "property");
     updateMetaTag("og:type", seo.type, "property");
+    updateMetaTag("og:site_name", "Swamivivekananda Seva Brundam", "property");
+    updateMetaTag("og:locale", "en_IN", "property");
 
-    // Twitter tags
+    // Twitter Card tags
+    updateMetaTag("twitter:card", "summary_large_image");
     updateMetaTag("twitter:title", seo.title);
     updateMetaTag("twitter:description", seo.description);
     updateMetaTag("twitter:image", seo.image);
+    updateMetaTag("twitter:url", seo.url);
 
-    // Canonical URL
+    // Canonical URL (prevents duplicate content issues)
     let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement("link");
@@ -71,7 +97,21 @@ export const SEO = ({ title, description, keywords, image, type = "website" }: S
       document.head.appendChild(canonical);
     }
     canonical.setAttribute("href", seo.url);
-  }, [seo.title, seo.description, seo.keywords, seo.image, seo.type, seo.url]);
+
+    // Add structured data (JSON-LD) if provided
+    if (structuredData) {
+      // Remove existing structured data script if any
+      const existingScript = document.querySelector('script[type="application/ld+json"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+      
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    }
+  }, [seo.title, seo.description, seo.keywords, seo.image, seo.type, seo.url, noindex, structuredData]);
 
   return null;
 };
