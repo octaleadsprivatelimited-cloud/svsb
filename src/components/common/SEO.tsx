@@ -11,8 +11,8 @@ interface SEOProps {
 
 const defaultSEO = {
   title: "Swamivivekananda Seva Brundam | Rural Development NGO in Telangana",
-  description: "Swamivivekananda Seva Brundam is a registered NGO working for rural development, education, healthcare, women empowerment, and youth skill development in Telangana since 2012.",
-  keywords: "NGO Telangana, rural development, education programs, healthcare camps, women empowerment, youth development, donate NGO, volunteer India, CSR partnerships",
+  description: "Swamivivekananda Seva Brundam is a registered NGO working for rural development, education, healthcare, and youth skill development in Telangana since 2012.",
+  keywords: "NGO Telangana, rural development, education programs, healthcare camps, youth development, donate NGO, volunteer India, CSR partnerships",
   image: "https://ysvsb.org/logo.png",
   type: "website",
 };

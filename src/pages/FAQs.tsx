@@ -11,7 +11,7 @@ import {
 const faqs = [
   {
     question: "What is Swamivivekananda Seva Brundam?",
-    answer: "Swamivivekananda Seva Brundam is a registered charitable trust working for the holistic development of rural communities in Telangana. We focus on education, healthcare, women empowerment, youth development, and sustainable rural development.",
+    answer: "Swamivivekananda Seva Brundam is a registered charitable trust working for the holistic development of rural communities in Telangana. We focus on education, healthcare, youth development, and sustainable rural development.",
   },
   {
     question: "Is my donation tax-deductible?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "How is my donation used?",
-    answer: "Your donation is used directly for our programs including education support, healthcare camps, women skill training, and youth development. We maintain complete transparency in all our operations and fund utilization.",
+    answer: "Your donation is used directly for our programs including education support, healthcare camps, skill training, and youth development. We maintain complete transparency in all our operations and fund utilization.",
   },
   {
     question: "Can I volunteer with SVSB?",

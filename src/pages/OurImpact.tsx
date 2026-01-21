@@ -22,7 +22,7 @@ const initiatives = [
   {
     title: "Central Government Schemes Awareness",
     description:
-      "Conducting awareness programs on Central Government Welfare Schemes, helping the public understand available benefits related to education, health, employment, women empowerment, and social security.",
+      "Conducting awareness programs on Central Government Welfare Schemes, helping the public understand available benefits related to education, health, employment, and social security.",
     icon: Megaphone,
   },
   {
@@ -60,7 +60,7 @@ const OurImpact = () => {
                   We conduct <strong>Nasha Mukth Yuva – Bharat Awareness Programs</strong> in colleges and educational institutions, focusing on anti-drug and non-alcohol messages. These programs guide youth to stay away from harmful habits and lead disciplined, healthy lives.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our organization also conducts awareness programs on <strong>Central Government Welfare Schemes</strong>, helping the public understand available benefits related to education, health, employment, women empowerment, and social security.
+                  Our organization also conducts awareness programs on <strong>Central Government Welfare Schemes</strong>, helping the public understand available benefits related to education, health, employment, and social security.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   In addition, we organize public health awareness programs on issues such as <strong>AIDS prevention, liver health, and general well-being</strong>, educating people about prevention, healthy lifestyles, and early care. We also actively conduct <strong>child protection awareness programs</strong>, emphasizing child rights, safety, education, and protection from abuse.

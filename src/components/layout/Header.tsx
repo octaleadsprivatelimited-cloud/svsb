@@ -333,9 +333,14 @@ export const Header = () => {
             </nav>
 
             {/* Desktop Donate Button */}
-            <Link to="/donate" className="hidden lg:block">
+            <a
+              href="https://pages.razorpay.com/ysvsb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:block"
+            >
               <Button className="btn-primary">Donate Now</Button>
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -591,9 +596,15 @@ export const Header = () => {
                       </AnimatePresence>
                     </div>
                   ))}
-                  <Link to="/donate" onClick={() => setIsMobileMenuOpen(false)} className="block mt-4">
+                  <a
+                    href="https://pages.razorpay.com/ysvsb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-4"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     <Button className="btn-primary w-full">Donate Now</Button>
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </>

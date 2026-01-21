@@ -88,7 +88,7 @@ const galleryImages = [
   { src: img31, category: "Healthcare", title: "Health Initiative" },
   { src: img32, category: "Healthcare", title: "Medical Services" },
   { src: img34, category: "Women", title: "Women's Program" },
-  { src: img35, category: "Women", title: "Women Empowerment" },
+  { src: img35, category: "Women", title: "Women's Program" },
   { src: img36, category: "Women", title: "Women's Initiative" },
   { src: img37, category: "Events", title: "Community Event" },
   { src: img38, category: "Events", title: "Community Program" },

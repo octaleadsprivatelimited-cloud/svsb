@@ -272,12 +272,16 @@ const Index = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                <Link to="/donate">
+                <a
+                  href="https://pages.razorpay.com/ysvsb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button className="btn-primary">
                     Donate Now
                     <ArrowRight className="ml-2" size={18} />
                   </Button>
-                </Link>
+                </a>
                 <Link to="/about">
                   <Button className="btn-outline-light">
                     <Play className="mr-2" size={18} />
@@ -309,7 +313,7 @@ const Index = () => {
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Initially started to support education, it has expanded into comprehensive education programs, 
-                healthcare, women empowerment, skill development, youth leadership, and sustainable 
+                healthcare, skill development, youth leadership, and sustainable 
                 rural development.
               </p>
               <Link to="/about">
@@ -557,12 +561,16 @@ const Index = () => {
             lives of thousands. Join us in our mission to transform rural India.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/donate">
+            <a
+              href="https://pages.razorpay.com/ysvsb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="btn-primary">
                 <Heart className="mr-2" size={18} />
                 Donate Now
               </Button>
-            </Link>
+            </a>
             <Link to="/volunteer">
               <Button className="btn-outline-light">
                 <Users className="mr-2" size={18} />

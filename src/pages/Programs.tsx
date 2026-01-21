@@ -212,11 +212,15 @@ const Programs = () => {
               Whether through volunteering, donations, or partnerships, every contribution matters.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/donate">
+              <a
+                href="https://pages.razorpay.com/ysvsb"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="btn-primary">
                   Donate Now
                 </Button>
-              </Link>
+              </a>
               <Link to="/volunteer">
                 <Button className="btn-outline bg-transparent border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10">
                   Become a Volunteer

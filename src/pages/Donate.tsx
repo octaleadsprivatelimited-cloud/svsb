@@ -19,7 +19,7 @@ const donationOptions = [
 const impactAreas = [
   "Education for underprivileged children",
   "Healthcare & medical camps in villages",
-  "Women empowerment & skill training",
+  "Skill training & development",
   "Youth development programs",
   "Sustainable rural development",
   "Emergency relief & disaster response",
@@ -152,7 +152,7 @@ const Donate = () => {
               <div className="mb-6">
                 <div 
                   className="razorpay-embed-btn" 
-                  data-url="https://pages.razorpay.com/pl_S6DgnCx47HtU0Z/view" 
+                  data-url="https://pages.razorpay.com/ysvsb" 
                   data-text="Donate Now" 
                   data-color="#528FF0" 
                   data-size="large"

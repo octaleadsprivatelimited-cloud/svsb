@@ -58,7 +58,7 @@ const CSRPartnerships = () => {
               <ul className="space-y-3 text-secondary-foreground/80">
                 <li>• Education & Skill Development</li>
                 <li>• Healthcare & Medical Camps</li>
-                <li>• Women Empowerment</li>
+                <li>• Skill Training & Development</li>
                 <li>• Rural Development</li>
                 <li>• Environmental Sustainability</li>
                 <li>• Disaster Relief & Response</li>

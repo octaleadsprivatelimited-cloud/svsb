@@ -16,12 +16,16 @@ export const CTAStrip = () => {
             </p>
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/donate">
+            <a
+              href="https://pages.razorpay.com/ysvsb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-6 text-sm uppercase tracking-wider font-semibold">
                 <Heart className="mr-2" size={18} />
                 Donate Now
               </Button>
-            </Link>
+            </a>
             <Link to="/volunteer">
               <Button className="btn-outline-light">
                 <Users className="mr-2" size={18} />
