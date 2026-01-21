@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, CreditCard, Building, Wallet, ArrowRight, CheckCircle } from "lucide-react";
+import { useEffect } from "react";
 import upiQrCode from "@/assets/upi-qr-code.png";
 
 const donationOptions = [
@@ -25,6 +26,25 @@ const impactAreas = [
 ];
 
 const Donate = () => {
+  useEffect(() => {
+    // Razorpay embed button script injection
+    const scriptId = 'razorpay-embed-btn-js';
+    const existingScript = document.getElementById(scriptId);
+    
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.id = scriptId;
+      script.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
+      document.body.appendChild(script);
+    } else {
+      const rzp = (window as any)['__rzp__'];
+      if (rzp && rzp.init) {
+        rzp.init();
+      }
+    }
+  }, []);
+
   return (
     <Layout>
       <PageHero
@@ -127,6 +147,16 @@ const Donate = () => {
                     placeholder="Enter PAN number (optional)"
                   />
                 </div>
+              </div>
+
+              <div className="mb-6">
+                <div 
+                  className="razorpay-embed-btn" 
+                  data-url="https://pages.razorpay.com/pl_S6DgnCx47HtU0Z/view" 
+                  data-text="Donate Now" 
+                  data-color="#528FF0" 
+                  data-size="large"
+                />
               </div>
 
               <Button className="btn-primary w-full">
